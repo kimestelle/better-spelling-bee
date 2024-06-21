@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.core.cache import cache
-from .daily_data.utils import get_cached_daily_data, print_cache
+from .utils import get_cached_daily_data
 from django.http import HttpResponse
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 # Create your views here.
 def cache_test_view(request): 
@@ -34,3 +36,7 @@ def clear_cache_view(request):
     print("Cache keys after clear:", keys_after)
 
     return HttpResponse("Cache cleared!")
+
+# @api_view(['GET'])
+# def getData(request):
+#     return Response()

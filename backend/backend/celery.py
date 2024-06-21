@@ -22,7 +22,7 @@ def debug_task(self):
 # define periodic task schedule 
 app.conf.beat_schedule = {
     'generate-and-cache-daily-data-every-midnight': {
-        'task': 'myapp.tasks.generate_and_cache_daily_data',
+        'task': 'daily_data.tasks.generate_and_cache_daily_data',
         'schedule': crontab(hour=0, minute=0), # execute daily at midnight
     }
 }

@@ -2,7 +2,7 @@ from celery import shared_task
 from django.utils import timezone 
 import redis 
 from daily_data.models import DailyData 
-from daily_data.utils import generate_daily_data 
+from backend.daily_data.utils import generate_daily_data 
 
 from celery.schedules import crontab 
 from backend.celery import periodic_task
