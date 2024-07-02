@@ -1,0 +1,8 @@
+.top-bar {
+    height: 7svh;
+    max-height: 7svh;
+    width: 50svh;
+    top: 0;
+    border-bottom: 1px solid gray;
+    background-color: rgb(240, 240, 240);
+}

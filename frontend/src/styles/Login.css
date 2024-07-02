@@ -1,0 +1,18 @@
+
+.login-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1svh;
+    padding-bottom: 20svh;
+    padding-top: 10svh;
+}
+
+.eye {
+    position: absolute;
+    bottom: 52svh;
+    left: 31svh;
+    height: 2svh;
+    opacity: 50%;
+}

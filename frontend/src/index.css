@@ -1,0 +1,80 @@
+* {
+  /* border: 1px solid red; */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: "Arvo", serif;
+    font-size: 1.7svh;
+  }
+
+  #root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgb(250, 250, 250);
+    z-index: 0;
+  }
+
+  #root::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100svw;
+    height: 100svh;
+    background: url('/noise.png') repeat;
+    background-size: 100px 100px;
+    opacity: 40%;
+    
+    pointer-events: none; 
+    z-index: 9999;
+}
+  .screen {
+    width: 50svh;
+    max-width: 50svh;
+    height: 100svh;
+    max-height: 100svh;
+  }
+
+  button {
+    z-index: 3;
+    width: 15svh;
+    color: black;
+    font-size: 1.7svh;
+    font-family: "Arvo", serif;
+    font-weight: regular;
+
+    background-color: rgb(240, 240, 240);
+    padding: 0.9svh;
+    padding-bottom: 0.8svh;
+    border-radius: 0.7svh;
+    border: none;
+    box-shadow: 0.2svh 0.2svh lightgray;
+
+    cursor: pointer;
+  }
+
+  input {
+    border-radius: 0.7svh;
+    font-family: "Arvo", serif;
+    font-size: 1.5svh;
+    border: 1px solid gray;
+    padding: 0.7svh;
+  }
+
+  .flex-column {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .clickable:hover {
+    cursor: pointer;
+  }
