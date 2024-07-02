@@ -1,27 +1,27 @@
-const ScoreCounter = (word, letters) => {
-    if (word.length === 4) {
-        return (1, 'good!')
-    } else if (word.length === 5) {
-        return (5, 'great!')
-    } else if (word.length === 7) {
-        if (isPangram(word)) {
-            return (14, 'PANGRAM!')
-        }
-        return (7, 'amazing!')
-    } else {
-        return (word.length, 'quack-tastic!')
+class ScoreCounter {
+    static calculateScore(word) {
+      if (word.length === 4) {
+        return { score: 1, message: 'good!' };
+      } else if (word.length === 5) {
+        return { score: 5, message: 'great!' };
+      } else if (word.length === 7 && this.isPangram(word)) {
+        return { score: 14, message: 'PANGRAM!' };
+      } else {
+        return { score: word.length, message: 'quack-tastic!' };
+      }
     }
-}
-
-    const isPangram = (word) => {
-        const counter = []
-        for (c in word.toCharArray()) {
-            if (counter.includes(c)) {
-                return false;
-            } else {
-                counter.push(c);
-            }
+  
+    static isPangram(word) {
+      const counter = {};
+      for (const char of word) {
+        if (counter[char]) {
+          return false;
+        } else {
+          counter[char] = true;
         }
+      }
+      return Object.keys(counter).length === 7;
     }
-
-export default ScoreCounter;
+  }
+  
+  export default ScoreCounter;
