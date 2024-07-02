@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'wordnet_app',
+    'users',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
