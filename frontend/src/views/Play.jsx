@@ -10,7 +10,7 @@ import FoundWords from '../components/play-components/FoundWords.jsx';
 import shuffleButton from '../assets/shuffle.svg';
 import pond from '../assets/pond.svg';
 
-import '../styles/Duck.css';
+import '../styles/Play.css';
 
 
 // temporary word list
@@ -112,7 +112,7 @@ const handleDuckClick = (duck) => {
     const clonedDuck = { ...duck, id: uuidv4() };
     const newWord = [...prevDuckList, clonedDuck].map(d => d.letter).join('');
     setWord(newWord);
-    setDuckAnimate(1);
+    setDuckAnimate(1, clonedDuck);
     return [...prevDuckList, clonedDuck];
   });
 };

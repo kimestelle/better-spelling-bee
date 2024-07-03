@@ -40,6 +40,7 @@ html, body {
     max-width: 50svh;
     height: 100svh;
     max-height: 100svh;
+    border: 1px solid blue;
   }
 
   button {

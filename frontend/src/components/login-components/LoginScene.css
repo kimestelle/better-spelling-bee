@@ -1,9 +1,9 @@
 .duck-box {
     position: absolute;
     height: 5svh;
-    width: 3svh;
-    bottom: 21.8svh;
-    left: 7.05svh;
+    width: 3.5svh;
+    bottom: 24.6svh;
+    left: 4.7svh;
     z-index: 2;
     display: flex;
     align-items: flex-end;
@@ -13,32 +13,81 @@
 
 .animated-duck {
     display: block;
-    width: 100%;
+    width: 95%;
     height: auto;
-    transform: translateY(100%); 
+    transform: translateY(100%) scaleX(1); 
     transition: transform 0.5s ease;
 }
 
 .duck-box:hover .animated-duck {
-    transform: translateY(7%);
+    transform: translateY(7%) scaleX(-1);
+}
+
+.tractor-box {
+    position: absolute;
+    height: 15svh;
+    width: 12svh;
+    bottom: 4.9svh;
+    left: 35svh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden; 
+    z-index: 2;
+}
+
+.tractor-inner-box {
+    position: relative;
+    width: 85%;
+    height: auto;
+    transition: transform 0.5s ease;
+    transform: rotate(-4deg)
+}
+
+.tractor {
+    position: relative;
+    height: 100%;
+    margin-bottom: -5.9svh;
+    margin-left: 0svh;
+    z-index: 3;
+}
+
+.tractor-wheel {
+    position: relative;
+    height: 5.47svh;
+    margin-left: 4.6svh;
+    margin-bottom: -0.5svh;
+    z-index: 0;
+}
+
+.tractor-box:hover .tractor-inner-box {
+    animation: TractorRotate 1.5s ease infinite;
 }
 
 .login-scene {
     position: absolute;
     bottom: 0;
-    height: 30svh;
-    z-index: 1;
+    height: 34svh;
 }
 
 .windmill-arms {
     position: absolute;
-    animation: Rotate 15s linear infinite;
-    height: 18svh;
-    bottom: 20svh;
-    left: -0.5svh;
+    height: 23svh;
+    bottom: 20.4svh;
+    left: -5svh;
     z-index: 3;
     user-select: none;
     pointer-events: none;
+}
+
+.rotating {
+    animation: Rotate 15s linear infinite;
+}
+
+@keyframes TractorRotate
+{0% { transform: rotate(-4deg) }
+ 20% { transform: rotate(-10deg) }
+    100% { transform: rotate(-4deg) }
 }
 
 @keyframes Rotate
