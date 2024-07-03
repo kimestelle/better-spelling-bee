@@ -6,6 +6,7 @@
     gap: 1svh;
     padding: 10svh;
     padding-bottom: 13svh;
+    padding-top: 9svh;
     margin-bottom: 8svh;
     border-radius: 1svh;
     background-color: white;
@@ -14,12 +15,13 @@
 
 .login {
     margin-top: 1.5svh;
-    background-color:rgba(250, 192, 42, .76);
+    background-color: rgb(58, 58, 58);
+    color: white;
 }
 
 .eye {
     position: absolute;
-    bottom: 58svh;
+    bottom: 53.4svh;
     left: 31svh;
     height: 2svh;
     opacity: 50%;

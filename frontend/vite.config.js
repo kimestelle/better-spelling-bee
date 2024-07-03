@@ -4,5 +4,8 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/spelling-bee-ducks/',
+  base: '/',
+  server: {
+    port: 8000, 
+  },
 })
