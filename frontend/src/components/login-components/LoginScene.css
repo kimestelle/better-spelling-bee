@@ -2,13 +2,13 @@
     position: absolute;
     height: 5svh;
     width: 3.5svh;
-    bottom: 24.6svh;
-    left: 4.7svh;
+    bottom: 21.54svh;
+    left: 4.4svh;
     z-index: 2;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .animated-duck {
@@ -28,7 +28,7 @@
     height: 15svh;
     width: 12svh;
     bottom: 4.9svh;
-    left: 35svh;
+    left: 38svh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -67,14 +67,14 @@
 .login-scene {
     position: absolute;
     bottom: 0;
-    height: 34svh;
+    height: 31svh;
 }
 
 .windmill-arms {
     position: absolute;
-    height: 23svh;
-    bottom: 20.4svh;
-    left: -5svh;
+    height: 18svh;
+    bottom: 20.2svh;
+    left: -2.9svh;
     z-index: 3;
     user-select: none;
     pointer-events: none;

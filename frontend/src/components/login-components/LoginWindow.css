@@ -10,7 +10,7 @@
     margin-bottom: 8svh;
     border-radius: 1svh;
     background-color: white;
-    box-shadow: 0.2svh 0.2svh 0.5svh lightgrey;
+    box-shadow: 0.2svh 0.2svh  lightgrey;
 }
 
 .login {
