@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-color: #7EC8E3;
+  --background-end-color: #FAF9F6;
+  position: relative;
+}
+
+:root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100svw;
+  height: 100svh;
+  background: url('/noise.png') repeat;
+  background-size: 120px 120px;
+  opacity: 0.5;
+  
+  pointer-events: none; 
+  z-index: 9999;
+}
+
+* {
+  /* border: 0.1px solid red; */
+  box-sizing: border-box;
+  font-size: 1.7svh;
+}
+
+div {
+  /* border: 0.1px solid blue; */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    var(--background-start-color),
+    var(--background-end-color)
+  );
+}
+
+h1 {
+  font-size: 5svh;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 25svh;
+  height: 3.5svh;
+
+  border: 1px solid rgb(161, 161, 161);
+  border-radius: 1svh;
+  padding: 1svh;
+
+  box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"] {
+  width: auto; 
+  height: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+button {
+  width: 15svh;
+  height: 4.5svh;
+
+  background-color: #D6D6D6;
+  border-radius: 1svh;
+  padding: 1svh;
+
+  box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  box-shadow: inset 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+}
+
+.box-shadow {
+  box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+}
+
+.clickable {
+  text-decoration: underline;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bg-sand {
+  background-color: #FAF9F6;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* duck stuff */
+.duck-0 {
+  left: 46%;
+  top: 33.5%;
+}
+
+.duck-1 {
+  left: 56%;
+  top: 15.5%;
+}
+
+.duck-2 {
+  left: 66.25%;
+  top: 33.5%;
+}
+
+.duck-3 {
+  left: 56%;
+  top: 51.75%;
+}
+
+.duck-4 {
+  left: 36%;
+  top: 51.75%;
+}
+
+.duck-5 {
+  left: 25.75%;
+  top: 33.5%;
+}
+
+.duck-6 {
+  left: 36%;
+  top: 15.5%;
+}
+
+.pond {
+  background-image: url('/game-assets/pond.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 90%;
+  background-position-x: 3.5svh;
+}
+
+.mask {
+  display: none;
+}
+
+
+.duck-container {
+  user-select: none;
+  cursor: grab;
+  transition: transform 0.2s ease, opacity 0.1s ease;
+  width: 7.6svh;
+  height: 8.3svh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: flex-end;
+  background-image: url('/game-assets/duck.svg');
+  z-index: 1;
+  margin: 0 -2svh; /* Negative margin to create overlap */
+}
+
+.duck-container:active {
+  cursor: grabbing;
+  background-image: url('/game-assets/duck-fly.svg');
+}
+
+.duck-letter {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-left: 2svh;
+  line-height: 4.8svh;
+
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-style: normal;
+  font-size: 4svh;
+  color: black;
+
+  -webkit-mask-image: url('/game-assets/duck.svg');
+  mask-image: url('/game-assets/duck.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.center {
+  color: white; 
+}
+
+.avatar-animate {
+  animation: bob 2.5s infinite;
+}
+
+@keyframes bob {
+  0% {
+    transform: translateY(0%);
+  }
+
+  30% {
+    transform: translateY(2.5%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}

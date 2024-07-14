@@ -1,0 +1,84 @@
+/* Remove this CSS and replace with Tailwind CSS classes in the JSX */
+.dropdown {
+    user-select: none;
+    position: absolute;
+    width: 45svh;
+    height: 5.5svh;
+    left: 2.5svh;
+
+    background-color: rgb(240, 240, 240);
+    padding: 2svh;
+    padding-bottom: 0.9svh;
+    padding-top: 0;
+    overflow: hidden;
+    transition: 0.2s ease;
+    border-radius: 1svh;
+    z-index: 5;
+    border: none;
+  }
+  
+  .dropdown.container {
+    transform-origin: top;
+    display: block;
+    margin-top: 4svh;
+    height: 79svh;
+    max-height: 79svh;
+  }
+  
+  .dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5svh;
+  }
+  .dropdown-list.open {
+    display: block;
+    height: 66svh;
+    max-height: 66svh;
+    margin-bottom: 5svh;
+    margin-top: 2svh;
+    background-color: rgb(240, 240, 240);
+    column-count: 3;
+    column-gap: 2.5svh;
+    column-fill: auto;
+  }
+  
+  .dropdown-list.open li {
+    margin-bottom: 1.2svh;
+    border-bottom: 1px solid white;
+    overflow: hidden;
+  }
+  
+  .dropdown-list.closed {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 1.5svh;
+    overflow: hidden;
+    height: 5.5svh;
+  }
+  
+  .dropdown-toggle {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    height: 5.5svh;
+    padding: 2.1svh;
+    padding-right: 1.5svh;
+    padding-left: 20svh;
+    background: linear-gradient(90deg, transparent, rgb(240, 240, 240));
+    z-index: 4;
+    border: 1px solid green;
+  }
+  
+  .dropdown-toggle.down {
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+  }
+  
+  .words-found {
+    padding-top: 1.5svh;
+  }
+  
