@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'daily_data',
     'users',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 
 ]
 
@@ -162,3 +164,7 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': crontab(hour=0, minute=0),  # Execute daily at midnight
     },
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Update this to match your frontend URL
+]
