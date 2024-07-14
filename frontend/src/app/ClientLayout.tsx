@@ -17,7 +17,7 @@ export default function ClientLayout({
   return (
     <div className={`${arvo.className} h-[100svh] w-full overflow-hidden flex items-center justify-center`}>
       <AuthProvider>
-        <div className='h-[100svh] w-[50svh] flex overflow-visible'>
+        <div className='h-[100svh] w-[50svh] flex overflow-visible items-center justify-center`'>
           {children}
         </div>
       </AuthProvider>

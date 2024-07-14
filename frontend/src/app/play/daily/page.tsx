@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
-import DuckDragDrop from './components/DuckDragDrop';
-import FoundWords from './components/FoundWords';
-import ScoreBar from './components/ScoreBar';
-import { GameLogicProvider } from './components/game-logic/GameLogicProvider';
+import DuckDragDrop from '../components/DuckDragDrop';
+import FoundWords from '../components/FoundWords';
+import ScoreBar from '../components/ScoreBar';
+import { GameLogicProvider } from '../components/game-logic/GameLogicProvider';
 
 const Play: React.FC = () => {
   return (
