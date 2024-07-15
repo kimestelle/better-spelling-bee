@@ -1,41 +1,32 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
-import UserDataService, { User } from '../services/UserDataService';
+import { useAuth } from '../../context/AuthContext';
 
 interface SignUpWindowProps {
   setLoginScreen: (value: boolean) => void;
 }
 
 const SignUpWindow: React.FC<SignUpWindowProps> = ({ setLoginScreen }) => {
-  const { setUsername, setPassword } = useAuth();
+  const { register } = useAuth();
   const [localUsername, setLocalUsername] = useState('');
   const [localPassword, setLocalPassword] = useState('');
   const [email, setEmail] = useState('');
   const [emailUpdates, setEmailUpdates] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSignUp = async () => {
-    const user: User = {
-      username: localUsername,
-      password: localPassword,
-      email: email,
-      emailUpdates: emailUpdates,
-    };
-
-    const isValid = UserDataService.signUp(user);
-
-    if (isValid) {
-      setUsername(localUsername);
-      setPassword(localPassword);
+    try {
+      await register(localUsername, localPassword, email, emailUpdates);
       setLoginScreen(true);
-    } else {
-      alert('Invalid input');
+    } catch (err) {
+      setError('Registration failed: Please check your details and try again.');
     }
   };
 
   return (
     <div className='w-full h-full flex flex-col items-center gap-y-[1svh] justify-center bg-sand rounded-lg box-shadow'>
+      {error && <p className="error">{error}</p>}
       <input
         type="text"
         id="new-username"

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useGameLogicContext } from './game-logic/GameLogicProvider';
 
@@ -7,6 +7,7 @@ import './FoundWords.css';
 const FoundWords: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { foundWords } = useGameLogicContext();
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -27,11 +28,24 @@ const FoundWords: React.FC = () => {
     },
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <>
+    <div className='w-[50svh] h-[10svh]'>
       <div className="dropdown">
         <img src="/game-assets/arrow.svg" className={`dropdown-toggle ${isOpen ? 'up' : 'down'}`} onClick={toggleMenu} />
-        {isOpen ? (
+        {isOpen || isDesktop ? (
           <p className="words-found">
             Words you found:
           </p>
@@ -44,7 +58,7 @@ const FoundWords: React.FC = () => {
         )}
       </div>
       <AnimatePresence>
-        {isOpen && (
+        {isOpen || isDesktop && (
           <motion.div
             variants={menuVars}
             initial="initial"
@@ -60,7 +74,7 @@ const FoundWords: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 
