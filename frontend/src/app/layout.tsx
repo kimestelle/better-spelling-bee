@@ -28,7 +28,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </head>
-      <body className={arvo.className}>
+      <body className={`${arvo.className} flex justify-center items-center`}>
         <ClientLayout>
           {children}
         </ClientLayout>

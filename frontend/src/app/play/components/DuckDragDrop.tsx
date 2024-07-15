@@ -194,7 +194,7 @@ const DuckDragDrop: React.FC = () => {
             </div>
           </SortableContext>
         </Droppable>
-        <div className="h-[40svh] w-full mt-[10svh] flex justify-center items-center relative pond">
+        <div className="h-[40svh] w-full mt-[8svh] flex justify-center items-center relative pond">
           {letters.filter((item, index, self) => self.findIndex(t => t.letter === item.letter) === index).map((letter, index) => (
             <div key={index} onClick={() => handleAddDuck(letter.letter)} className={`absolute duck-${index} ${index === Math.floor(letters.length / 2) ? 'center' : ''}`}>
               {letters.filter((item) => item.letter === letter.letter && !droppedLetters.some((dropped) => dropped.id === item.id)).map((item, subIndex) => (
@@ -211,7 +211,7 @@ const DuckDragDrop: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className='h-[10svh] flex flex-row justify-center items-center'>
+        <div className='h-[12svh] flex flex-row justify-center items-center'>
           <button onClick={handleDeleteDuck}>Delete</button>
           <button onClick={handleShuffle}>Shuffle</button>
           <button onClick={handleEnter}>Enter</button>

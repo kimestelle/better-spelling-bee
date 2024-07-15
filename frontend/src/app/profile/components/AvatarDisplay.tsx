@@ -1,13 +1,13 @@
 import React from 'react';
 
 interface AvatarDisplayProps {
-  color: { r: string; g: string; b: string; a: string };
-  topColor: { r: string; g: string; b: string; a: string };
+  bottomColor: string;
+  topColor: string;
 }
 
-const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ color, topColor }) => {
-  const fillColor = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
-  const gradientColor = `rgba(${topColor.r}, ${topColor.g}, ${topColor.b}, ${topColor.a})`;
+const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ bottomColor, topColor }) => {
+  const fillColor = bottomColor;
+  const gradientColor = topColor;
 
   return (
     <svg

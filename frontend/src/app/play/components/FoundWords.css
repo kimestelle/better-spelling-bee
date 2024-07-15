@@ -91,12 +91,12 @@
     }
 
     .dropdown.container {
-      height: 67.5svh;
-      max-height: 67.5svh;
+      height: 69.5svh;
+      max-height: 69.5svh;
     }
 
     .dropdown-list.open {
-      height: 58.5svh;
-      max-height: 58.5svh;
+      height: 59.5svh;
+      max-height: 59.5svh;
     }
   }

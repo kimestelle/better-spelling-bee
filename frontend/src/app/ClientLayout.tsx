@@ -1,7 +1,7 @@
 "use client";
 
 import { Arvo } from "next/font/google";
-import { AuthProvider } from './context/AuthContext'; // Ensure the correct path
+import { AuthProvider } from '../context/AuthContext'; // Ensure the correct path
 import "./globals.css";
 
 const arvo = Arvo({
@@ -17,7 +17,7 @@ export default function ClientLayout({
   return (
     <div className={`${arvo.className} h-[100svh] w-full overflow-hidden flex items-center justify-center`}>
       <AuthProvider>
-        <div className='h-[100svh] w-[50svh] flex overflow-visible items-center justify-center`'>
+        <div className='h-[100svh] flex overflow-visible items-center justify-center'>
           {children}
         </div>
       </AuthProvider>

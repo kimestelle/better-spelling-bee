@@ -4,3 +4,5 @@ celery
 redis
 django-cors-headers
 django-redis
+axios
+djangorestframework-simplejwt
