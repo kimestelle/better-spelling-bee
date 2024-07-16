@@ -24,9 +24,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   useEffect(() => {
     const token = Cookies.get('access_token');
     if (token) {
-      getUserData(token).then(setUser).catch(() => {
-        setUser(null);
-      }).finally(() => setLoading(false));
+      getUserData(token)
+        .then(setUser)
+        .catch(() => setUser(null))
+        .finally(() => setLoading(false));
     } else {
       setLoading(false);
     }
@@ -115,8 +116,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const updateUser = async (userData: Partial<Player>) => {
     const token = Cookies.get('access_token');
     if (token) {
-      const updatedUser = await UserService.updateUserData(token, userData);
-      setUser(updatedUser);
+      try {
+        await UserService.updateUserData(token, userData);
+        // Fetch the latest user data after updating
+        const updatedUser = await UserService.getCurrentUserData(token);
+        setUser(updatedUser);
+      } catch (error) {
+        console.error('Failed to update user data:', error);
+        throw error;  
+      }
     }
   };
 

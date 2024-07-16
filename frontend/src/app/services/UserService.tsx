@@ -30,22 +30,23 @@ const getCurrentUserData = async (token: string): Promise<Player> => {
     throw error;
   }
 };
-
 const updateUserData = async (token: string, userData: Partial<Player>): Promise<Player> => {
   try {
-    const response = await axios.put(`${API_URL}/users/me/`, userData, {
+    const response = await axios.patch(`${API_URL}/users/me/`, userData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
+    console.log('Updating user data with token:', token);
     return response.data;
   } catch (error) {
-    console.error('Failed to update user data:', error);
     throw error;
   }
 };
 
-export default {
+const api = {
   getCurrentUserData,
   updateUserData,
 };
+
+export default api;
