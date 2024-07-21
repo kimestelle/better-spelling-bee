@@ -17,7 +17,7 @@ const SketchExample: React.FC = () => {
       setBottomColor(user.color_bottom);
       setTopColor(user.color_top);
     }
-  }, [user]);
+  }, []);
 
   const handleClick = () => {
     setDisplayColorPicker(!displayColorPicker);

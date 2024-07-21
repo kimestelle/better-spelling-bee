@@ -1,8 +1,8 @@
 "use client";
 
-import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect, useCallback } from 'react';
 import Cookies from 'js-cookie';
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import UserService, { Player } from '../app/services/UserService';
 import { useRouter } from 'next/navigation';
 
@@ -14,12 +14,71 @@ interface AuthContextProps {
   updateUser: (userData: Partial<Player>) => Promise<void>;
 }
 
+interface AxiosError extends Error {
+  config: AxiosRequestConfig;
+  code?: string;
+  request?: any;
+  response?: {
+    status: number;
+    data: any;
+    headers: Record<string, any>;
+    config: AxiosRequestConfig;
+  };
+  isAxiosError: boolean;
+  toJSON: () => object;
+}
+
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<Player | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+
+  const logout = useCallback(() => {
+    Cookies.remove('access_token');
+    Cookies.remove('refresh_token');
+    setUser(null);
+    router.push('/');
+  }, [router]);
+
+  const refreshToken = useCallback(async () => {
+    const refresh = Cookies.get('refresh_token');
+    if (refresh) {
+      try {
+        const response = await axios.post('http://127.0.0.1:8000/users/refresh/', { refresh });
+        const { access } = response.data;
+        Cookies.set('access_token', access);
+        return access;
+      } catch (error) {
+        console.error('Failed to refresh token:', error);
+        logout();
+      }
+    }
+  }, [logout]);
+
+  const getCurrentUserDataWithRefresh = useCallback(async () => {
+    let token = Cookies.get('access_token');
+    try {
+      const userData = await UserService.getCurrentUserData(token);
+      setUser(userData);
+    } catch (error) {
+      if ((error as AxiosError).response && (error as AxiosError).response.status === 401) {
+        token = await refreshToken();
+        if (token) {
+          const userData = await UserService.getCurrentUserData(token);
+          setUser(userData);
+        }
+      }
+    }
+  }, [refreshToken]);
+
+  useEffect(() => {
+    const token = Cookies.get('access_token');
+    if (token) {
+      getCurrentUserDataWithRefresh();
+    }
+  }, [getCurrentUserDataWithRefresh]);
 
   useEffect(() => {
     const token = Cookies.get('access_token');
@@ -33,50 +92,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   }, []);
 
-  const refreshToken = async () => {
-    const refresh = Cookies.get('refresh_token');
-    if (refresh) {
-      try {
-        const response = await axios.post('http://127.0.0.1:8000/users/refresh/', { refresh });
-        const { access } = response.data;
-        Cookies.set('access_token', access);
-        return access;
-      } catch (error) {
-        console.error('Failed to refresh token:', error);
-        logout();
-      }
-    }
-  };
-
-  const getCurrentUserDataWithRefresh = async () => {
-    let token = Cookies.get('access_token');
-    try {
-      const userData = await UserService.getCurrentUserData(token);
-      setUser(userData);
-    } catch (error) {
-      if (error.response && error.response.status === 401) {
-        token = await refreshToken();
-        if (token) {
-          const userData = await UserService.getCurrentUserData(token);
-          setUser(userData);
-        }
-      }
-    }
-  };
-
-  useEffect(() => {
-    const token = Cookies.get('access_token');
-    if (token) {
-      getCurrentUserDataWithRefresh();
-    }
-  }, []);
-
   const login = async (username: string, password: string) => {
     try {
       const response = await axios.post('http://127.0.0.1:8000/users/login/', { username, password });
       const { access, refresh } = response.data;
       Cookies.set('access_token', access);
       Cookies.set('refresh_token', refresh);
+      console.log('Access Token:', access);  // Correct position
+      console.log('Refresh Token:', refresh);  // Correct position
       const userData = await UserService.getCurrentUserData(access);
       setUser(userData);
       router.push('/profile');
@@ -106,19 +129,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
-  const logout = () => {
-    Cookies.remove('access_token');
-    Cookies.remove('refresh_token');
-    setUser(null);
-    router.push('/');
-  };
-
   const updateUser = async (userData: Partial<Player>) => {
     const token = Cookies.get('access_token');
     if (token) {
       try {
         await UserService.updateUserData(token, userData);
-        // Fetch the latest user data after updating
         const updatedUser = await UserService.getCurrentUserData(token);
         setUser(updatedUser);
       } catch (error) {
@@ -135,6 +150,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           Authorization: `Bearer ${token}`,
         },
       });
+      console.log('User Data:', response.data);
       return response.data;
     } catch (error) {
       console.error('Failed to fetch user data:', error);
