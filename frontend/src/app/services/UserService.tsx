@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://127.0.0.1:8000'; // Update with your backend URL
+const API_URL = 'http://127.0.0.1:8000';
 
 export interface User {
   id: number;
@@ -30,14 +30,15 @@ const getCurrentUserData = async (token: string): Promise<Player> => {
     throw error;
   }
 };
-
 const updateUserData = async (token: string, userData: Partial<Player>): Promise<Player> => {
   try {
-    const response = await axios.put(`${API_URL}/users/me/`, userData, {
+    const response = await axios.patch(`${API_URL}/users/me/`, userData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
+    console.log('Updating user data with token:', token);
+    console.log(userData);
     return response.data;
   } catch (error) {
     console.error('Failed to update user data:', error);
@@ -45,7 +46,9 @@ const updateUserData = async (token: string, userData: Partial<Player>): Promise
   }
 };
 
-export default {
+const api = {
   getCurrentUserData,
   updateUserData,
 };
+
+export default api;
