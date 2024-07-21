@@ -32,7 +32,7 @@ function Dashboard() {
     <div className='w-[100svw] h-[75svh] flex justify-center bg-blue-600 bg-opacity-20'>
       <div className='w-[50svh] h-full flex flex-col items-center border-red-500 p-[2svh] gap-[1svh]'>
         <h1>{username}</h1>
-        <span className='bg-white rounded-[1svh] p-[0.5svh] px-[1svh]'>tiny quacker</span>
+        <span className='bg-white rounded-[1svh] p-[0.5svh] px-[1svh]'>duckling</span>
 
         <div className='w-full h-[15svh] flex flex-row my-[10svh] justify-between'>
           <div className='w-[20svh] h-full flex flex-col items-center bg-gradient-to-t from-white to-transparent rounded-[2svh]'>

@@ -213,7 +213,9 @@ const DuckDragDrop: React.FC = () => {
         </div>
         <div className='h-[12svh] flex flex-row justify-center items-center'>
           <button onClick={handleDeleteDuck}>Delete</button>
-          <button onClick={handleShuffle}>Shuffle</button>
+          <button onClick={handleShuffle} className='w-[6svh] h-[6svh] m-[1svh] rounded-[5svh]'>
+            <img src='/game-assets/shuffle.svg'/>
+          </button>
           <button onClick={handleEnter}>Enter</button>
         </div>
       </DndContext>

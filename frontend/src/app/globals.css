@@ -25,13 +25,13 @@
 }
 
 * {
-  border: 0.1px solid red;
+  /* border: 0.1px solid red; */
   box-sizing: border-box;
   font-size: 1.7svh;
 }
 
 div {
-  border: 0.1px solid blue;
+  /* border: 0.1px solid blue; */
 }
 
 body {
@@ -68,6 +68,7 @@ input[type="checkbox"] {
 button {
   width: 15svh;
   height: 4.5svh;
+  cursor: pointer;
 
   background-color: #D6D6D6;
   border-radius: 1svh;

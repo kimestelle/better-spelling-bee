@@ -6,9 +6,13 @@ const ScoreBar: React.FC = () => {
 
   return (
       <div className="w-full h-[10svh] flex flex-row justify-between items-center px-[3svh]">
-        <img src='/icons/home-icon.svg' className='h-[3.5svh]'/>
+        <button className='w-[5svh] h-[5svh] bg-transparent shadow-none'>
+        <img src='/icons/home-icon.svg'/>
+        </button>
         <img src='/logo.svg' className='h-[5svh]'/>
-        <img src='/icons/settings-icon.svg' className='h-[3.5svh]'/>
+        <button className='w-[5svh] h-[5svh] bg-transparent shadow-none'>
+          <img src='/icons/settings-icon.svg'/>
+        </button>
       </div>
   );
 };

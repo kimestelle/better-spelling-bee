@@ -9,6 +9,12 @@ export interface GameLogicReturnType {
   statusMessage: string;
   foundWords: string[];
   points: number;
+  counterPosition: number;
+  win: boolean;
+  complete: boolean;
+
+  winScreenDisplayed: boolean;
+  setWinScreenDisplayed: (displayed: boolean) => void;
 }
 
 interface SubmitResult {
@@ -20,8 +26,16 @@ interface SubmitResult {
 
 export default function useGameLogic(): GameLogicReturnType {
   const [foundWords, setFoundWords] = useState<string[]>([]);
+
   const [statusMessage, setStatusMessage] = useState<string>('');
+
   const [points, setPoints] = useState<number>(0);
+  const [winThreshold, setWinThreshold] = useState<number>(10);
+  const [counterPosition, setCounterPosition] = useState<number>(1);
+
+  const [win, setWin] = useState<boolean>(false);
+  const [complete, setComplete] = useState<boolean>(false);
+  const [winScreenDisplayed, setWinScreenDisplayed] = useState<boolean>(false);
 
   const handleSubmit = (word: string, letters: string[]): SubmitResult | undefined => {
     console.log(foundWords)
@@ -63,7 +77,46 @@ export default function useGameLogic(): GameLogicReturnType {
     return () => clearTimeout(timer);
   }, [statusMessage]);
 
-  return { handleSubmit, statusMessage, foundWords, points };
+  useEffect(() => {
+    const newPosition = getCounterPosition();
+    setCounterPosition(newPosition);
+  }, [points, winThreshold]);
+
+  const getCounterPosition = () => {
+    const percentage = (points / winThreshold) * 100;
+
+    if (winThreshold <= 0) {
+      throw new Error('Win threshold must be greater than 0');
+    }
+    if (percentage <= 2) {
+      return 1;
+    } else if (percentage <= 5) {
+      return 2;
+    } else if (percentage <= 8) {
+      return 3;
+    } else if (percentage <= 15) {
+      return 4;
+    } else if (percentage <= 25) {
+      return 5;
+    } else if (percentage <= 40) {
+      return 6;
+    } else if (percentage <= 50) {
+      return 7;
+    } else if (percentage <= 70) {
+      setWin(true);
+      return 8;
+    } else if (percentage <= 70) {
+      setWin(true);
+      setComplete(true);
+      return 8;
+    }
+    else {
+      return 0;
+    }
+  }
+  
+
+  return { handleSubmit, statusMessage, foundWords, points, counterPosition, win, complete, winScreenDisplayed, setWinScreenDisplayed };
 }
 
 class ScoreCounter {
