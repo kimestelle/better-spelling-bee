@@ -27,42 +27,62 @@ def validate(words, letters):
 
     return dict[max_key]
 
-def make_subset(input_file):
-    if os.path.exists(input_file) == False:
-        print(f"File not found: {input_file}")
+def is_pangram(word, letters):
+    return set(word) == set(letters)
 
-    letters = random.sample(list(string.ascii_lowercase), 7) + ['\n']
+def calculate_score(word, letters):
+    if len(word) == 4:
+        return 1
+    elif len(word) == 5:
+        return 5
+    elif len(word) == 7 and is_pangram(word, letters):
+        return 14
+    else:
+        return len(word)
 
+def make_subset():
+    global win_threshold
+    win_threshold = 0
+    
     file_path = os.path.join(os.path.dirname(__file__), 'data', 'cleaned.txt')
+    
+    if not os.path.exists(file_path):
+        print(f"File not found: {file_path}")
+        return None, 0
+
+    letters = random.sample(list(string.ascii_lowercase), 7)
         
-    words = [line[:-1] for line in open(file_path, 'r') if set(line).issubset(letters)]
+    words = [line.strip() for line in open(file_path, 'r') if set(line.strip()).issubset(letters)]
     
     if len(validate(words, letters)) < 9:
-        make_subset(input_file)
+        return make_subset()
     else: 
-        return json.dumps(list(validate(words, letters)))
-
+        for word in words:
+            win_threshold += calculate_score(word, letters)
+        return json.dumps(list(validate(words, letters))), win_threshold
 
 def fetch_daily_data():
     """
     Fetch the daily data from an external source.
     This is a placeholder function; replace it with actual data fetching logic.
     """
-
-    return make_subset('cleaned.txt')
+    return make_subset()
 
 def cache_daily_data():
     """
     Fetch data and cache it in Redis.
     """
-    data = fetch_daily_data()
-    # data = make_subset('cleaned.txt')
+    data, win_threshold = fetch_daily_data()
+    if data is None:
+        return None, 0
+
     today = timezone.now().date()
     cache_key = f"daily_data:{today}"
     r.set(cache_key, data, ex=86400)  # Cache for 24 hours
 
     # Save data in the database
-    DailyData.objects.create(date=today, data=data)
+    DailyData.objects.create(date=today, data=data, win_threshold=win_threshold)
+    return data, win_threshold
 
 def get_cached_daily_data():
     """
@@ -73,11 +93,16 @@ def get_cached_daily_data():
     data = r.get(cache_key)
 
     if data:
-        return data.decode('utf-8')
+        try:
+            daily_data = DailyData.objects.get(date=today)
+            win_threshold = daily_data.win_threshold
+            return data, win_threshold
+        except DailyData.DoesNotExist:
+            data, win_threshold = cache_daily_data()
+            return data if data else None, win_threshold
     else:
-        # If data is not found in the cache, fetch and cache it
-        cache_daily_data()
-        return r.get(cache_key).decode('utf-8')
+        data, win_threshold = cache_daily_data()
+        return data if data else None, win_threshold
     
 def print_cache():
     cache_contents = []

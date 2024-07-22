@@ -70,7 +70,7 @@ const DuckDragDrop: React.FC = () => {
         setTimeout(() => {
           setDroppedLetters([]);
           setAnimationClass('');
-        }, 2000); // Duration of the animation
+        }, 400); // Duration of the animation
       }
     }
     setWord(currentWord);

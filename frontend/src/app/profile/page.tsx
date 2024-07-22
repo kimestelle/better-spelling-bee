@@ -29,7 +29,7 @@ const Profile = () => {
 
   return (
     <ProtectedRoute>
-      <div className='w-full h-[100svh] flex flex-col items-center'>
+      <div className='w-full h-[100svh] flex flex-col items-center bg-sand'>
         <Avatar />
         <Dashboard />
       </div>
