@@ -19,9 +19,17 @@ def cache_test_view(request):
     return render(request, 'cache_test.html', {'cached_data': cached_data})
 
 def daily_data_view(request):
-    data = get_cached_daily_data()
+    data, win_threshold, letters, center_letter = get_cached_daily_data()
+    if data is None:
+        return HttpResponse("Error fetching daily data", status=500)
     print(data)
-    return render(request, 'daily_data.html', {'data': data})
+    return render(request, 'daily_data.html', {
+        'data': data, 
+        'win_threshold': win_threshold, 
+        'letters': letters,
+        'center_letter': center_letter,
+        })
+
 
 def clear_cache_view(request):
     keys_before = cache.keys('*')
@@ -37,6 +45,15 @@ def clear_cache_view(request):
 
     return HttpResponse("Cache cleared!")
 
-# @api_view(['GET'])
-# def getData(request):
-#     return Response()
+@api_view(['GET'])
+def daily_data_api_view(request):
+    data, win_threshold, letters, center_letter = get_cached_daily_data()
+    if data is None:
+        return Response({"error": "Error fetching daily data"}, status=500)
+    
+    return Response({
+        "data": data,
+        "win_threshold": win_threshold,
+        "letters": letters,
+        "center_letter": center_letter
+    })

@@ -30,6 +30,9 @@ const config: Config = {
         'flap': 'flap 0.2s',
         'shake': 'shake 0.4s steps(1) infinite',
       },
+      backgroundImage: {
+        'wave-bg': "url('/background-assets/waves.svg')"
+      }
     },
   },
   plugins: [],

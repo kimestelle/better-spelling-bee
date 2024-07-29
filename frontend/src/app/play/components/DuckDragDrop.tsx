@@ -13,7 +13,7 @@ import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortab
 import Droppable from './duck-components/Droppable';
 import Duck from './duck-components/Duck';
 import DuckSortable from './duck-components/DuckSortable';
-import { useGameLogicContext } from './game-logic/GameLogicProvider';
+import { useGameLogicContext } from './game-logic/DailyLogicProvider';
 
 interface LetterItem {
   id: string;
@@ -70,7 +70,7 @@ const DuckDragDrop: React.FC = () => {
         setTimeout(() => {
           setDroppedLetters([]);
           setAnimationClass('');
-        }, 2000); // Duration of the animation
+        }, 400); // Duration of the animation
       }
     }
     setWord(currentWord);
@@ -213,7 +213,9 @@ const DuckDragDrop: React.FC = () => {
         </div>
         <div className='h-[12svh] flex flex-row justify-center items-center'>
           <button onClick={handleDeleteDuck}>Delete</button>
-          <button onClick={handleShuffle}>Shuffle</button>
+          <button onClick={handleShuffle} className='w-[6svh] h-[6svh] m-[1svh] rounded-[5svh]'>
+            <img src='/game-assets/shuffle.svg'/>
+          </button>
           <button onClick={handleEnter}>Enter</button>
         </div>
       </DndContext>

@@ -42,14 +42,14 @@ const SketchExample: React.FC = () => {
   return (
     <div className="w-[50svh] h-[25svh] flex flex-row gap-[3svh] justify-end items-end overflow-hidden">
       {displayColorPicker ? (
-        <div className='flex flex-col items-end h-[16.5svh] w-[22svh] gap-[2svh]'>
+        <div className='flex flex-col items-center h-[21svh] w-[22svh] gap-[2svh]'>
           <div className='custom-slider-picker h-[5svh] w-[22svh]'>
             <SliderPicker color={topColor} onChange={handleTopChange} />
           </div>
           <div className='custom-slider-picker h-[5svh] w-[22svh]'>
             <SliderPicker color={bottomColor} onChange={handleBottomChange} />
           </div>
-          <button className='h-[2svh] p-0 pb-[0.6svh] m-0 text-[1.4svh]' onClick={handleSubmit}>
+          <button className='h-[2.8svh] p-[0.4svh] m-0 mt-[0.7svh] text-[1.4svh] bg-white' onClick={handleSubmit}>
             Save
           </button>
         </div>
@@ -57,9 +57,6 @@ const SketchExample: React.FC = () => {
       <div className='clickable mb-[-2svh] avatar-animate' onClick={handleClick}>
         <AvatarDisplay bottomColor={bottomColor} topColor={topColor} />
       </div>
-      <p>
-        {topColor} {bottomColor}
-      </p>
     </div>
   );
 };

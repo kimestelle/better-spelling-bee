@@ -68,6 +68,7 @@ input[type="checkbox"] {
 button {
   width: 15svh;
   height: 4.5svh;
+  cursor: pointer;
 
   background-color: #D6D6D6;
   border-radius: 1svh;
@@ -212,4 +213,16 @@ button:active {
   100% {
     transform: translateY(0%);
   }
+}
+
+/* Avatar styles */
+
+.face-container {
+  border-radius: 50%;
+  width: fit-content;
+  height: fit-content;
+}
+
+.face {
+  width: 100%;
 }

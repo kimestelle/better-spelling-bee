@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useGameLogicContext } from './game-logic/GameLogicProvider';
+import { useGameLogicContext } from './game-logic/DailyLogicProvider';
 
 import './FoundWords.css';
 
@@ -31,6 +31,7 @@ const FoundWords: React.FC = () => {
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 768);
+      console.log(isDesktop)
     };
 
     handleResize();
@@ -39,7 +40,7 @@ const FoundWords: React.FC = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isDesktop]);
 
   return (
     <div className='w-[50svh] h-[10svh]'>
@@ -58,7 +59,7 @@ const FoundWords: React.FC = () => {
         )}
       </div>
       <AnimatePresence>
-        {isOpen || isDesktop && (
+        {(isOpen || isDesktop) && (
           <motion.div
             variants={menuVars}
             initial="initial"
