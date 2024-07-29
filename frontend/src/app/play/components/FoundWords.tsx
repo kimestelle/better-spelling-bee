@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useGameLogicContext } from './game-logic/GameLogicProvider';
+import { useGameLogicContext } from './game-logic/DailyLogicProvider';
 
 import './FoundWords.css';
 

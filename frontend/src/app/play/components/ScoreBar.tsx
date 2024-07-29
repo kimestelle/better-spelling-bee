@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGameLogicContext } from './game-logic/GameLogicProvider';
+import { useGameLogicContext } from './game-logic/DailyLogicProvider';
 
 const ScoreBar: React.FC = () => {
   const { points, counterPosition } = useGameLogicContext();

@@ -214,3 +214,15 @@ button:active {
     transform: translateY(0%);
   }
 }
+
+/* Avatar styles */
+
+.face-container {
+  border-radius: 50%;
+  width: fit-content;
+  height: fit-content;
+}
+
+.face {
+  width: 100%;
+}

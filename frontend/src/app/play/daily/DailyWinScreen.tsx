@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { useGameLogicContext } from '../components/game-logic/GameLogicProvider';
+import { useGameLogicContext } from '../components/game-logic/DailyLogicProvider';
 
 const DailyWinScreen: React.FC = () => {
     const router = useRouter();

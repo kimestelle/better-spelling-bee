@@ -4,7 +4,7 @@ import DuckDragDrop from '../components/DuckDragDrop';
 import FoundWords from '../components/FoundWords';
 import ScoreBar from '../components/ScoreBar';
 import TopBar from '../components/TopBar';
-import { GameLogicProvider } from '../components/game-logic/GameLogicProvider';
+import { GameLogicProvider } from '../components/game-logic/DailyLogicProvider';
 
 const PlayInfinite: React.FC = () => {
   return (

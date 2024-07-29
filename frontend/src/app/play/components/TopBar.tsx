@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGameLogicContext } from './game-logic/GameLogicProvider';
+import { useGameLogicContext } from './game-logic/DailyLogicProvider';
 
 const ScoreBar: React.FC = () => {
   const { points } = useGameLogicContext();
@@ -11,7 +11,9 @@ const ScoreBar: React.FC = () => {
         </button>
         <img src='/logo.svg' className='h-[5svh]'/>
         <button className='w-[5svh] h-[5svh] bg-transparent shadow-none'>
-          <img src='/icons/settings-icon.svg'/>
+          <div className='face-container'>
+            <img src='/avatar-assets/duck-face.svg' className='face'/>
+          </div>
         </button>
       </div>
   );

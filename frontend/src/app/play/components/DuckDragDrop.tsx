@@ -13,7 +13,7 @@ import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortab
 import Droppable from './duck-components/Droppable';
 import Duck from './duck-components/Duck';
 import DuckSortable from './duck-components/DuckSortable';
-import { useGameLogicContext } from './game-logic/GameLogicProvider';
+import { useGameLogicContext } from './game-logic/DailyLogicProvider';
 
 interface LetterItem {
   id: string;

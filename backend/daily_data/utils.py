@@ -9,7 +9,7 @@ from django.http import HttpResponse
 # Connect to Redis
 r = redis.Redis(host='localhost', port=6379, db=0)
 
-def validate(words, letters):
+def validate(words, letters, center_letter):
     dict = {}
 
     for letter in letters:
@@ -18,14 +18,8 @@ def validate(words, letters):
     for word in words:
         for char in word:
             dict[char].add(word)
-    
-    max_key = letters[0]
 
-    for k, v in dict.items():
-        if len(v) > len(dict[max_key]):
-            max_key = k
-
-    return dict[max_key]
+    return dict.get(center_letter)
 
 def is_pangram(word, letters):
     return set(word) == set(letters)
@@ -48,18 +42,37 @@ def make_subset():
     
     if not os.path.exists(file_path):
         print(f"File not found: {file_path}")
-        return None, 0
-
-    letters = random.sample(list(string.ascii_lowercase), 7)
+        return None, 0, "", ""
         
-    words = [line.strip() for line in open(file_path, 'r') if set(line.strip()).issubset(letters)]
+    letters = generate_letters()
+    if not letters:
+        print("Failed to generate letters")
+        return None, 0, "", ""
     
-    if len(validate(words, letters)) < 9:
+    center_letter = random.choice(letters)
+    
+    words = [line.strip() for line in open(file_path, 'r') if set(line.strip()).issubset(set(letters))]
+    valid_words = validate(words, letters, center_letter)
+    
+    if len(valid_words) < 9:
         return make_subset()
-    else: 
-        for word in words:
+    else:
+        for word in valid_words:
             win_threshold += calculate_score(word, letters)
-        return json.dumps(list(validate(words, letters))), win_threshold
+        return json.dumps(list(valid_words)), win_threshold, letters, center_letter
+
+    
+def generate_letters():
+    pangram_path = os.path.join(os.path.dirname(__file__), 'data', 'pangrams.txt')
+    if not os.path.exists(pangram_path):
+        print(f"File not found: {pangram_path}")
+        return None
+    
+    with open(pangram_path, 'r') as fp:
+        lines = fp.readlines()
+    pangram_line_no = random.randint(0, len(lines) - 1)
+    selected_line = lines[pangram_line_no].strip()
+    return list(selected_line) if selected_line else []
 
 def fetch_daily_data():
     """
@@ -69,25 +82,20 @@ def fetch_daily_data():
     return make_subset()
 
 def cache_daily_data():
-    """
-    Fetch data and cache it in Redis.
-    """
-    data, win_threshold = fetch_daily_data()
+    data, win_threshold, letters, center_letter = fetch_daily_data()
     if data is None:
-        return None, 0
+        return None, 0, "", ""
 
     today = timezone.now().date()
     cache_key = f"daily_data:{today}"
     r.set(cache_key, data, ex=86400)  # Cache for 24 hours
 
     # Save data in the database
-    DailyData.objects.create(date=today, data=data, win_threshold=win_threshold)
-    return data, win_threshold
+    DailyData.objects.create(date=today, data=data, win_threshold=win_threshold, letters=letters, center_letter=center_letter)
+    return data, win_threshold, letters, center_letter
+
 
 def get_cached_daily_data():
-    """
-    Retrieve the cached daily data.
-    """
     today = timezone.now().date()
     cache_key = f"daily_data:{today}"
     data = r.get(cache_key)
@@ -96,13 +104,16 @@ def get_cached_daily_data():
         try:
             daily_data = DailyData.objects.get(date=today)
             win_threshold = daily_data.win_threshold
-            return data, win_threshold
+            letters = daily_data.letters
+            center_letter = daily_data.center_letter
+            return data, win_threshold, letters, center_letter
         except DailyData.DoesNotExist:
-            data, win_threshold = cache_daily_data()
-            return data if data else None, win_threshold
+            data, win_threshold, letters, center_letter = cache_daily_data()
+            return data, win_threshold, letters, center_letter
     else:
-        data, win_threshold = cache_daily_data()
-        return data if data else None, win_threshold
+        data, win_threshold, letters, center_letter = cache_daily_data()
+        return data, win_threshold, letters, center_letter
+
     
 def print_cache():
     cache_contents = []
