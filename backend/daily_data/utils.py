@@ -72,7 +72,7 @@ def generate_letters():
         lines = fp.readlines()
     pangram_line_no = random.randint(0, len(lines) - 1)
     selected_line = lines[pangram_line_no].strip()
-    return list(selected_line) if selected_line else []
+    return list(set(selected_line)) if selected_line else []
 
 def fetch_daily_data():
     """
@@ -100,13 +100,24 @@ def get_cached_daily_data():
     cache_key = f"daily_data:{today}"
     data = r.get(cache_key)
 
+
+def get_cached_daily_data():
+    today = timezone.now().date()
+    cache_key = f"daily_data:{today}"
+    data = r.get(cache_key)
+
     if data:
         try:
-            daily_data = DailyData.objects.get(date=today)
+            daily_data = DailyData.objects.filter(date=today).last()
+            if not daily_data:
+                raise DailyData.DoesNotExist
             win_threshold = daily_data.win_threshold
             letters = daily_data.letters
+            excluded_chars = set(string.punctuation + string.digits + " ")
+            letters_array = [char for char in list(letters) if char not in excluded_chars]
+            
             center_letter = daily_data.center_letter
-            return data, win_threshold, letters, center_letter
+            return data, win_threshold, letters_array, center_letter
         except DailyData.DoesNotExist:
             data, win_threshold, letters, center_letter = cache_daily_data()
             return data, win_threshold, letters, center_letter
@@ -126,3 +137,15 @@ def print_cache():
     print(cache_output)
 
     return HttpResponse("Cache contents printed to console")
+
+def reset_daily_data():
+    data, win_threshold, letters, center_letter = fetch_daily_data()
+
+    today = timezone.now().date()
+    cache_key = f"daily_data:{today}"
+    r.set(cache_key, data, ex=86400) 
+
+    DailyData.objects.filter(date=today).delete()
+
+    DailyData.objects.create(date=today, data=data, win_threshold=win_threshold, letters=letters, center_letter=center_letter)
+    return data, win_threshold, letters, center_letter

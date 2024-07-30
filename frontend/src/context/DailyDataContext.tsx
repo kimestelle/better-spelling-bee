@@ -16,6 +16,7 @@ export const DailyDataProvider: React.FC<{ children: ReactNode }> = ({ children 
   const fetchDailyData = async () => {
     try {
       const data = await DailyDataService.getDailyData();
+      console.log(data)
       setDailyData(data);
     } catch (error) {
       console.error('Failed to fetch daily data:', error);

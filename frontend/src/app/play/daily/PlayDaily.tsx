@@ -8,9 +8,16 @@ import TopBar from '../components/TopBar';
 import DailyWinScreen from './DailyWinScreen';
 import { useGameLogicContext } from '../components/game-logic/DailyLogicProvider';
 
-const PlayDaily: React.FC = () => {
-  const { win, winScreenDisplayed } = useGameLogicContext();
+import {useEffect} from 'react'
 
+const PlayDaily: React.FC = () => {
+  const { win, winScreenDisplayed, gameData } = useGameLogicContext();
+
+  useEffect(() => {
+    console.log(gameData.letters)
+}, [gameData])
+
+  
   return (
     <>
       {win && !winScreenDisplayed ? (
@@ -24,7 +31,9 @@ const PlayDaily: React.FC = () => {
               <FoundWords />
             </div>
             <div className="flex flex-col h-[77svh] w-[50svh] md:mt-[8svh]">
-              <DuckDragDrop />
+              {gameData && gameData.letters && (
+                <DuckDragDrop letterArray={gameData.letters} />
+              )}
             </div>
           </div>
         </div>

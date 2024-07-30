@@ -1,7 +1,7 @@
 "use client";
 
 import { Arvo } from "next/font/google";
-import { AuthProvider } from '../context/AuthContext'; // Ensure the correct path
+import { AuthProvider } from '../context/AuthContext'; 
 import "./globals.css";
 
 const arvo = Arvo({

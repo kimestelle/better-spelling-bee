@@ -20,16 +20,19 @@ interface LetterItem {
   letter: string;
 }
 
-const createDucks = (letter: string) => {
-  return Array.from({ length: 12 }, (_, index) => ({
+interface DuckDragDropProps {
+  letterArray: string[];
+}
+
+const createDucks = (letter: string): LetterItem[] => {
+  return Array.from({ length: 7 }, (_, index) => ({
     id: `${letter}-${index}`,
     letter,
   }));
 };
 
-const DuckDragDrop: React.FC = () => {
-  const initialLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].flatMap(createDucks);
-  const [letters, setLetters] = useState<LetterItem[]>(initialLetters);
+const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray }) => {
+  const [letters, setLetters] = useState<LetterItem[]>([]);
   const [droppedLetters, setDroppedLetters] = useState<LetterItem[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [word, setWord] = useState<string>('');
@@ -41,6 +44,16 @@ const DuckDragDrop: React.FC = () => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    console.log('Received letterArray:', letterArray);
+    if (Array.isArray(letterArray) && letterArray.length > 0) {
+      console.log('Initializing letters:', letterArray);
+      setLetters(letterArray.flatMap(createDucks));
+    } else {
+      console.error('letterArray is not a valid array:', letterArray);
+    }
+  }, [letterArray]);
 
   const shuffleArray = (array: any[]) => {
     const centerItem = array[0];
@@ -59,7 +72,7 @@ const DuckDragDrop: React.FC = () => {
 
   const handleEnter = useCallback(() => {
     const currentWord = droppedLetters.map((item) => item.letter).join('');
-    const result = handleSubmit(currentWord, letters.map(letter => letter.letter));
+    const result = handleSubmit(currentWord);
     if (result) {
       if (result.reset) {
         if (result.sink) {
@@ -70,12 +83,11 @@ const DuckDragDrop: React.FC = () => {
         setTimeout(() => {
           setDroppedLetters([]);
           setAnimationClass('');
-        }, 400); // Duration of the animation
+        }, 400);
       }
     }
     setWord(currentWord);
-  }, [droppedLetters, handleSubmit, letters]);
-  
+  }, [droppedLetters, handleSubmit]);
 
   const handleDragStart = useCallback((event: DragStartEvent) => {
     setActiveId(event.active.id as string);
@@ -159,13 +171,12 @@ const DuckDragDrop: React.FC = () => {
         handleAddDuck(event.key.toUpperCase());
       }
     };
-  
+
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [letters, handleAddDuck, handleDeleteDuck, handleEnter]); 
-
+  }, [letters, handleAddDuck, handleDeleteDuck, handleEnter]);
 
   if (!isMounted) {
     return null;

@@ -11,7 +11,7 @@ export interface DailyData {
 
 const getDailyData = async (): Promise<DailyData> => {
   try {
-    const response = await axios.get(`${API_URL}/api/daily-data/`);
+    const response = await axios.get(`${API_URL}/daily-data/api/daily-data/`);
     return response.data;
   } catch (error) {
     console.error('Failed to fetch daily data:', error);

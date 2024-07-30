@@ -31,7 +31,6 @@ const FoundWords: React.FC = () => {
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 768);
-      console.log(isDesktop)
     };
 
     handleResize();

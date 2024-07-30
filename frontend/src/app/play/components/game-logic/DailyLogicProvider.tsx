@@ -8,10 +8,21 @@ interface DailyLogicProviderProps {
   children: ReactNode;
 }
 
-const GameLogicContext = createContext<GameLogicReturnType | undefined>(undefined);
+interface ExtendedGameLogicReturnType extends GameLogicReturnType {
+  gameData: DailyData;
+}
+
+const GameLogicContext = createContext<ExtendedGameLogicReturnType | undefined>(undefined);
 
 export const DailyLogicProvider: React.FC<DailyLogicProviderProps> = ({ children }) => {
-  const [gameData, setGameData] = useState<DailyData | null>(null);
+  const defaultDailyData: DailyData = {
+    data: [],
+    letters: [],
+    center_letter: '',
+    win_threshold: 1,
+  };
+
+  const [gameData, setGameData] = useState<DailyData>(defaultDailyData);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -29,25 +40,20 @@ export const DailyLogicProvider: React.FC<DailyLogicProviderProps> = ({ children
     fetchData();
   }, []);
 
-  const gameLogic = useGameLogic(gameData || {
-    data: [], // Assuming 'data' is a list of words
-    letters: [],
-    center_letter: '',
-    win_threshold: 1,
-  });
+  const gameLogic = useGameLogic(gameData);
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
-    <GameLogicContext.Provider value={gameLogic}>
+    <GameLogicContext.Provider value={{ ...gameLogic, gameData }}>
       {children}
     </GameLogicContext.Provider>
   );
 };
 
-export const useGameLogicContext = (): GameLogicReturnType => {
+export const useGameLogicContext = (): ExtendedGameLogicReturnType => {
   const context = useContext(GameLogicContext);
   if (context === undefined) {
     throw new Error('useGameLogicContext must be used within a GameLogicProvider');

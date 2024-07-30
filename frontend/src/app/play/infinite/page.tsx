@@ -4,11 +4,11 @@ import DuckDragDrop from '../components/DuckDragDrop';
 import FoundWords from '../components/FoundWords';
 import ScoreBar from '../components/ScoreBar';
 import TopBar from '../components/TopBar';
-import { GameLogicProvider } from '../components/game-logic/DailyLogicProvider';
+import { InfiniteLogicProvider } from '../components/game-logic/InfiniteLogicProvider';
 
 const PlayInfinite: React.FC = () => {
   return (
-    <GameLogicProvider>
+    <InfiniteLogicProvider>
       <div className="flex flex-col w-[50svh] h-[100svh] md:w-[100svh] border-black md:pt-[2svh]">
         <TopBar/>
         <div className='flex flex-col md:flex-row-reverse'>
@@ -21,7 +21,7 @@ const PlayInfinite: React.FC = () => {
         </div>
         </div>
       </div>
-    </GameLogicProvider>
+    </InfiniteLogicProvider>
   );
 };
 
