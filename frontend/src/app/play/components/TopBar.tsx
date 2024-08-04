@@ -1,12 +1,18 @@
 import React from 'react';
-import { useGameLogicContext } from './game-logic/DailyLogicProvider';
+
+import { useRouter } from 'next/navigation';
 
 const ScoreBar: React.FC = () => {
-  const { points } = useGameLogicContext();
+
+  const router = useRouter();
+
+  const routeProfile = () => {
+    router.push('/profile');
+  };
 
   return (
       <div className="w-full h-[10svh] flex flex-row justify-between items-center px-[3svh]">
-        <button className='w-[5svh] h-[5svh] bg-transparent shadow-none'>
+        <button className='w-[5svh] h-[5svh] bg-transparent shadow-none' onClick={routeProfile}>
         <img src='/icons/home-icon.svg'/>
         </button>
         <img src='/logo.svg' className='h-[5svh]'/>

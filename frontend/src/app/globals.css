@@ -151,6 +151,7 @@ button:active {
 
 
 .duck-container {
+  position: relative;
   user-select: none;
   cursor: grab;
   transition: transform 0.2s ease, opacity 0.1s ease;
@@ -161,7 +162,6 @@ button:active {
   align-items: flex-end;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: flex-end;
   background-image: url('/game-assets/duck.svg');
   z-index: 1;
   margin: 0 -2svh; /* Negative margin to create overlap */
@@ -173,7 +173,7 @@ button:active {
 }
 
 .duck-letter {
-  position: relative;
+  position: absolute;
   height: 100%;
   width: 100%;
   padding-left: 2svh;

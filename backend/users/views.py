@@ -1,6 +1,6 @@
 from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.contrib.auth.models import User
@@ -20,14 +20,7 @@ class RegisterView(generics.CreateAPIView):
     permission_classes = (AllowAny,)
     serializer_class = UserSerializer
 
-class CustomTokenObtainPairView(TokenObtainPairView):
-    permission_classes = (AllowAny,)
-
-class CustomTokenRefreshView(TokenRefreshView):
-    permission_classes = (AllowAny,)
-
 class UserListView(APIView):
-    # permission_classes = [IsAuthenticated]
 
     def get(self, request):
         logger.debug("Fetching all players")
@@ -37,6 +30,7 @@ class UserListView(APIView):
         return Response(serializer.data)
 
 class CurrentUserView(APIView):
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request):

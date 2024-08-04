@@ -32,7 +32,7 @@ const PlayDaily: React.FC = () => {
             </div>
             <div className="flex flex-col h-[77svh] w-[50svh] md:mt-[8svh]">
               {gameData && gameData.letters && (
-                <DuckDragDrop letterArray={gameData.letters} />
+                <DuckDragDrop letterArray={gameData.letters} centerLetter={gameData.center_letter}/>
               )}
             </div>
           </div>

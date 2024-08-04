@@ -15,6 +15,8 @@ export interface Player {
   color_bottom: string;
   color_top: string;
   email_updates: boolean;
+  daily_score: number;
+  daily_words: string;
 }
 
 const getCurrentUserData = async (token: string): Promise<Player> => {
@@ -30,6 +32,7 @@ const getCurrentUserData = async (token: string): Promise<Player> => {
     throw error;
   }
 };
+
 const updateUserData = async (token: string, userData: Partial<Player>): Promise<Player> => {
   try {
     const response = await axios.patch(`${API_URL}/users/me/`, userData, {
@@ -46,9 +49,47 @@ const updateUserData = async (token: string, userData: Partial<Player>): Promise
   }
 };
 
+const login = async (username: string, password: string) => {
+  try {
+    const response = await axios.post(`${API_URL}/users/login/`, { username, password });
+    return response;
+  } catch (error) {
+    console.error('Login failed:', error);
+    throw error;
+  }
+};
+
+const register = async (username: string, password: string, email: string, emailUpdates: boolean) => {
+  try {
+    const response = await axios.post(`${API_URL}/users/register/`, {
+      username,
+      password,
+      email,
+      email_updates: emailUpdates,
+    });
+    return response;
+  } catch (error) {
+    console.error('Registration failed:', error);
+    throw error;
+  }
+};
+
+const refreshToken = async (refresh: string) => {
+  try {
+    const response = await axios.post(`${API_URL}/users/refresh/`, { refresh });
+    return response;
+  } catch (error) {
+    console.error('Failed to refresh token:', error);
+    throw error;
+  }
+};
+
 const api = {
   getCurrentUserData,
   updateUserData,
+  login,
+  register,
+  refreshToken,
 };
 
 export default api;

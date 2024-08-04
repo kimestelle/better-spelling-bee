@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../../../context/AuthContext';
 
 function Dashboard() {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const [username, setUsername] = useState('');
   const [points, setPoints] = useState(0);
   const [streak, setStreak] = useState(0);
@@ -67,6 +67,10 @@ function Dashboard() {
             </span>
           </div>
         </div>
+        <button onClick={logout}>
+          Log Out
+        </button>
+
       </div>
     </div>
   );

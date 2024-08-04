@@ -22,16 +22,18 @@ interface LetterItem {
 
 interface DuckDragDropProps {
   letterArray: string[];
+  centerLetter: string;
 }
 
 const createDucks = (letter: string): LetterItem[] => {
+
   return Array.from({ length: 7 }, (_, index) => ({
     id: `${letter}-${index}`,
     letter,
   }));
 };
 
-const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray }) => {
+const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray, centerLetter }) => {
   const [letters, setLetters] = useState<LetterItem[]>([]);
   const [droppedLetters, setDroppedLetters] = useState<LetterItem[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -49,11 +51,14 @@ const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray }) => {
     console.log('Received letterArray:', letterArray);
     if (Array.isArray(letterArray) && letterArray.length > 0) {
       console.log('Initializing letters:', letterArray);
-      setLetters(letterArray.flatMap(createDucks));
+      const filteredLetters = letterArray.filter(letter => letter !== centerLetter);
+      const arrangedLetters = [centerLetter, ...filteredLetters];
+
+      setLetters(arrangedLetters.flatMap(createDucks));
     } else {
       console.error('letterArray is not a valid array:', letterArray);
     }
-  }, [letterArray]);
+  }, [letterArray, centerLetter]);
 
   const shuffleArray = (array: any[]) => {
     const centerItem = array[0];
@@ -167,8 +172,8 @@ const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray }) => {
         handleEnter();
       } else if (event.key === 'Backspace') {
         handleDeleteDuck();
-      } else if (letters.some((letter) => letter.letter === event.key.toUpperCase())) {
-        handleAddDuck(event.key.toUpperCase());
+      } else if (letters.some((letter) => letter.letter === event.key.toLowerCase())) {
+        handleAddDuck(event.key.toLowerCase());
       }
     };
 

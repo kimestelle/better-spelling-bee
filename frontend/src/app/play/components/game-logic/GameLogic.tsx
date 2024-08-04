@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios'
 
 export interface GameLogicReturnType {
   handleSubmit: (word: string) => SubmitResult | undefined;
@@ -34,6 +35,33 @@ export default function useGameLogic(gameData: GameData): GameLogicReturnType {
   const [win, setWin] = useState<boolean>(false);
   const [complete, setComplete] = useState<boolean>(false);
   const [winScreenDisplayed, setWinScreenDisplayed] = useState<boolean>(false);
+  
+  useEffect(() => {
+    const fetchInitialData = async () => {
+      try {
+        const response = await axios.get('/api/currentDailyData');
+        const { found_words, points } = response.data;
+        setFoundWords(found_words.split(','));
+        setPoints(points);
+      } catch (error) {
+        console.error('Failed to fetch initial data:', error);
+      }
+    };
+
+    fetchInitialData();
+  }, []);
+
+  useEffect(() => {
+    const storedUpdates = JSON.parse(localStorage.getItem('gameUpdates') || '[]');
+    if (storedUpdates.length > 0) {
+      storedUpdates.forEach((update: any) => {
+        setPoints((prevPoints) => prevPoints + update.score);
+        setFoundWords((prevWords) => [...prevWords, ...update.words]);
+      });
+      localStorage.removeItem('gameUpdates');
+    }
+  }, []);
+
 
   const handleSubmit = (word: string): SubmitResult | undefined => {
     if (word.length === 0) {
@@ -57,14 +85,36 @@ export default function useGameLogic(gameData: GameData): GameLogicReturnType {
       } else {
         setFoundWords((prevWords) => [...prevWords, word]);
         const { score, message } = ScoreCounter.calculateScore(word);
+        if (navigator.onLine) {
+          patchFoundWords([word]);
+        } else {
+          saveLocally([word]);
+        }
         setPoints((prevPoints) => prevPoints + score); 
         setStatusMessage(message);
+        
         return { message, animation: 1, reset: true, sink: false };
       }
     }
 
     setStatusMessage('Not in word list');
     return { message: 'Not in word list', animation: 2, reset: true, sink: true };
+  };
+
+  const saveLocally = (words: string[]) => {
+    const existingUpdates = JSON.parse(localStorage.getItem('gameUpdates') || '[]');
+    existingUpdates.push({ words });
+    localStorage.setItem('gameUpdates', JSON.stringify(existingUpdates));
+  };
+
+  const patchFoundWords = async (words: string[]) => {
+    try {
+      const response = await axios.patch('/api/updateFoundWords', { words });
+      console.log('Patched words:', response.data);
+    } catch (error) {
+      console.error('Failed to patch found words:', error);
+      saveLocally(words);
+    }
   };
 
   useEffect(() => {
@@ -121,7 +171,7 @@ class ScoreCounter {
       return { score: 1, message: 'good!' };
     } else if (word.length === 5) {
       return { score: 5, message: 'great!' };
-    } else if (word.length === 7 && this.isPangram(word)) {
+    } else if (word.length >= 7 && this.isPangram(word)) {
       return { score: 14, message: 'PANGRAM!' };
     } else {
       return { score: word.length, message: 'quack-tastic!' };
@@ -129,14 +179,7 @@ class ScoreCounter {
   }
 
   static isPangram(word: string) {
-    const counter: Record<string, boolean> = {};
-    for (const char of word) {
-      if (counter[char]) {
-        return false;
-      } else {
-        counter[char] = true;
-      }
-    }
-    return Object.keys(counter).length === 7;
+    const uniqueLetters = new Set(word);
+    return uniqueLetters.size === 7;
   }
 }

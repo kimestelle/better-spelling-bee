@@ -5,6 +5,7 @@ from .models import DailyData
 import random, string, os, json
 from django.core.cache import cache
 from django.http import HttpResponse
+from django.db import transaction
 
 # Connect to Redis
 r = redis.Redis(host='localhost', port=6379, db=0)
@@ -91,7 +92,20 @@ def cache_daily_data():
     r.set(cache_key, data, ex=86400)  # Cache for 24 hours
 
     # Save data in the database
-    DailyData.objects.create(date=today, data=data, win_threshold=win_threshold, letters=letters, center_letter=center_letter)
+    try:
+        with transaction.atomic():
+            DailyData.objects.update_or_create(
+                date=today,
+                defaults={
+                    'data': data,
+                    'win_threshold': win_threshold,
+                    'letters': letters,
+                    'center_letter': center_letter
+                }
+            )
+    except Exception as e:
+        print(f"Error saving daily data: {e}")
+
     return data, win_threshold, letters, center_letter
 
 
@@ -145,7 +159,18 @@ def reset_daily_data():
     cache_key = f"daily_data:{today}"
     r.set(cache_key, data, ex=86400) 
 
-    DailyData.objects.filter(date=today).delete()
+    try:
+        DailyData.objects.update_or_create(
+            date=today,
+            defaults={
+                'data': data,
+                'win_threshold': win_threshold,
+                'letters': letters,
+                'center_letter': center_letter
+            }
+        )
+    except Exception as e:
+        print(f"Error resetting daily data: {e}")
 
     DailyData.objects.create(date=today, data=data, win_threshold=win_threshold, letters=letters, center_letter=center_letter)
     return data, win_threshold, letters, center_letter

@@ -2,8 +2,7 @@
 
 import React, { createContext, useState, useContext, ReactNode, useEffect, useCallback } from 'react';
 import Cookies from 'js-cookie';
-import axios, { AxiosRequestConfig } from 'axios';
-import UserService, { Player } from '../app/services/UserService';
+import api, { Player } from '../app/services/UserService';
 import { useRouter } from 'next/navigation';
 
 interface AuthContextProps {
@@ -12,20 +11,6 @@ interface AuthContextProps {
   register: (username: string, password: string, email: string, emailUpdates: boolean) => Promise<void>;
   logout: () => void;
   updateUser: (userData: Partial<Player>) => Promise<void>;
-}
-
-interface AxiosError extends Error {
-  config: AxiosRequestConfig;
-  code?: string;
-  request?: any;
-  response?: {
-    status: number;
-    data: any;
-    headers: Record<string, any>;
-    config: AxiosRequestConfig;
-  };
-  isAxiosError: boolean;
-  toJSON: () => object;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -46,7 +31,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const refresh = Cookies.get('refresh_token');
     if (refresh) {
       try {
-        const response = await axios.post('http://127.0.0.1:8000/users/refresh/', { refresh });
+        const response = await api.refreshToken(refresh as string);
         const { access } = response.data;
         Cookies.set('access_token', access);
         return access;
@@ -58,16 +43,21 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, [logout]);
 
   const getCurrentUserDataWithRefresh = useCallback(async () => {
-    let token = Cookies.get('access_token');
-    try {
-      const userData = await UserService.getCurrentUserData(token);
-      setUser(userData);
-    } catch (error) {
-      if ((error as AxiosError).response && (error as AxiosError).response.status === 401) {
-        token = await refreshToken();
-        if (token) {
-          const userData = await UserService.getCurrentUserData(token);
-          setUser(userData);
+    const token = Cookies.get('access_token');
+    if (token) {
+      try {
+        console.log('Fetching user data with token:', token);
+        const userData = await api.getCurrentUserData(token as string);
+        setUser(userData);
+        console.log('User data set:', userData);
+      } catch (error) {
+        if ((error as any).response && (error as any).response.status === 401) {
+          const newToken = await refreshToken();
+          if (newToken) {
+            const userData = await api.getCurrentUserData(newToken as string);
+            setUser(userData);
+            console.log('User data set after refresh:', userData);
+          }
         }
       }
     }
@@ -76,32 +66,22 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   useEffect(() => {
     const token = Cookies.get('access_token');
     if (token) {
-      getCurrentUserDataWithRefresh();
-    }
-  }, [getCurrentUserDataWithRefresh]);
-
-  useEffect(() => {
-    const token = Cookies.get('access_token');
-    if (token) {
-      getUserData(token)
-        .then(setUser)
-        .catch(() => setUser(null))
-        .finally(() => setLoading(false));
+      getCurrentUserDataWithRefresh().finally(() => setLoading(false));
     } else {
       setLoading(false);
     }
-  }, []);
+  }, [getCurrentUserDataWithRefresh]);
 
   const login = async (username: string, password: string) => {
     try {
-      const response = await axios.post('http://127.0.0.1:8000/users/login/', { username, password });
+      const response = await api.login(username, password);
       const { access, refresh } = response.data;
+      console.log('Login response:', response.data);
       Cookies.set('access_token', access);
       Cookies.set('refresh_token', refresh);
-      console.log('Access Token:', access);  // Correct position
-      console.log('Refresh Token:', refresh);  // Correct position
-      const userData = await UserService.getCurrentUserData(access);
+      const userData = await api.getCurrentUserData(access as string);
       setUser(userData);
+      console.log('User data set after login:', userData);
       router.push('/profile');
     } catch (error) {
       console.error('Login failed:', error);
@@ -111,17 +91,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const register = async (username: string, password: string, email: string, emailUpdates: boolean) => {
     try {
-      const response = await axios.post('http://127.0.0.1:8000/users/register/', {
-        username,
-        password,
-        email,
-        email_updates: emailUpdates,
-      });
+      const response = await api.register(username, password, email, emailUpdates);
       const { access, refresh } = response.data;
+      console.log('Register response:', response.data);
       Cookies.set('access_token', access);
       Cookies.set('refresh_token', refresh);
-      const userData = await UserService.getCurrentUserData(access);
+      const userData = await api.getCurrentUserData(access as string);
       setUser(userData);
+      console.log('User data set after registration:', userData);
       router.push('/profile');
     } catch (error) {
       console.error('Registration failed:', error);
@@ -133,28 +110,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const token = Cookies.get('access_token');
     if (token) {
       try {
-        await UserService.updateUserData(token, userData);
-        const updatedUser = await UserService.getCurrentUserData(token);
+        const updatedUser = await api.updateUserData(token as string, userData);
         setUser(updatedUser);
+        console.log('User data updated:', updatedUser);
       } catch (error) {
         console.error('Failed to update user data:', error);
-        throw error;  
+        throw error;
       }
-    }
-  };
-
-  const getUserData = async (token: string): Promise<Player> => {
-    try {
-      const response = await axios.get('http://127.0.0.1:8000/users/me/', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log('User Data:', response.data);
-      return response.data;
-    } catch (error) {
-      console.error('Failed to fetch user data:', error);
-      throw error;
     }
   };
 
@@ -171,6 +133,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
 export const useAuth = (): AuthContextProps => {
   const context = useContext(AuthContext);
+  console.log('useAuth context:', context);
   if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }

@@ -4,11 +4,12 @@ import Cookies from 'js-cookie';
 import axios from 'axios';
 
 import AvatarDisplay from './AvatarDisplay';
+import AvatarFrontDisplay from './AvatarFrontDisplay';
 import { useAuth } from '../../../context/AuthContext';
 
 const SketchExample: React.FC = () => {
   const { user, updateUser } = useAuth();
-  const [displayColorPicker, setDisplayColorPicker] = useState(false);
+  const [displayColorOrCostume, setDisplayColorOrCostume] = useState(0);
   const [bottomColor, setBottomColor] = useState(user?.color_bottom || '#FFFFFF');
   const [topColor, setTopColor] = useState(user?.color_top || '#FFFFFF');
 
@@ -20,8 +21,15 @@ const SketchExample: React.FC = () => {
   }, []);
 
   const handleClick = () => {
-    setDisplayColorPicker(!displayColorPicker);
-  };
+    setDisplayColorOrCostume(prev => {
+      if (prev === 2) {
+        console.log(0)
+        return 0;
+      } else {
+        console.log(prev + 1)
+        return prev + 1;
+      }
+    });};
 
   const handleSubmit = async () => {
     try {
@@ -41,7 +49,7 @@ const SketchExample: React.FC = () => {
 
   return (
     <div className="w-[50svh] h-[25svh] flex flex-row gap-[3svh] justify-end items-end overflow-hidden">
-      {displayColorPicker ? (
+      {displayColorOrCostume === 1 ? (
         <div className='flex flex-col items-center h-[21svh] w-[22svh] gap-[2svh]'>
           <div className='custom-slider-picker h-[5svh] w-[22svh]'>
             <SliderPicker color={topColor} onChange={handleTopChange} />
@@ -55,7 +63,10 @@ const SketchExample: React.FC = () => {
         </div>
       ) : null}
       <div className='clickable mb-[-2svh] avatar-animate' onClick={handleClick}>
-        <AvatarDisplay bottomColor={bottomColor} topColor={topColor} />
+        {displayColorOrCostume === 2 ? (
+          <AvatarFrontDisplay bottomColor={bottomColor} topColor={topColor} />
+        ):(
+          <AvatarDisplay bottomColor={bottomColor} topColor={topColor} />)}
       </div>
     </div>
   );

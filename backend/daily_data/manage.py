@@ -11,6 +11,6 @@ def reset_daily_data():
     except requests.exceptions.RequestException as e:
         print(f"Error resetting daily data: {e}")
         sys.exit(1)
-
+        
 if __name__ == "__main__":
     reset_daily_data()
