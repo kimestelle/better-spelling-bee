@@ -50,7 +50,7 @@ const SketchExample: React.FC = () => {
   return (
     <div className="w-[50svh] h-[25svh] flex flex-row gap-[3svh] justify-end items-end overflow-hidden">
       {displayColorOrCostume === 1 ? (
-        <div className='flex flex-col items-center h-[21svh] w-[22svh] gap-[2svh]'>
+        <div id='color selector' className='flex flex-col items-center h-[21svh] w-[22svh] gap-[2svh]'>
           <div className='custom-slider-picker h-[5svh] w-[22svh]'>
             <SliderPicker color={topColor} onChange={handleTopChange} />
           </div>
@@ -61,7 +61,11 @@ const SketchExample: React.FC = () => {
             Save
           </button>
         </div>
-      ) : null}
+      ) : (displayColorOrCostume === 2 ? (
+        <div className='flex justify-center items-center'>
+          color selector
+        </div>
+      ) : null)}
       <div className='clickable mb-[-2svh] avatar-animate' onClick={handleClick}>
         {displayColorOrCostume === 2 ? (
           <AvatarFrontDisplay bottomColor={bottomColor} topColor={topColor} />

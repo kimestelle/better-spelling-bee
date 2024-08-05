@@ -34,17 +34,17 @@ function Dashboard() {
         <h1>{username}</h1>
         <span className='bg-white rounded-[1svh] p-[0.5svh] px-[1svh]'>duckling</span>
 
-        <div className='w-full h-[15svh] flex flex-row my-[10svh] justify-between'>
-          <div className='w-[20svh] h-full flex flex-col items-center bg-gradient-to-t from-white to-transparent rounded-[2svh]'>
-            <span className="text-[10svh] leading-[10svh] bg-gradient-to-t from-black to-gray-600 bg-clip-text text-transparent">
+        <div className='w-full h-[15svh] flex flex-row my-[10svh] justify-center items-end gap-[10svh]'>
+          <div className="w-[15svh] h-[18svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-cover rounded-[2svh]">
+            <span className="text-[7svh] leading-[8svh] bg-gradient-to-t from-black to-gray-600 bg-clip-text text-transparent">
               {points}
             </span>
             <span>
               points
             </span>
           </div>
-          <div className='w-[20svh] h-full flex flex-col items-center bg-gradient-to-t from-white to-transparent rounded-[2svh]'>
-            <span className="text-[10svh] leading-[10svh] bg-gradient-to-t from-black to-gray-600 bg-clip-text text-transparent">
+          <div className="w-[15svh] h-[19svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/streak-flame.svg')] bg-cover rounded-[2svh]">
+            <span className="text-[7svh] leading-[8svh] bg-gradient-to-t from-black to-gray-600 bg-clip-text text-transparent">
                 {streak}
             </span>
             <span>

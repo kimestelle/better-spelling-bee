@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import LoginWindow from './login-components/LoginWindow';
 import SignUpWindow from './login-components/SignUpWindow';
+import LoginScene from './login-components/LoginScene';
 import './login-components/LoginScene.css';
 
 const Login = () => {
@@ -15,12 +16,7 @@ const Login = () => {
       <div className='relative h-[55svh] w-full p-[5svh] flex justify-center items-end'>
         {loginScreen ? <LoginWindow setLoginScreen={setLoginScreen} /> : <SignUpWindow setLoginScreen={setLoginScreen} />}
       </div>
-      <div className='flex items-end absolute bottom-0 z-10 h-[30svh] w-[180svh]'>
-        <div className='absolute h-[5svh] w-[4svh] l-[10svh]'>
-          <img src='/game-assets/tractor.svg' alt="Login Scene" className='' />
-        </div>
-        <img src='/game-assets/login-scene.svg' alt="Login Scene" className='w-full' />
-      </div>
+      <LoginScene/>
     </main>
   );
 };

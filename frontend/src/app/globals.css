@@ -25,14 +25,15 @@
 }
 
 * {
-  border: 0.1px solid red;
+  /* border: 0.1px solid red; */
   box-sizing: border-box;
   font-size: 1.7svh;
 }
 
-div {
+/* div {
   border: 0.1px solid blue;
-}
+} */
+
 
 body {
   color: rgb(var(--foreground-rgb));
