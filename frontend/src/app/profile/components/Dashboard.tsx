@@ -35,7 +35,7 @@ function Dashboard() {
         <span className='bg-white rounded-[1svh] p-[0.5svh] px-[1svh]'>duckling</span>
 
         <div className='w-full h-[15svh] flex flex-row my-[10svh] justify-center items-end gap-[10svh]'>
-          <div className="w-[15svh] h-[18svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-cover rounded-[2svh]">
+          <div className="w-[15.5svh] h-[18svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-cover rounded-[2svh]">
             <span className="text-[7svh] leading-[8svh] bg-gradient-to-t from-black to-gray-600 bg-clip-text text-transparent">
               {points}
             </span>
@@ -43,7 +43,7 @@ function Dashboard() {
               points
             </span>
           </div>
-          <div className="w-[15svh] h-[19svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/streak-flame.svg')] bg-cover rounded-[2svh]">
+          <div className="w-[15.5svh] h-[19svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/streak-flame.svg')] bg-cover rounded-[2svh]">
             <span className="text-[7svh] leading-[8svh] bg-gradient-to-t from-black to-gray-600 bg-clip-text text-transparent">
                 {streak}
             </span>
