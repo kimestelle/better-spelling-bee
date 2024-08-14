@@ -42,6 +42,7 @@ body {
     var(--background-start-color),
     var(--background-end-color)
   );
+  height: 100svh;
 }
 
 h1 {

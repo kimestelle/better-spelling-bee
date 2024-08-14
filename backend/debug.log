@@ -23139,3 +23139,621 @@ Fetching current user data for user: hi
 (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
 Fetched player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
 "GET /users/me/ HTTP/1.1" 200 194
+(0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Received PATCH data for user: hi, data: {'accessory': 1}
+(0.000) SELECT "users_player"."id", "users_player"."user_id", "users_player"."points", "users_player"."streak", "users_player"."color_bottom", "users_player"."color_top", "users_player"."accessory", "users_player"."email_updates", "users_player"."daily_score", "users_player"."daily_words" FROM "users_player" WHERE "users_player"."user_id" = 7 LIMIT 21; args=(7,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+(0.001) UPDATE "users_player" SET "user_id" = 7, "points" = 0, "streak" = 0, "color_bottom" = '#F8E7A0', "color_top" = '#FFA607', "accessory" = 1, "email_updates" = 0, "daily_score" = 0, "daily_words" = '' WHERE "users_player"."id" = 6; args=(7, 0, 0, '#F8E7A0', '#FFA607', 1, False, 0, '', 6); alias=default
+Updated player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
+"PATCH /users/me/ HTTP/1.1" 200 194
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Received PATCH data for user: hi, data: {'accessory': 1}
+(0.000) SELECT "users_player"."id", "users_player"."user_id", "users_player"."points", "users_player"."streak", "users_player"."color_bottom", "users_player"."color_top", "users_player"."accessory", "users_player"."email_updates", "users_player"."daily_score", "users_player"."daily_words" FROM "users_player" WHERE "users_player"."user_id" = 7 LIMIT 21; args=(7,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+(0.002) UPDATE "users_player" SET "user_id" = 7, "points" = 0, "streak" = 0, "color_bottom" = '#F8E7A0', "color_top" = '#FFA607', "accessory" = 1, "email_updates" = 0, "daily_score" = 0, "daily_words" = '' WHERE "users_player"."id" = 6; args=(7, 0, 0, '#F8E7A0', '#FFA607', 1, False, 0, '', 6); alias=default
+Updated player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
+"PATCH /users/me/ HTTP/1.1" 200 194
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Received PATCH data for user: hi, data: {'accessory': 1}
+(0.000) SELECT "users_player"."id", "users_player"."user_id", "users_player"."points", "users_player"."streak", "users_player"."color_bottom", "users_player"."color_top", "users_player"."accessory", "users_player"."email_updates", "users_player"."daily_score", "users_player"."daily_words" FROM "users_player" WHERE "users_player"."user_id" = 7 LIMIT 21; args=(7,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+(0.001) UPDATE "users_player" SET "user_id" = 7, "points" = 0, "streak" = 0, "color_bottom" = '#F8E7A0', "color_top" = '#FFA607', "accessory" = 1, "email_updates" = 0, "daily_score" = 0, "daily_words" = '' WHERE "users_player"."id" = 6; args=(7, 0, 0, '#F8E7A0', '#FFA607', 1, False, 0, '', 6); alias=default
+Updated player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
+"PATCH /users/me/ HTTP/1.1" 200 194
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /users/me/
+"GET /users/me/ HTTP/1.1" 401 183
+Unauthorized: /users/me/
+(0.001) SELECT 1 AS "a" FROM "token_blacklist_blacklistedtoken" INNER JOIN "token_blacklist_outstandingtoken" ON ("token_blacklist_blacklistedtoken"."token_id" = "token_blacklist_outstandingtoken"."id") WHERE "token_blacklist_outstandingtoken"."jti" = 'bdbcb57ccdb64a6987086a111ded2aa2' LIMIT 1; args=(1, 'bdbcb57ccdb64a6987086a111ded2aa2'); alias=default
+Unauthorized: /users/refresh/
+"POST /users/refresh/ HTTP/1.1" 401 58
+"GET /users/me/ HTTP/1.1" 401 183
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'hi' LIMIT 21; args=('hi',); alias=default
+(0.001) INSERT INTO "token_blacklist_outstandingtoken" ("user_id", "jti", "token", "created_at", "expires_at") VALUES (7, '128d3c6785a74b14967c9496bf1660e7', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyMzY4NjIyNywiaWF0IjoxNzIzNTk5ODI3LCJqdGkiOiIxMjhkM2M2Nzg1YTc0YjE0OTY3Yzk0OTZiZjE2NjBlNyIsInVzZXJfaWQiOjd9.j5zjHefTGSGJnmJV31VMMHWPdGKf1kk58oB-x_IzzUQ', '2024-08-14 01:43:47.725026', '2024-08-15 01:43:47') RETURNING "token_blacklist_outstandingtoken"."id"; args=(7, '128d3c6785a74b14967c9496bf1660e7', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyMzY4NjIyNywiaWF0IjoxNzIzNTk5ODI3LCJqdGkiOiIxMjhkM2M2Nzg1YTc0YjE0OTY3Yzk0OTZiZjE2NjBlNyIsInVzZXJfaWQiOjd9.j5zjHefTGSGJnmJV31VMMHWPdGKf1kk58oB-x_IzzUQ', '2024-08-14 01:43:47.725026', '2024-08-15 01:43:47'); alias=default
+"POST /users/login/ HTTP/1.1" 200 483
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Request headers: {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua-Mobile': '?0', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNjAwMTI3LCJpYXQiOjE3MjM1OTk4MjcsImp0aSI6IjhlMGRjNDdkMmQ1MjRhZDRiNWZmZTdhOWUxOWViZWUxIiwidXNlcl9pZCI6N30.7QF7XRtLEPU2Z_Pb2eX7X9ClkxfNuAP2P0pRpM-1lwk', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"macOS"', 'Origin': 'http://localhost:3000', 'Sec-Fetch-Site': 'cross-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:3000/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+Fetching current user data for user: hi
+(0.000) SELECT "users_player"."id", "users_player"."user_id", "users_player"."points", "users_player"."streak", "users_player"."color_bottom", "users_player"."color_top", "users_player"."accessory", "users_player"."email_updates", "users_player"."daily_score", "users_player"."daily_words" FROM "users_player" WHERE "users_player"."user_id" = 7 LIMIT 21; args=(7,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Fetched player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
+"GET /users/me/ HTTP/1.1" 200 194
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+(0.000) BEGIN; args=None; alias=default
+(0.000) SAVEPOINT "s6191968256_x1"; args=None; alias=default
+(0.000) SELECT "daily_data_dailydata"."id", "daily_data_dailydata"."date", "daily_data_dailydata"."data", "daily_data_dailydata"."letters", "daily_data_dailydata"."center_letter", "daily_data_dailydata"."win_threshold" FROM "daily_data_dailydata" WHERE "daily_data_dailydata"."date" = '2024-08-14' LIMIT 21; args=('2024-08-14',); alias=default
+(0.000) SAVEPOINT "s6191968256_x2"; args=None; alias=default
+(0.000) INSERT INTO "daily_data_dailydata" ("date", "data", "letters", "center_letter", "win_threshold") VALUES ('2024-08-14', '["merle", "omelet", "reeler", "roll", "melt", "leon", "leer", "oleo", "toller", "tell", "element", "treelet", "molle", "mellon", "mottle", "letter", "rtlt", "tole", "enol", "troll", "emetrol", "memel", "loon", "tootle", "rotl", "melter", "loot", "neel", "roller", "lerner", "telemeter", "enrollee", "leto", "merl", "reel", "tremolo", "loment", "lore", "melee", "nettle", "looter", "merlot", "lemon", "molter", "letterer", "rootlet", "rommel", "lorre", "loom", "tool", "lotto", "lolo", "orlon", "noel", "toll", "lome", "lennon", "lemmon", "teller", "omelette", "enrollment", "role", "loner", "troller", "merlon", "elmont", "ltte", "leone", "mole", "melon", "lerot", "enrolment", "moll", "motel", "loren", "oenomel", "lent", "morel", "telomere", "tollon", "mettle", "morello", "molt", "lotte", "rollo"]', '["r", "l", "e", "n", "o", "t", "m"]', 'l', 373) RETURNING "daily_data_dailydata"."id"; args=('2024-08-14', '["merle", "omelet", "reeler", "roll", "melt", "leon", "leer", "oleo", "toller", "tell", "element", "treelet", "molle", "mellon", "mottle", "letter", "rtlt", "tole", "enol", "troll", "emetrol", "memel", "loon", "tootle", "rotl", "melter", "loot", "neel", "roller", "lerner", "telemeter", "enrollee", "leto", "merl", "reel", "tremolo", "loment", "lore", "melee", "nettle", "looter", "merlot", "lemon", "molter", "letterer", "rootlet", "rommel", "lorre", "loom", "tool", "lotto", "lolo", "orlon", "noel", "toll", "lome", "lennon", "lemmon", "teller", "omelette", "enrollment", "role", "loner", "troller", "merlon", "elmont", "ltte", "leone", "mole", "melon", "lerot", "enrolment", "moll", "motel", "loren", "oenomel", "lent", "morel", "telomere", "tollon", "mettle", "morello", "molt", "lotte", "rollo"]', '["r", "l", "e", "n", "o", "t", "m"]', 'l', 373); alias=default
+(0.000) RELEASE SAVEPOINT "s6191968256_x2"; args=None; alias=default
+(0.000) RELEASE SAVEPOINT "s6191968256_x1"; args=None; alias=default
+(0.000) COMMIT; args=None; alias=default
+"GET /daily-data/daily-data/ HTTP/1.1" 200 2004
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 10094
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'kestelle' LIMIT 21; args=('kestelle',); alias=default
+(0.001) SELECT "daily_data_dailydata"."id", "daily_data_dailydata"."date", "daily_data_dailydata"."data", "daily_data_dailydata"."letters", "daily_data_dailydata"."center_letter", "daily_data_dailydata"."win_threshold" FROM "daily_data_dailydata" WHERE "daily_data_dailydata"."date" = '2024-08-14' ORDER BY "daily_data_dailydata"."id" DESC LIMIT 1; args=('2024-08-14',); alias=default
+"GET /daily-data/api/daily-data/ HTTP/1.1" 200 12370
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'cache-test/' [name='cache_test_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'daily-data/' [name='daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/' [name='daily_data_api_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/reset/' [name='reset_daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'clear-cache/' [name='clear_cache']>], [<URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>]], 'path': 'daily-data/api/daily-data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'cache-test/' [name='cache_test_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'daily-data/' [name='daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/' [name='daily_data_api_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/reset/' [name='reset_daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'clear-cache/' [name='clear_cache']>], [<URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>]], 'path': 'daily-data/api/daily-data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>
+"GET /daily-data/api/daily-data HTTP/1.1" 301 0
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 183
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'cache-test/' [name='cache_test_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'daily-data/' [name='daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/' [name='daily_data_api_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/reset/' [name='reset_daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'clear-cache/' [name='clear_cache']>], [<URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>]], 'path': 'daily-data/api/daily-data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'cache-test/' [name='cache_test_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'daily-data/' [name='daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/' [name='daily_data_api_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/reset/' [name='reset_daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'clear-cache/' [name='clear_cache']>], [<URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>]], 'path': 'daily-data/api/daily-data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>
+"GET /daily-data/api/daily-data HTTP/1.1" 301 0
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 183
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'cache-test/' [name='cache_test_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'daily-data/' [name='daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/' [name='daily_data_api_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/reset/' [name='reset_daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'clear-cache/' [name='clear_cache']>], [<URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>]], 'path': 'daily-data/api/daily-data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'cache-test/' [name='cache_test_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'daily-data/' [name='daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/' [name='daily_data_api_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/reset/' [name='reset_daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'clear-cache/' [name='clear_cache']>], [<URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>]], 'path': 'daily-data/api/daily-data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>
+"GET /daily-data/api/daily-data HTTP/1.1" 301 0
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 183
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'cache-test/' [name='cache_test_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'daily-data/' [name='daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/' [name='daily_data_api_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/reset/' [name='reset_daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'clear-cache/' [name='clear_cache']>], [<URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>]], 'path': 'daily-data/api/daily-data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'cache-test/' [name='cache_test_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'daily-data/' [name='daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/' [name='daily_data_api_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/reset/' [name='reset_daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'clear-cache/' [name='clear_cache']>], [<URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>]], 'path': 'daily-data/api/daily-data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>
+"GET /daily-data/api/daily-data HTTP/1.1" 301 0
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'cache-test/' [name='cache_test_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'daily-data/' [name='daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/' [name='daily_data_api_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/reset/' [name='reset_daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'clear-cache/' [name='clear_cache']>], [<URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>]], 'path': 'daily-data/api/daily-data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'cache-test/' [name='cache_test_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'daily-data/' [name='daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/' [name='daily_data_api_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'api/daily-data/reset/' [name='reset_daily_data_view']>], [<URLResolver <module 'daily_data.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/daily_data/urls.py'> (None:None) 'daily-data/'>, <URLPattern 'clear-cache/' [name='clear_cache']>], [<URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>]], 'path': 'daily-data/api/daily-data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/estellekim/Projects/better-spelling-bee/venv/lib/python3.12/site-packages/django/template/base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'users.urls' from '/Users/estellekim/Projects/better-spelling-bee/backend/users/urls.py'> (None:None) 'users/'>
+"GET /daily-data/api/daily-data HTTP/1.1" 301 0
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /users/me/
+"GET /users/me/ HTTP/1.1" 401 183
+Unauthorized: /users/me/
+"GET /users/me/ HTTP/1.1" 401 183
+(0.001) SELECT 1 AS "a" FROM "token_blacklist_blacklistedtoken" INNER JOIN "token_blacklist_outstandingtoken" ON ("token_blacklist_blacklistedtoken"."token_id" = "token_blacklist_outstandingtoken"."id") WHERE "token_blacklist_outstandingtoken"."jti" = '128d3c6785a74b14967c9496bf1660e7' LIMIT 1; args=(1, '128d3c6785a74b14967c9496bf1660e7'); alias=default
+(0.000) SELECT "token_blacklist_outstandingtoken"."id", "token_blacklist_outstandingtoken"."user_id", "token_blacklist_outstandingtoken"."jti", "token_blacklist_outstandingtoken"."token", "token_blacklist_outstandingtoken"."created_at", "token_blacklist_outstandingtoken"."expires_at" FROM "token_blacklist_outstandingtoken" WHERE "token_blacklist_outstandingtoken"."jti" = '128d3c6785a74b14967c9496bf1660e7' LIMIT 21; args=('128d3c6785a74b14967c9496bf1660e7',); alias=default
+(0.000) SELECT "token_blacklist_blacklistedtoken"."id", "token_blacklist_blacklistedtoken"."token_id", "token_blacklist_blacklistedtoken"."blacklisted_at" FROM "token_blacklist_blacklistedtoken" WHERE "token_blacklist_blacklistedtoken"."token_id" = 160 LIMIT 21; args=(160,); alias=default
+(0.000) SELECT 1 AS "a" FROM "token_blacklist_blacklistedtoken" INNER JOIN "token_blacklist_outstandingtoken" ON ("token_blacklist_blacklistedtoken"."token_id" = "token_blacklist_outstandingtoken"."id") WHERE "token_blacklist_outstandingtoken"."jti" = '128d3c6785a74b14967c9496bf1660e7' LIMIT 1; args=(1, '128d3c6785a74b14967c9496bf1660e7'); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) SELECT "token_blacklist_outstandingtoken"."id", "token_blacklist_outstandingtoken"."user_id", "token_blacklist_outstandingtoken"."jti", "token_blacklist_outstandingtoken"."token", "token_blacklist_outstandingtoken"."created_at", "token_blacklist_outstandingtoken"."expires_at" FROM "token_blacklist_outstandingtoken" WHERE "token_blacklist_outstandingtoken"."jti" = '128d3c6785a74b14967c9496bf1660e7' LIMIT 21; args=('128d3c6785a74b14967c9496bf1660e7',); alias=default
+(0.000) INSERT INTO "token_blacklist_blacklistedtoken" ("token_id", "blacklisted_at") VALUES (160, '2024-08-14 01:49:27.836846') RETURNING "token_blacklist_blacklistedtoken"."id"; args=(160, '2024-08-14 01:49:27.836846'); alias=default
+(0.000) SELECT "token_blacklist_blacklistedtoken"."id", "token_blacklist_blacklistedtoken"."token_id", "token_blacklist_blacklistedtoken"."blacklisted_at" FROM "token_blacklist_blacklistedtoken" WHERE "token_blacklist_blacklistedtoken"."token_id" = 160 LIMIT 21; args=(160,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.001) COMMIT; args=None; alias=default
+"POST /users/refresh/ HTTP/1.1" 200 483
+(0.002) INSERT INTO "token_blacklist_blacklistedtoken" ("token_id", "blacklisted_at") VALUES (160, '2024-08-14 01:49:27.837843') RETURNING "token_blacklist_blacklistedtoken"."id"; args=(160, '2024-08-14 01:49:27.837843'); alias=default
+(0.000) ROLLBACK; args=None; alias=default
+(0.000) SELECT "token_blacklist_blacklistedtoken"."id", "token_blacklist_blacklistedtoken"."token_id", "token_blacklist_blacklistedtoken"."blacklisted_at" FROM "token_blacklist_blacklistedtoken" WHERE "token_blacklist_blacklistedtoken"."token_id" = 160 LIMIT 21; args=(160,); alias=default
+"POST /users/refresh/ HTTP/1.1" 200 483
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Request headers: {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua-Mobile': '?0', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNjAwNDY3LCJpYXQiOjE3MjM1OTk4MjcsImp0aSI6ImY0NzkxOWZiN2Q1ZTRkMWZhZmU0ZmUwMWY4OWJkMzdmIiwidXNlcl9pZCI6N30.dHFFzmX5LWs2smFCeVzIZ4-vve3AE5dZpwTHSyQCHTY', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"macOS"', 'Origin': 'http://localhost:3000', 'Sec-Fetch-Site': 'cross-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:3000/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+Fetching current user data for user: hi
+(0.000) SELECT "users_player"."id", "users_player"."user_id", "users_player"."points", "users_player"."streak", "users_player"."color_bottom", "users_player"."color_top", "users_player"."accessory", "users_player"."email_updates", "users_player"."daily_score", "users_player"."daily_words" FROM "users_player" WHERE "users_player"."user_id" = 7 LIMIT 21; args=(7,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Fetched player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
+"GET /users/me/ HTTP/1.1" 200 194
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Request headers: {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua-Mobile': '?0', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNjAwNDY3LCJpYXQiOjE3MjM1OTk4MjcsImp0aSI6IjU2MTgwN2Y1OTU1MjQ2OGNiNTMwMGY2NDE4ZTFmNTllIiwidXNlcl9pZCI6N30.As6XNjoD7CJ4JNxXu0MFS4H1mzP46WF-QcaxrbBjX0o', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"macOS"', 'Origin': 'http://localhost:3000', 'Sec-Fetch-Site': 'cross-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:3000/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+Fetching current user data for user: hi
+(0.000) SELECT "users_player"."id", "users_player"."user_id", "users_player"."points", "users_player"."streak", "users_player"."color_bottom", "users_player"."color_top", "users_player"."accessory", "users_player"."email_updates", "users_player"."daily_score", "users_player"."daily_words" FROM "users_player" WHERE "users_player"."user_id" = 7 LIMIT 21; args=(7,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Fetched player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
+"GET /users/me/ HTTP/1.1" 200 194
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Request headers: {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua-Mobile': '?0', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNjAwNDY3LCJpYXQiOjE3MjM1OTk4MjcsImp0aSI6IjU2MTgwN2Y1OTU1MjQ2OGNiNTMwMGY2NDE4ZTFmNTllIiwidXNlcl9pZCI6N30.As6XNjoD7CJ4JNxXu0MFS4H1mzP46WF-QcaxrbBjX0o', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"macOS"', 'Origin': 'http://localhost:3000', 'Sec-Fetch-Site': 'cross-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:3000/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+Fetching current user data for user: hi
+(0.000) SELECT "users_player"."id", "users_player"."user_id", "users_player"."points", "users_player"."streak", "users_player"."color_bottom", "users_player"."color_top", "users_player"."accessory", "users_player"."email_updates", "users_player"."daily_score", "users_player"."daily_words" FROM "users_player" WHERE "users_player"."user_id" = 7 LIMIT 21; args=(7,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Fetched player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
+"GET /users/me/ HTTP/1.1" 200 194
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Request headers: {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua-Mobile': '?0', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNjAwNDY3LCJpYXQiOjE3MjM1OTk4MjcsImp0aSI6IjU2MTgwN2Y1OTU1MjQ2OGNiNTMwMGY2NDE4ZTFmNTllIiwidXNlcl9pZCI6N30.As6XNjoD7CJ4JNxXu0MFS4H1mzP46WF-QcaxrbBjX0o', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"macOS"', 'Origin': 'http://localhost:3000', 'Sec-Fetch-Site': 'cross-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:3000/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+Fetching current user data for user: hi
+(0.000) SELECT "users_player"."id", "users_player"."user_id", "users_player"."points", "users_player"."streak", "users_player"."color_bottom", "users_player"."color_top", "users_player"."accessory", "users_player"."email_updates", "users_player"."daily_score", "users_player"."daily_words" FROM "users_player" WHERE "users_player"."user_id" = 7 LIMIT 21; args=(7,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Fetched player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
+Unauthorized: /daily-data/api/daily-data/
+"GET /users/me/ HTTP/1.1" 200 194
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Request headers: {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua-Mobile': '?0', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNjAwNDY3LCJpYXQiOjE3MjM1OTk4MjcsImp0aSI6IjU2MTgwN2Y1OTU1MjQ2OGNiNTMwMGY2NDE4ZTFmNTllIiwidXNlcl9pZCI6N30.As6XNjoD7CJ4JNxXu0MFS4H1mzP46WF-QcaxrbBjX0o', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"macOS"', 'Origin': 'http://localhost:3000', 'Sec-Fetch-Site': 'cross-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:3000/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+Fetching current user data for user: hi
+(0.000) SELECT "users_player"."id", "users_player"."user_id", "users_player"."points", "users_player"."streak", "users_player"."color_bottom", "users_player"."color_top", "users_player"."accessory", "users_player"."email_updates", "users_player"."daily_score", "users_player"."daily_words" FROM "users_player" WHERE "users_player"."user_id" = 7 LIMIT 21; args=(7,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Fetched player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
+"GET /users/me/ HTTP/1.1" 200 194
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Request headers: {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua-Mobile': '?0', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNjAwNDY3LCJpYXQiOjE3MjM1OTk4MjcsImp0aSI6IjU2MTgwN2Y1OTU1MjQ2OGNiNTMwMGY2NDE4ZTFmNTllIiwidXNlcl9pZCI6N30.As6XNjoD7CJ4JNxXu0MFS4H1mzP46WF-QcaxrbBjX0o', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"macOS"', 'Origin': 'http://localhost:3000', 'Sec-Fetch-Site': 'cross-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:3000/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+Fetching current user data for user: hi
+(0.000) SELECT "users_player"."id", "users_player"."user_id", "users_player"."points", "users_player"."streak", "users_player"."color_bottom", "users_player"."color_top", "users_player"."accessory", "users_player"."email_updates", "users_player"."daily_score", "users_player"."daily_words" FROM "users_player" WHERE "users_player"."user_id" = 7 LIMIT 21; args=(7,); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 7 LIMIT 21; args=(7,); alias=default
+Fetched player data: {'user': {'id': 7, 'username': 'hi', 'email': 'hi@gmail.com'}, 'points': 0, 'streak': 0, 'color_bottom': '#F8E7A0', 'color_top': '#FFA607', 'accessory': 1, 'email_updates': False, 'daily_score': 0, 'daily_words': ''}
+Unauthorized: /daily-data/api/daily-data/
+"GET /users/me/ HTTP/1.1" 200 194
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58
+Unauthorized: /daily-data/api/daily-data/
+"GET /daily-data/api/daily-data/ HTTP/1.1" 401 58

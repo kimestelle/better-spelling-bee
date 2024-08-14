@@ -66,13 +66,13 @@
     position: absolute;
     cursor: pointer;
     right: 0;
-    height: 5.5svh;
+    height: 5.2svh;
     padding: 2.1svh;
-    padding-right: 1.5svh;
+    padding-right: 1.8svh;
     padding-left: 20svh;
     background: linear-gradient(90deg, transparent, #FAF9F6);
     z-index: 4;
-    border: 1px solid green;
+    /* border: 1px solid green; */
   }
   
   .dropdown-toggle.down {
