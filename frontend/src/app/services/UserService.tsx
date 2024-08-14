@@ -17,6 +17,7 @@ export interface Player {
   email_updates: boolean;
   daily_score: number;
   daily_words: string;
+  accessory: number;
 }
 
 const getCurrentUserData = async (token: string): Promise<Player> => {
@@ -26,6 +27,9 @@ const getCurrentUserData = async (token: string): Promise<Player> => {
         Authorization: `Bearer ${token}`,
       },
     });
+    // token isn't updating
+    // console.log(`Bearer ${token}`)
+    // console.log(response.data)
     return response.data;
   } catch (error) {
     console.error('Failed to fetch user data:', error);
@@ -52,6 +56,7 @@ const updateUserData = async (token: string, userData: Partial<Player>): Promise
 const login = async (username: string, password: string) => {
   try {
     const response = await axios.post(`${API_URL}/users/login/`, { username, password });
+    console.log(`api response ${JSON.stringify(response.data)}`)
     return response;
   } catch (error) {
     console.error('Login failed:', error);

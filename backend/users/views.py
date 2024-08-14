@@ -4,9 +4,12 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.contrib.auth.models import User
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
 from .models import Player
 from .serializer import PlayerSerializer, UserSerializer
 from django.http import HttpResponse
+
 
 import logging
 
@@ -28,12 +31,18 @@ class UserListView(APIView):
         serializer = PlayerSerializer(players, many=True)
         logger.debug(f"Fetched players data: {serializer.data}")
         return Response(serializer.data)
+    
+# from django.views.decorators.csrf import csrf_exempt
+
+# @csrf_exempt
 
 class CurrentUserView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
-
+    @method_decorator(never_cache)
     def get(self, request):
+        # Corrected the logging statement
+        logger.debug(f'Request headers: {request.headers}')
         try:
             logger.debug(f"Fetching current user data for user: {request.user}")
             player = Player.objects.get(user=request.user)

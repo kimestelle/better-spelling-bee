@@ -27,7 +27,9 @@ const LoginWindow: React.FC<LoginWindowProps> = ({ setLoginScreen }) => {
 
   return (
     <div className='w-full h-full flex flex-col items-center gap-y-[1svh] justify-center bg-sand rounded-lg box-shadow'>
-      {error}
+      <p className='w-[30svh] text-center'>
+        {error}
+      </p>
       <input
         type="text"
         id="username"
