@@ -29,10 +29,12 @@ function Dashboard() {
   };
 
   return (
-    <div className='w-[100svw] h-[75svh] bottom-0 flex justify-center bg-[url("/background-assets/waves.svg")] bg-repeat-x bg-[length:200svh] mt-[-2.5svh] z-10 pt-[5svh]'>
+    <div className='w-[100svw] h-[75svh] bottom-04 flex justify-center bg-[url("/background-assets/waves.svg")] bg-repeat-x bg-[length:200svh] mt-[-2.5svh] z-10 pt-[5svh]'>
       <div className='w-[50svh] h-full flex flex-col items-center p-[2svh] gap-[1svh]'>
         <h1>{username}</h1>
-        <span className='bg-white rounded-[1svh] p-[0.5svh] px-[1svh]'>duckling</span>
+        <span className='relative overflow-hidden box-shine bg-gray-200 rounded-[1svh] p-[0.5svh] px-[1svh]'>
+          duckling
+        </span>
 
         <div className='w-full h-[15svh] flex flex-row my-[10svh] justify-center items-end gap-[10svh]'>
           <div className="w-[15.5svh] h-[18svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-cover rounded-[2svh]">
@@ -53,15 +55,15 @@ function Dashboard() {
           </div>
         </div>
 
-        <div className='w-full h-[20svh] flex flex-col gap-[1.5svh] justify-center items-center'>
-          <div className='w-full h-[5svh] clickable' onClick={routeDaily}>
-            checkbox
+        <div className='w-full h-[15svh] -mt-[3svh] flex flex-col gap-[1.5svh] justify-top items-center'>
+          <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center clickable' onClick={routeDaily}>
+            <div className='checkbox w-[3svh] h-[3svh]'></div>
             <span className='text-[2.5svh]'>
               PLAY the DAILY
             </span>
           </div>
-          <div className='w-full h-[5svh] clickable' onClick={routeInfinite}>
-            checkbox
+          <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center clickable' onClick={routeInfinite}>
+            <div className='checkbox w-[3svh] h-[3svh]'></div>
             <span className='text-[2.5svh]'>
               PLAY INFINITE
             </span>

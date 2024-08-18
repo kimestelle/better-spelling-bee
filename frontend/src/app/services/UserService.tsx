@@ -44,8 +44,8 @@ const updateUserData = async (token: string, userData: Partial<Player>): Promise
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log('Updating user data with token:', token);
-    console.log(userData);
+    // console.log('Updating user data with token:', token);
+    // console.log(userData);
     return response.data;
   } catch (error) {
     console.error('Failed to update user data:', error);
@@ -56,7 +56,7 @@ const updateUserData = async (token: string, userData: Partial<Player>): Promise
 const login = async (username: string, password: string) => {
   try {
     const response = await axios.post(`${API_URL}/users/login/`, { username, password });
-    console.log(`api response ${JSON.stringify(response.data)}`)
+    // console.log(`api response ${JSON.stringify(response.data)}`)
     return response;
   } catch (error) {
     console.error('Login failed:', error);
@@ -89,12 +89,27 @@ const refreshToken = async (refresh: string) => {
   }
 };
 
+const patchFoundWords = async (token: string, words: string[]): Promise<any> => {
+  try {
+    const response = await axios.patch(`${API_URL}/api/updateFoundWords`, { words }, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to patch found words:', error);
+    throw error;
+  }
+}
+
 const api = {
   getCurrentUserData,
   updateUserData,
   login,
   register,
   refreshToken,
+  patchFoundWords,
 };
 
 export default api;

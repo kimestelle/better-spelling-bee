@@ -1,38 +1,36 @@
-'use client';
-
 import React, { createContext, useContext, ReactNode, useState, useEffect } from 'react';
 import useGameLogic, { GameLogicReturnType } from './GameLogic';
-import DailyDataService, { DailyData } from '../../../services/DailyDataService';
+import InfiniteDataService from '../../../services/InfiniteDataService';  // Infinite mode-specific service
 
-interface DailyLogicProviderProps {
+interface InfiniteLogicProviderProps {
   children: ReactNode;
 }
 
 interface ExtendedGameLogicReturnType extends GameLogicReturnType {
-  gameData: DailyData;
+  gameData: any;  // Adjust based on the structure of your infinite mode data
 }
 
 const GameLogicContext = createContext<ExtendedGameLogicReturnType | undefined>(undefined);
 
-export const InfiniteLogicProvider: React.FC<DailyLogicProviderProps> = ({ children }) => {
-  const defaultDailyData: DailyData = {
+export const InfiniteLogicProvider: React.FC<InfiniteLogicProviderProps> = ({ children }) => {
+  const defaultInfiniteData = {
     data: [],
     letters: [],
     center_letter: '',
     win_threshold: 1,
   };
 
-  const [gameData, setGameData] = useState<DailyData>(defaultDailyData);
+  const [gameData, setGameData] = useState(defaultInfiniteData);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await DailyDataService.getDailyData();
+        const data = await InfiniteDataService.getInfiniteData();  // Infinite mode-specific data fetch
         console.log('Fetched data:', data);
         setGameData(data);
       } catch (error) {
-        console.error('Failed to fetch daily data:', error);
+        console.error('Failed to fetch infinite data:', error);
       } finally {
         setLoading(false);
       }
@@ -45,7 +43,7 @@ export const InfiniteLogicProvider: React.FC<DailyLogicProviderProps> = ({ child
     console.log('Updated gameData:', gameData);
   }, [gameData]);
 
-  const gameLogic = useGameLogic(gameData);
+  const gameLogic = useGameLogic(InfiniteDataService.updateFoundWords, gameData);  // Infinite mode-specific update
 
   if (loading) {
     return <div>Loading...</div>;

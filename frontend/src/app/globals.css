@@ -87,6 +87,32 @@ button:active {
   box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
 }
 
+.box-shine::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(30deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+      transform: rotate(30deg) translateX(-200%);
+  }
+  100% {
+      transform: rotate(30deg) translateX(200%);
+  }
+}
+
+.checkbox {
+  border-radius: 1svh;
+  border: 0.2svh solid lightgray;
+}
+
 .clickable {
   text-decoration: underline;
   cursor: pointer;

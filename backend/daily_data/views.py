@@ -5,6 +5,10 @@ from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import authentication_classes, permission_classes
+
 def cache_test_view(request):
     cache.set('my_cached_data', 'Hello, this is cached data!', timeout=300)
     cached_data = cache.get('my_cached_data')
@@ -33,6 +37,8 @@ def clear_cache_view(request):
     return HttpResponse("Cache cleared!")
 
 @api_view(['GET'])
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
 def daily_data_api_view(request):
     data, win_threshold, letters, center_letter = get_cached_daily_data()
     if data is None:

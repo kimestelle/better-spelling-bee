@@ -2,9 +2,11 @@
 
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import DailyDataService, { DailyData } from '../app/services/DailyDataService';
+import Cookies from 'js-cookie';
 
 interface DailyDataContextProps {
   dailyData: DailyData | null;
+  loading: boolean;
   fetchDailyData: () => Promise<void>;
 }
 
@@ -12,14 +14,24 @@ const DailyDataContext = createContext<DailyDataContextProps | undefined>(undefi
 
 export const DailyDataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [dailyData, setDailyData] = useState<DailyData | null>(null);
+  const [loading, setLoading] = useState(true);
 
   const fetchDailyData = async () => {
     try {
-      const data = await DailyDataService.getDailyData();
-      console.log(data)
+      console.log('fetchDailyData function called');
+      const token = Cookies.get('access_token');
+      if (!token) {
+        throw new Error('No access token found');
+      }
+      console.log(`token: ${token}`);
+
+      const data = await DailyDataService.getDailyData(token);
+      console.log(data);
       setDailyData(data);
     } catch (error) {
       console.error('Failed to fetch daily data:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -28,7 +40,7 @@ export const DailyDataProvider: React.FC<{ children: ReactNode }> = ({ children 
   }, []);
 
   return (
-    <DailyDataContext.Provider value={{ dailyData, fetchDailyData }}>
+    <DailyDataContext.Provider value={{ dailyData, loading, fetchDailyData }}>
       {children}
     </DailyDataContext.Provider>
   );

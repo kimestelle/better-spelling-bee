@@ -1,8 +1,8 @@
-'use client';
-
-import React, { createContext, useContext, ReactNode, useState, useEffect } from 'react';
+'use client'
+import React, { createContext, useContext, ReactNode } from 'react';
 import useGameLogic, { GameLogicReturnType } from './GameLogic';
-import DailyDataService, { DailyData } from '../../../services/DailyDataService';
+import { useDailyData } from '@/context/DailyDataContext';
+import { useAuth } from '@/context/AuthContext';  // Import AuthContext
 
 interface DailyLogicProviderProps {
   children: ReactNode;
@@ -15,39 +15,17 @@ interface ExtendedGameLogicReturnType extends GameLogicReturnType {
 const GameLogicContext = createContext<ExtendedGameLogicReturnType | undefined>(undefined);
 
 export const DailyLogicProvider: React.FC<DailyLogicProviderProps> = ({ children }) => {
-  const defaultDailyData: DailyData = {
-    data: [],
-    letters: [],
-    center_letter: '',
-    win_threshold: 1,
-  };
+  const { dailyData, loading } = useDailyData();
+  const { updateFoundWords } = useAuth();  // Use updateFoundWords from AuthContext
 
-  const [gameData, setGameData] = useState<DailyData>(defaultDailyData);
-  const [loading, setLoading] = useState(true);
+  const gameLogic = useGameLogic(updateFoundWords, dailyData);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await DailyDataService.getDailyData();
-        setGameData(data);
-      } catch (error) {
-        console.error('Failed to fetch daily data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const gameLogic = useGameLogic(gameData);
-
-  if (loading) {
+  if (loading || !dailyData) {
     return <div>Loading...</div>;
   }
 
   return (
-    <GameLogicContext.Provider value={{ ...gameLogic, gameData }}>
+    <GameLogicContext.Provider value={{ ...gameLogic, gameData: dailyData }}>
       {children}
     </GameLogicContext.Provider>
   );

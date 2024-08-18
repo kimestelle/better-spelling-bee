@@ -11,6 +11,7 @@ interface AuthContextProps {
   register: (username: string, password: string, email: string, emailUpdates: boolean) => Promise<void>;
   logout: () => void;
   updateUser: (userData: Partial<Player>) => Promise<void>;
+  updateFoundWords: (words: string[]) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -20,9 +21,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  useEffect(() => {
-    console.log('Current user state:', user);
-  }, [user]);
+  // useEffect(() => {
+  //   console.log('Current user state:', user);
+  // }, [user]);
 
   const logout = useCallback(() => {
     Cookies.remove('access_token');
@@ -48,7 +49,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const getCurrentUserDataWithRefresh = useCallback(async () => {
     let token = Cookies.get('access_token');
-    console.log('Access token:', Cookies.get('access_token'));
+    // console.log('Access token:', Cookies.get('access_token'));
 
     if (!token) {
       setLoading(false);
@@ -87,25 +88,25 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     try {
       Cookies.remove('access_token');
       Cookies.remove('refresh_token');
-      console.log(Cookies.get);
+      // console.log(Cookies.get);
       
       setUser(null);
   
       const response = await api.login(username, password);
       const { access, refresh } = response.data;
   
-      console.log('Login response received:', response.data);
+      // console.log('Login response received:', response.data);
       
       Cookies.set('access_token', access);
       Cookies.set('refresh_token', refresh);
       
-      console.log('New tokens set:', { access, refresh });
-      console.log(Cookies.get)
+      // console.log('New tokens set:', { access, refresh });
+      // console.log(Cookies.get)
   
       const userData = await api.getCurrentUserData(access as string);
       setUser(userData);
       
-      console.log('User data set after login:', userData);
+      // console.log('User data set after login:', userData);
       
       router.push('/profile');
     } catch (error) {
@@ -146,12 +147,25 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
+  const updateFoundWords = async (words: string[]) => {  
+    const token = Cookies.get('access_token');
+    if (token) {
+      try {
+        await api.patchFoundWords(token, words);  
+        setUser((prevUser) => prevUser ? { ...prevUser, daily_words: words.join(',') } : null); 
+      } catch (error) {
+        console.error('Failed to update found words:', error);
+        throw error;
+      }
+    }
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, updateUser }}>
+    <AuthContext.Provider value={{ user, login, register, logout, updateUser, updateFoundWords }}>
       {children}
     </AuthContext.Provider>
   );

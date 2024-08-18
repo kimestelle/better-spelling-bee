@@ -1,14 +1,15 @@
-'use client';
-
 import React from 'react';
 import { DailyLogicProvider } from '../components/game-logic/DailyLogicProvider';
+import { DailyDataProvider } from '@/context/DailyDataContext';
 import PlayDaily from './PlayDaily';
 
 const PlayDailyWrapper: React.FC = () => {
   return (
-    <DailyLogicProvider>
-      <PlayDaily />
-    </DailyLogicProvider>
+    <DailyDataProvider>
+      <DailyLogicProvider>
+        <PlayDaily />
+      </DailyLogicProvider>
+    </DailyDataProvider>
   );
 };
 

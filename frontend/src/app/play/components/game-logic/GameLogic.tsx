@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios'
 
 export interface GameLogicReturnType {
   handleSubmit: (word: string) => SubmitResult | undefined;
@@ -20,14 +19,7 @@ interface SubmitResult {
   sink: boolean;
 }
 
-export interface GameData {
-  data: string[];
-  letters: string[];
-  center_letter: string;
-  win_threshold: number;
-}
-
-export default function useGameLogic(gameData: GameData): GameLogicReturnType {
+export default function useGameLogic(updateFoundWords: (words: string[]) => Promise<void>, gameData: any): GameLogicReturnType {
   const [foundWords, setFoundWords] = useState<string[]>([]);
   const [statusMessage, setStatusMessage] = useState<string>('');
   const [points, setPoints] = useState<number>(0);
@@ -35,21 +27,6 @@ export default function useGameLogic(gameData: GameData): GameLogicReturnType {
   const [win, setWin] = useState<boolean>(false);
   const [complete, setComplete] = useState<boolean>(false);
   const [winScreenDisplayed, setWinScreenDisplayed] = useState<boolean>(false);
-  
-  useEffect(() => {
-    const fetchInitialData = async () => {
-      try {
-        const response = await axios.get('/api/currentDailyData');
-        const { found_words, points } = response.data;
-        setFoundWords(found_words.split(','));
-        setPoints(points);
-      } catch (error) {
-        console.error('Failed to fetch initial data:', error);
-      }
-    };
-
-    fetchInitialData();
-  }, []);
 
   useEffect(() => {
     const storedUpdates = JSON.parse(localStorage.getItem('gameUpdates') || '[]');
@@ -62,9 +39,8 @@ export default function useGameLogic(gameData: GameData): GameLogicReturnType {
     }
   }, []);
 
-
   const handleSubmit = (word: string): SubmitResult | undefined => {
-    if (word.length === 0) {
+    if (!gameData || word.length === 0) {
       return;
     }
 
@@ -109,8 +85,8 @@ export default function useGameLogic(gameData: GameData): GameLogicReturnType {
 
   const patchFoundWords = async (words: string[]) => {
     try {
-      const response = await axios.patch('/api/updateFoundWords', { words });
-      console.log('Patched words:', response.data);
+      await updateFoundWords(words);
+      console.log('Patched words:', words);
     } catch (error) {
       console.error('Failed to patch found words:', error);
       saveLocally(words);
@@ -130,6 +106,7 @@ export default function useGameLogic(gameData: GameData): GameLogicReturnType {
   }, [points, gameData]);
 
   const getCounterPosition = () => {
+    if (!gameData) return 0;
     const percentage = (points / gameData.win_threshold) * 100;
 
     if (gameData.win_threshold <= 0) {
@@ -152,12 +129,11 @@ export default function useGameLogic(gameData: GameData): GameLogicReturnType {
     } else if (percentage <= 70) {
       setWin(true);
       return 8;
-    } else if (percentage <= 70) {
+    } else if (percentage > 70) {
       setWin(true);
       setComplete(true);
       return 8;
-    }
-    else {
+    } else {
       return 0;
     }
   };
