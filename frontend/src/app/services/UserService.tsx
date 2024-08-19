@@ -66,6 +66,7 @@ const login = async (username: string, password: string) => {
 
 const register = async (username: string, password: string, email: string, emailUpdates: boolean) => {
   try {
+    console.log(username, password, email, emailUpdates)
     const response = await axios.post(`${API_URL}/users/register/`, {
       username,
       password,
@@ -89,19 +90,25 @@ const refreshToken = async (refresh: string) => {
   }
 };
 
-const patchFoundWords = async (token: string, words: string[]): Promise<any> => {
+const patchFoundWords = async (token: string, words: string[], score: number, daily: boolean): Promise<any> => {
   try {
-    const response = await axios.patch(`${API_URL}/api/updateFoundWords`, { words }, {
+    const data = daily 
+      ? { daily_words: words, daily_score: score } 
+      : { infinite_words: words, infinite_score: score };
+
+    const response = await axios.patch(`${API_URL}/users/me/`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
+
     return response.data;
   } catch (error) {
     console.error('Failed to patch found words:', error);
     throw error;
   }
-}
+};
+
 
 const api = {
   getCurrentUserData,

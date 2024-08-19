@@ -61,3 +61,16 @@ def reset_daily_data_view(request):
         "letters": letters,
         "center_letter": center_letter
     })
+
+@api_view(['GET'])
+def infinite_data_view(request):
+    data, win_threshold, letters, center_letter = make_subset()
+    if data is None:
+        return Response({"error": "Error generating infinite gameplay data"}, status=500)
+    
+    return Response({
+        "data": data,
+        "win_threshold": win_threshold,
+        "letters": letters,
+        "center_letter": center_letter
+    })

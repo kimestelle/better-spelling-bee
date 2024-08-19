@@ -43,7 +43,7 @@ export const InfiniteLogicProvider: React.FC<InfiniteLogicProviderProps> = ({ ch
     console.log('Updated gameData:', gameData);
   }, [gameData]);
 
-  const gameLogic = useGameLogic(InfiniteDataService.updateFoundWords, gameData);  // Infinite mode-specific update
+  const gameLogic = useGameLogic(InfiniteDataService.updateFoundWords, gameData, false);  // Infinite mode-specific update
 
   if (loading) {
     return <div>Loading...</div>;

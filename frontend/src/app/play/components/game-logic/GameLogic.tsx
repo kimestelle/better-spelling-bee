@@ -19,10 +19,17 @@ interface SubmitResult {
   sink: boolean;
 }
 
-export default function useGameLogic(updateFoundWords: (words: string[]) => Promise<void>, gameData: any): GameLogicReturnType {
-  const [foundWords, setFoundWords] = useState<string[]>([]);
+export default function useGameLogic(
+  updateFoundWords: (words: string[], score: number, daily: boolean) => Promise<void>, 
+  gameData: any,
+  initScore: number,
+  initWords: string[],
+  daily: boolean,
+): GameLogicReturnType {
+  const [foundWords, setFoundWords] = useState<string[]>(initWords || []);
+  const [points, setPoints] = useState<number>(initScore || 0);
+  
   const [statusMessage, setStatusMessage] = useState<string>('');
-  const [points, setPoints] = useState<number>(0);
   const [counterPosition, setCounterPosition] = useState<number>(1);
   const [win, setWin] = useState<boolean>(false);
   const [complete, setComplete] = useState<boolean>(false);
@@ -61,13 +68,16 @@ export default function useGameLogic(updateFoundWords: (words: string[]) => Prom
       } else {
         setFoundWords((prevWords) => [...prevWords, word]);
         const { score, message } = ScoreCounter.calculateScore(word);
-        if (navigator.onLine) {
-          patchFoundWords([word]);
-        } else {
-          saveLocally([word]);
-        }
         setPoints((prevPoints) => prevPoints + score); 
         setStatusMessage(message);
+
+        const newFoundWords = [...foundWords, word];
+        const newScore = points + score
+        if (navigator.onLine) {
+          patchFoundWords(newFoundWords, newScore);
+        } else {
+          saveLocally(newFoundWords, newScore);
+        }
         
         return { message, animation: 1, reset: true, sink: false };
       }
@@ -83,10 +93,10 @@ export default function useGameLogic(updateFoundWords: (words: string[]) => Prom
     localStorage.setItem('gameUpdates', JSON.stringify(existingUpdates));
   };
 
-  const patchFoundWords = async (words: string[]) => {
+  const patchFoundWords = async (words: string[], score: number) => {
     try {
-      await updateFoundWords(words);
-      console.log('Patched words:', words);
+      await updateFoundWords(words, score, daily);
+      console.log('Patched words:', words, score);
     } catch (error) {
       console.error('Failed to patch found words:', error);
       saveLocally(words);

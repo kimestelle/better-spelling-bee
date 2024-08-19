@@ -9,6 +9,7 @@ from django.views.decorators.cache import never_cache
 from .models import Player
 from .serializer import PlayerSerializer, UserSerializer
 from django.http import HttpResponse
+from django.db.models import F
 
 
 import logging
@@ -18,9 +19,24 @@ logger = logging.getLogger('better-spelling-bee')
 def favicon_view(request):
     return HttpResponse(status=204)
 
+class DailyLeaderboardView(generics.ListAPIView):
+    permission_classes = [AllowAny]
+    serializer_class = PlayerSerializer
+
+    def get_queryset(self):
+        return Player.objects.all().order_by('-daily_score')
+
+
+class TotalLeaderboardView(generics.ListAPIView):
+    permission_classes = [AllowAny]
+    serializer_class = PlayerSerializer
+
+    def get_queryset(self):
+        return Player.objects.all().order_by('-points')
+
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
-    permission_classes = (AllowAny,)
+    permission_classes = [AllowAny]
     serializer_class = UserSerializer
 
 class UserListView(APIView):

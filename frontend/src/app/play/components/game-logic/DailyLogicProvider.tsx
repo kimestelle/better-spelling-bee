@@ -3,6 +3,7 @@ import React, { createContext, useContext, ReactNode } from 'react';
 import useGameLogic, { GameLogicReturnType } from './GameLogic';
 import { useDailyData } from '@/context/DailyDataContext';
 import { useAuth } from '@/context/AuthContext';  // Import AuthContext
+import { DailyData } from '@/app/services/DailyDataService';
 
 interface DailyLogicProviderProps {
   children: ReactNode;
@@ -16,9 +17,9 @@ const GameLogicContext = createContext<ExtendedGameLogicReturnType | undefined>(
 
 export const DailyLogicProvider: React.FC<DailyLogicProviderProps> = ({ children }) => {
   const { dailyData, loading } = useDailyData();
-  const { updateFoundWords } = useAuth();  // Use updateFoundWords from AuthContext
+  const { updateFoundWords, user } = useAuth(); 
 
-  const gameLogic = useGameLogic(updateFoundWords, dailyData);
+  const gameLogic = useGameLogic(updateFoundWords, dailyData, user?.daily_score, user?.daily_words, true);
 
   if (loading || !dailyData) {
     return <div>Loading...</div>;

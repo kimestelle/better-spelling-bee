@@ -11,7 +11,7 @@ interface AuthContextProps {
   register: (username: string, password: string, email: string, emailUpdates: boolean) => Promise<void>;
   logout: () => void;
   updateUser: (userData: Partial<Player>) => Promise<void>;
-  updateFoundWords: (words: string[]) => Promise<void>;
+  updateFoundWords: (words: string[], score: number, daily: boolean) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -128,7 +128,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       // console.log('User data set after registration:', userData);
       router.push('/profile');
     } catch (error) {
-      console.error('Registration failed:', error);
+      console.error('Registration failed in context:', error);
       throw error;
     }
   };
@@ -147,11 +147,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
-  const updateFoundWords = async (words: string[]) => {  
+  const updateFoundWords = async (words: string[], score: number, daily: boolean) => {  
     const token = Cookies.get('access_token');
     if (token) {
       try {
-        await api.patchFoundWords(token, words);  
+        await api.patchFoundWords(token, words, score, daily);  
         setUser((prevUser) => prevUser ? { ...prevUser, daily_words: words.join(',') } : null); 
       } catch (error) {
         console.error('Failed to update found words:', error);

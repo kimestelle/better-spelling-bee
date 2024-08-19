@@ -1,0 +1,1 @@
+primarily for generating daily data, but includes api endpoint for generating a set of infinite data (not stored) to pass on to the front end and user.

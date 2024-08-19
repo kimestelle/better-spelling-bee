@@ -24,7 +24,23 @@ class PlayerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Player
-        fields = ('user', 'points', 'streak', 'color_bottom', 'color_top', 'accessory', 'email_updates', 'daily_score', 'daily_words')
+        fields = (
+            'user', 
+            'points', 
+            'streak', 
+            'color_bottom', 
+            'color_top', 
+            'accessory', 
+            'email_updates', 
+            'daily_score', 
+            'daily_words',
+            'infinite_score', 
+            'infinite_words', 
+            'infinite_data', 
+            'infinite_letters', 
+            'infinite_center_letter', 
+            'infinite_win_threshold'
+        )
 
     def update(self, instance, validated_data):
         user_data = validated_data.pop('user', None)
@@ -46,6 +62,14 @@ class PlayerSerializer(serializers.ModelSerializer):
         instance.email_updates = validated_data.get('email_updates', instance.email_updates)
         instance.daily_score = validated_data.get('daily_score', instance.daily_score)
         instance.daily_words = validated_data.get('daily_words', instance.daily_words)
+
+        instance.infinite_score = validated_data.get('infinite_score', instance.infinite_score)
+        instance.infinite_words = validated_data.get('infinite_words', instance.infinite_words)
+        instance.infinite_data = validated_data.get('infinite_data', instance.infinite_data)
+        instance.infinite_letters = validated_data.get('infinite_letters', instance.infinite_letters)
+        instance.infinite_center_letter = validated_data.get('infinite_center_letter', instance.infinite_center_letter)
+        instance.infinite_win_threshold = validated_data.get('infinite_win_threshold', instance.infinite_win_threshold)
+
 
         instance.save()
         return instance

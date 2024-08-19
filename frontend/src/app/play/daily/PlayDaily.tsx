@@ -13,10 +13,6 @@ import {useEffect} from 'react'
 const PlayDaily: React.FC = () => {
   const { win, winScreenDisplayed, gameData } = useGameLogicContext();
 
-  useEffect(() => {
-    console.log(gameData.letters)
-}, [gameData])
-
   
   return (
     <>

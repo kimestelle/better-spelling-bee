@@ -18,9 +18,6 @@ const DuckSortable: React.FC<DuckSortableProps> = ({ letter, id, index, center, 
   const style = {
     transform: CSS.Translate.toString(transform),
     transition,
-    width: '7.6svh',
-    height: '8.3svh',
-    zIndex: 1,
   };
 
   return (
