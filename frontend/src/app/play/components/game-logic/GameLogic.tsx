@@ -87,11 +87,11 @@ export default function useGameLogic(
     return { message: 'Not in word list', animation: 2, reset: true, sink: true };
   };
 
-  const saveLocally = (words: string[]) => {
+  const saveLocally = (words: string[], score: number) => {
     const existingUpdates = JSON.parse(localStorage.getItem('gameUpdates') || '[]');
-    existingUpdates.push({ words });
+    existingUpdates.push({ words, score });  // Store both words and score together
     localStorage.setItem('gameUpdates', JSON.stringify(existingUpdates));
-  };
+  };  
 
   const patchFoundWords = async (words: string[], score: number) => {
     try {
@@ -99,7 +99,7 @@ export default function useGameLogic(
       console.log('Patched words:', words, score);
     } catch (error) {
       console.error('Failed to patch found words:', error);
-      saveLocally(words);
+      saveLocally(words, score);
     }
   };
 
