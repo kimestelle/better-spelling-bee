@@ -20,8 +20,13 @@ export interface Player {
 
   daily_score: number;
   daily_words: string;
+
   infinite_score: number;
   infinite_words: string;
+  infinite_data: string[]; 
+  infinite_letters: string[]; 
+  infinite_center_letter: string;
+  infinite_win_threshold: number;
 }
 
 const getCurrentUserData = async (token: string): Promise<Player> => {
@@ -31,10 +36,21 @@ const getCurrentUserData = async (token: string): Promise<Player> => {
         Authorization: `Bearer ${token}`,
       },
     });
-    // token isn't updating
-    // console.log(`Bearer ${token}`)
-    // console.log(response.data)
-    return response.data;
+    let userData = response.data;
+    
+    if (typeof userData.daily_words === 'string') {
+      userData.daily_words = userData.daily_words.replace(/[\[\]]/g, '');
+    }
+
+    if (typeof userData.infinite_words === 'string') {
+      userData.infinite_words = userData.infinite_words.replace(/[\[\]]/g, '');
+    }
+
+    if (Array.isArray(userData.infinite_data)) {
+      userData.infinite_data = userData.infinite_data.map((word: string) => word.replace(/[\[\]]/g, ''));
+    }
+
+    return userData;
   } catch (error) {
     console.error('Failed to fetch user data:', error);
     throw error;
@@ -113,6 +129,37 @@ const patchFoundWords = async (token: string, words: string[], score: number, da
   }
 };
 
+  const patchInfiniteData = async (
+    token: string,
+    data: string[],
+    win_threshold: number,
+    letters: string[],
+    center_letter: string
+  ): Promise<any> => {
+    try {
+      const response = await axios.patch(
+        `${API_URL}/users/me/`,
+        {
+          infinite_data: data,
+          infinite_win_threshold: win_threshold,
+          infinite_letters: letters,
+          infinite_center_letter: center_letter,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+  
+      return response.data;
+    } catch (error) {
+      console.error('Failed to patch infinite data:', error);
+      throw error;
+    }
+};
+  
+
 
 const api = {
   getCurrentUserData,
@@ -121,6 +168,7 @@ const api = {
   register,
   refreshToken,
   patchFoundWords,
+  patchInfiniteData,
 };
 
 export default api;

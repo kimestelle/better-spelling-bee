@@ -12,6 +12,12 @@ interface AuthContextProps {
   logout: () => void;
   updateUser: (userData: Partial<Player>) => Promise<void>;
   updateFoundWords: (words: string[], score: number, daily: boolean) => Promise<void>;
+  updateInfiniteData: (
+    data: string[],
+    win_threshold: number,
+    letters: string[],
+    center_letter: string
+  ) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -20,10 +26,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [user, setUser] = useState<Player | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-
-  // useEffect(() => {
-  //   console.log('Current user state:', user);
-  // }, [user]);
 
   const logout = useCallback(() => {
     Cookies.remove('access_token');
@@ -35,7 +37,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const refreshToken = useCallback(async () => {
     const refresh = Cookies.get('refresh_token');
     if (!refresh) return;
-    
+
     try {
       const response = await api.refreshToken(refresh);
       const { access } = response.data;
@@ -49,7 +51,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const getCurrentUserDataWithRefresh = useCallback(async () => {
     let token = Cookies.get('access_token');
-    // console.log('Access token:', Cookies.get('access_token'));
 
     if (!token) {
       setLoading(false);
@@ -58,7 +59,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     try {
       const userData = await api.getCurrentUserData(token);
-      // console.log(`current user data: ${userData}`)
       setUser(userData);
     } catch (error) {
       if ((error as any).response?.status === 401) {
@@ -88,44 +88,32 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     try {
       Cookies.remove('access_token');
       Cookies.remove('refresh_token');
-      // console.log(Cookies.get);
-      
       setUser(null);
-  
+
       const response = await api.login(username, password);
       const { access, refresh } = response.data;
-  
-      // console.log('Login response received:', response.data);
-      
+
       Cookies.set('access_token', access);
       Cookies.set('refresh_token', refresh);
-      
-      // console.log('New tokens set:', { access, refresh });
-      // console.log(Cookies.get)
-  
+
       const userData = await api.getCurrentUserData(access as string);
       setUser(userData);
-      
-      // console.log('User data set after login:', userData);
-      
+
       router.push('/profile');
     } catch (error) {
       console.error('Login failed:', error);
       throw error;
     }
   };
-    
 
   const register = async (username: string, password: string, email: string, emailUpdates: boolean) => {
     try {
       const response = await api.register(username, password, email, emailUpdates);
       const { access, refresh } = response.data;
-      // console.log('Register response:', response.data);
       Cookies.set('access_token', access);
       Cookies.set('refresh_token', refresh);
       const userData = await api.getCurrentUserData(access as string);
       setUser(userData);
-      // console.log('User data set after registration:', userData);
       router.push('/profile');
     } catch (error) {
       console.error('Registration failed in context:', error);
@@ -139,7 +127,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       try {
         const updatedUser = await api.updateUserData(token as string, userData);
         setUser(updatedUser);
-        // console.log('User data updated:', updatedUser);
       } catch (error) {
         console.error('Failed to update user data:', error);
         throw error;
@@ -147,14 +134,50 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
-  const updateFoundWords = async (words: string[], score: number, daily: boolean) => {  
+  const updateFoundWords = async (words: string[], score: number, daily: boolean) => {
     const token = Cookies.get('access_token');
     if (token) {
       try {
-        await api.patchFoundWords(token, words, score, daily);  
-        setUser((prevUser) => prevUser ? { ...prevUser, daily_words: words.join(',') } : null); 
+        await api.patchFoundWords(token, words, score, daily);
+        setUser((prevUser) =>
+          prevUser ? { ...prevUser, daily_words: words.join(',') } : null
+        );
       } catch (error) {
         console.error('Failed to update found words:', error);
+        throw error;
+      }
+    }
+  };
+
+  const updateInfiniteData = async (
+    data: string[],
+    win_threshold: number,
+    letters: string[],
+    center_letter: string
+  ) => {
+    const token = Cookies.get('access_token');
+    if (token) {
+      try {
+        const updatedUser = await api.patchInfiniteData(
+          token,
+          data,
+          win_threshold,
+          letters,
+          center_letter
+        );
+        setUser((prevUser) =>
+          prevUser
+            ? {
+                ...prevUser,
+                infinite_data: data,
+                infinite_win_threshold: win_threshold,
+                infinite_letters: letters,
+                infinite_center_letter: center_letter,
+              }
+            : null
+        );
+      } catch (error) {
+        console.error('Failed to update infinite data:', error);
         throw error;
       }
     }
@@ -165,7 +188,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, updateUser, updateFoundWords }}>
+    <AuthContext.Provider value={{ user, login, register, logout, updateUser, updateFoundWords, updateInfiniteData }}>
       {children}
     </AuthContext.Provider>
   );
@@ -173,7 +196,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
 export const useAuth = (): AuthContextProps => {
   const context = useContext(AuthContext);
-  // console.log('useAuth context:', context);
   if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }

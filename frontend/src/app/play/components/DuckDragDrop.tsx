@@ -13,7 +13,6 @@ import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortab
 import Droppable from './duck-components/Droppable';
 import Duck from './duck-components/Duck';
 import DuckSortable from './duck-components/DuckSortable';
-import { useGameLogicContext } from './game-logic/DailyLogicProvider';
 
 interface LetterItem {
   id: string;
@@ -23,24 +22,23 @@ interface LetterItem {
 interface DuckDragDropProps {
   letterArray: string[];
   centerLetter: string;
+  handleSubmit: (word: string) => any;
+  statusMessage: string;
 }
 
 const createDucks = (letter: string): LetterItem[] => {
-
   return Array.from({ length: 7 }, (_, index) => ({
     id: `${letter}-${index}`,
     letter,
   }));
 };
 
-const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray, centerLetter }) => {
+const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray, centerLetter, handleSubmit, statusMessage }) => {
   const [letters, setLetters] = useState<LetterItem[]>([]);
   const [droppedLetters, setDroppedLetters] = useState<LetterItem[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [word, setWord] = useState<string>('');
   const [animationClass, setAnimationClass] = useState<string>('');
-  const { handleSubmit, statusMessage } = useGameLogicContext();
-
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -203,7 +201,7 @@ const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray, centerLetter }
                   id={item.id}
                   letter={item.letter}
                   index={index}
-                  center={item.letter === letters[0].letter ? true : false}
+                  center={item.letter === letters[0].letter}
                   animation={animationClass}
                 />
               ))}
@@ -221,7 +219,7 @@ const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray, centerLetter }
                   index={subIndex}
                   isActive={activeId === item.id && droppedLetters.some((droppedItem) => droppedItem.id === item.id)}
                   stackIndex={subIndex}
-                  center={item.letter === letters[0].letter ? true : false}
+                  center={item.letter === letters[0].letter}
                 />
               ))}
             </div>

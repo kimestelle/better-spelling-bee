@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, ReactNode } from 'react';
+import React, { createContext, useContext, ReactNode, useEffect } from 'react';
 import useGameLogic, { GameLogicReturnType } from './GameLogic';
 import { useInfiniteData } from '@/context/InfiniteDataContext';
 import { useAuth } from '@/context/AuthContext';
@@ -18,7 +18,7 @@ const GameLogicContext = createContext<ExtendedGameLogicReturnType | undefined>(
 
 export const InfiniteLogicProvider: React.FC<InfiniteLogicProviderProps> = ({ children }) => {
   const { infiniteData, loading } = useInfiniteData();
-  const { updateFoundWords, user } = useAuth();  // Ensure updateFoundWords is correctly retrieved from useAuth
+  const { updateFoundWords, updateInfiniteData, user } = useAuth();  // Include updateInfiniteData from useAuth
 
   const gameLogic = useGameLogic(
     updateFoundWords, 
@@ -27,6 +27,25 @@ export const InfiniteLogicProvider: React.FC<InfiniteLogicProviderProps> = ({ ch
     user?.infinite_words, 
     false
   );
+
+  useEffect(() => {
+    if (infiniteData) {
+      console.log(
+        infiniteData.data,
+        infiniteData.win_threshold,
+        infiniteData.letters,
+        infiniteData.center_letter
+      );
+  
+      updateInfiniteData(
+        infiniteData.data,
+        infiniteData.win_threshold,
+        infiniteData.letters,
+        infiniteData.center_letter
+      );
+    }
+  }, [infiniteData]);
+  
 
   if (loading || !infiniteData) {
     return <div>Loading...</div>;

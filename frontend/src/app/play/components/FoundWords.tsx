@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useGameLogicContext } from './game-logic/DailyLogicProvider';
+import './FoundWords.css'
 
-import './FoundWords.css';
+interface FoundWordsProps {
+  foundWords: string[];
+}
 
-const FoundWords: React.FC = () => {
+const FoundWords: React.FC<FoundWordsProps> = ({ foundWords }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { foundWords } = useGameLogicContext();
   const [isDesktop, setIsDesktop] = useState(false);
 
   const toggleMenu = () => {
@@ -14,6 +15,7 @@ const FoundWords: React.FC = () => {
   };
 
   const sortedWords = [...foundWords].sort();
+  foundWords = [...foundWords]
 
   const menuVars = {
     initial: {

@@ -16,7 +16,7 @@ class Player(models.Model):
     infinite_score = models.IntegerField(default=0) 
     infinite_words = models.JSONField(default=list)
     infinite_data = models.TextField(default='') 
-    infinite_letters = models.JSONField(default=[], null=False, blank=False) 
+    infinite_letters = models.JSONField(default=list, null=False, blank=False) 
     infinite_center_letter = models.CharField(default='a', max_length=1)
     infinite_win_threshold = models.IntegerField(default=0)
 

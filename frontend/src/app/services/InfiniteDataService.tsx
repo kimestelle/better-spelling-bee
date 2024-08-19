@@ -7,11 +7,11 @@ export interface InfiniteData {
   center_letter: string;
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = 'http://127.0.0.1:8000';
 
 const InfiniteDataService = {
   getInfiniteData: async (token: string): Promise<InfiniteData> => {
-    const response = await axios.get(`${API_BASE_URL}/api/infinite-data/`, {
+    const response = await axios.get(`${API_URL}/daily-data/api/infinite-data/`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
