@@ -1,56 +1,39 @@
-import React, { createContext, useContext, ReactNode, useState, useEffect } from 'react';
+"use client";
+
+import React, { createContext, useContext, ReactNode } from 'react';
 import useGameLogic, { GameLogicReturnType } from './GameLogic';
-import InfiniteDataService from '../../../services/InfiniteDataService';  // Infinite mode-specific service
+import { useInfiniteData } from '@/context/InfiniteDataContext';
+import { useAuth } from '@/context/AuthContext';
+import { InfiniteData } from '@/app/services/InfiniteDataService';
 
 interface InfiniteLogicProviderProps {
   children: ReactNode;
 }
 
 interface ExtendedGameLogicReturnType extends GameLogicReturnType {
-  gameData: any;  // Adjust based on the structure of your infinite mode data
+  gameData: InfiniteData;
 }
 
 const GameLogicContext = createContext<ExtendedGameLogicReturnType | undefined>(undefined);
 
 export const InfiniteLogicProvider: React.FC<InfiniteLogicProviderProps> = ({ children }) => {
-  const defaultInfiniteData = {
-    data: [],
-    letters: [],
-    center_letter: '',
-    win_threshold: 1,
-  };
+  const { infiniteData, loading } = useInfiniteData();
+  const { updateFoundWords, user } = useAuth();  // Ensure updateFoundWords is correctly retrieved from useAuth
 
-  const [gameData, setGameData] = useState(defaultInfiniteData);
-  const [loading, setLoading] = useState(true);
+  const gameLogic = useGameLogic(
+    updateFoundWords, 
+    infiniteData, 
+    user?.infinite_score, 
+    user?.infinite_words, 
+    false
+  );
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await InfiniteDataService.getInfiniteData();  // Infinite mode-specific data fetch
-        console.log('Fetched data:', data);
-        setGameData(data);
-      } catch (error) {
-        console.error('Failed to fetch infinite data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    console.log('Updated gameData:', gameData);
-  }, [gameData]);
-
-  const gameLogic = useGameLogic(InfiniteDataService.updateFoundWords, gameData, false);  // Infinite mode-specific update
-
-  if (loading) {
+  if (loading || !infiniteData) {
     return <div>Loading...</div>;
   }
 
   return (
-    <GameLogicContext.Provider value={{ ...gameLogic, gameData }}>
+    <GameLogicContext.Provider value={{ ...gameLogic, gameData: infiniteData }}>
       {children}
     </GameLogicContext.Provider>
   );

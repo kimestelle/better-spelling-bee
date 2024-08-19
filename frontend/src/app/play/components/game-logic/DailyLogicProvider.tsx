@@ -2,7 +2,7 @@
 import React, { createContext, useContext, ReactNode } from 'react';
 import useGameLogic, { GameLogicReturnType } from './GameLogic';
 import { useDailyData } from '@/context/DailyDataContext';
-import { useAuth } from '@/context/AuthContext';  // Import AuthContext
+import { useAuth } from '@/context/AuthContext';
 import { DailyData } from '@/app/services/DailyDataService';
 
 interface DailyLogicProviderProps {

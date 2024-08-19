@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.cache import cache
-from .utils import get_cached_daily_data, reset_daily_data
+from .utils import get_cached_daily_data, reset_daily_data, make_subset
 from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -64,6 +64,7 @@ def reset_daily_data_view(request):
 
 @api_view(['GET'])
 def infinite_data_view(request):
+    
     data, win_threshold, letters, center_letter = make_subset()
     if data is None:
         return Response({"error": "Error generating infinite gameplay data"}, status=500)

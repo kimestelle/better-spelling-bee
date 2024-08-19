@@ -10,14 +10,18 @@ export interface User {
 
 export interface Player {
   user: User;
+  email_updates: boolean;
+
   points: number;
   streak: number;
   color_bottom: string;
   color_top: string;
-  email_updates: boolean;
+  accessory: number;
+
   daily_score: number;
   daily_words: string;
-  accessory: number;
+  infinite_score: number;
+  infinite_words: string;
 }
 
 const getCurrentUserData = async (token: string): Promise<Player> => {

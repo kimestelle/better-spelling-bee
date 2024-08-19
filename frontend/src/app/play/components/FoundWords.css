@@ -43,6 +43,7 @@
     column-count: 3;
     column-gap: 2.5svh;
     column-fill: auto;
+    overflow-x: scroll;
   }
   
   .dropdown-list.open li {
@@ -99,4 +100,18 @@
       height: 59.5svh;
       max-height: 59.5svh;
     }
+  }
+
+  .dropdown-list.open::-webkit-scrollbar {
+    width: 1svh;
+  }
+
+  .dropdown-list.open::-webkit-scrollbar-track {
+      background: #e0e0e0; /* Background of the scrollbar track */
+  }
+
+  .dropdown-list.open::-webkit-scrollbar-thumb {
+      background-color: #a0a0a0; /* Color of the scrollbar handle */
+      border-radius: 2svh; /* Roundness of the scrollbar handle */
+      border: 0.5svh solid #e0e0e0; /* Padding around scrollbar handle */
   }
