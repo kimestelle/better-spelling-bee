@@ -18,15 +18,12 @@ export const InfiniteDataProvider: React.FC<{ children: ReactNode }> = ({ childr
 
   const fetchInfiniteData = async () => {
     try {
-      console.log('fetchInfiniteData function called');
       const token = Cookies.get('access_token');
       if (!token) {
         throw new Error('No access token found');
       }
-      console.log(`token: ${token}`);
 
       const data = await InfiniteDataService.getInfiniteData(token);
-      console.log(data);
       setInfiniteData(data);
     } catch (error) {
       console.error('Failed to fetch infinite data:', error);

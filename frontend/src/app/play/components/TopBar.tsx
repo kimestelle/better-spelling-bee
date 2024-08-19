@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useRouter } from 'next/navigation';
 
-const ScoreBar: React.FC = () => {
+const TopBar: React.FC = () => {
 
   const router = useRouter();
 
@@ -26,4 +26,4 @@ const ScoreBar: React.FC = () => {
   );
 };
 
-export default ScoreBar;
+export default TopBar;

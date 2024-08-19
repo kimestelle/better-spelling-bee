@@ -37,14 +37,17 @@ const getCurrentUserData = async (token: string): Promise<Player> => {
       },
     });
     let userData = response.data;
-    
-    if (typeof userData.daily_words === 'string') {
-      userData.daily_words = userData.daily_words.replace(/[\[\]]/g, '');
-    }
 
-    if (typeof userData.infinite_words === 'string') {
-      userData.infinite_words = userData.infinite_words.replace(/[\[\]]/g, '');
+    if (Array.isArray(userData.daily_words)) {
+      userData.daily_words = userData.daily_words.filter((word: string) => word !== '[' && word !== ']');
     }
+    
+    console.log(userData.infinite_words);
+    if (Array.isArray(userData.infinite_words)) {
+      userData.infinite_words = userData.infinite_words.filter((word: string) => word !== '[' && word !== ']');
+    }
+    
+    console.log(userData.infinite_words);
 
     if (Array.isArray(userData.infinite_data)) {
       userData.infinite_data = userData.infinite_data.map((word: string) => word.replace(/[\[\]]/g, ''));
