@@ -56,7 +56,7 @@ function Dashboard() {
     >
       <div className='w-[50svh] h-full flex flex-col items-center p-[2svh] gap-[1svh]'>
         <h1>{username}</h1>
-        <span className='relative overflow-hidden box-shine bg-gray-200 rounded-[1svh] p-[0.5svh] px-[1svh]'>
+        <span className='relative overflow-hidden box-shine bg-white bg-opacity-10 rounded-[1svh] p-[0.5svh] px-[1svh]'>
           duckling
         </span>
 

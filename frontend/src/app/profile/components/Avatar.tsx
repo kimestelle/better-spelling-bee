@@ -88,7 +88,7 @@ const SketchExample: React.FC = () => {
           <div className='custom-slider-picker h-[5svh] w-[22svh]'>
             <SliderPicker color={bottomColor} onChange={handleBottomChange} />
           </div>
-          <button className='h-[2.8svh] p-[0.4svh] m-0 mt-[0.7svh] text-[1.4svh] bg-white' onClick={handleSubmitColor}>
+          <button className='h-[2.8svh] p-[0.4svh] m-0 mt-[0.7svh] text-[1.4svh]' onClick={handleSubmitColor}>
             Save
           </button>
         </div>

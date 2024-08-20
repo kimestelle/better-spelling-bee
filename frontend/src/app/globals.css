@@ -154,7 +154,7 @@
 
     @media (prefers-color-scheme: dark) {
       .bg-sand {
-        background: linear-gradient(to bottom, #FAF9F6 50%, #364961 50%);
+        background-color: #364961;
       }
     }
 
