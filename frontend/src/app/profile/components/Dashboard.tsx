@@ -60,7 +60,7 @@ function Dashboard() {
           duckling
         </span>
 
-        <div className='w-full h-[15svh] flex flex-row my-[10svh] justify-center items-end gap-[10svh]'>
+        <div className='w-full h-[15svh] flex flex-row mb-[10svh] mt-[5svh] justify-center items-end gap-[10svh]'>
           <div className="w-[15svh] h-[18svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-contain bg-no-repeat rounded-[2svh]">
             <span className={`text-[7svh] leading-[8svh] bg-gradient-to-t ${isDarkMode ? 'from-white to-gray-100' : 'from-black to-gray-600'} bg-clip-text text-transparent`}>
               {points}
@@ -80,8 +80,8 @@ function Dashboard() {
         </div>
 
         <div className='w-full h-[15svh] -mt-[3svh] flex flex-col gap-[1.5svh] justify-top items-center'>
-          <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center justify-center bg-button-green rounded-[2svh] clickable' onClick={routeDaily}>
-            <div className='checkbox w-[3svh] h-[3svh]'></div>
+          <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center justify-center bg-button-green overflow-hidden box-shine rounded-[2svh] clickable' onClick={routeDaily}>
+            {/* <div className='checkbox w-[3svh] h-[3svh]'></div> */}
             <span className='text-[2.5svh]'>
               PLAY the DAILY
             </span>

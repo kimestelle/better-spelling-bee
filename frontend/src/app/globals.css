@@ -43,14 +43,14 @@
 
     /* optional borders to help formatting */
     * {
-      border: 0.1px solid red;
+      /* border: 0.1px solid red; */
       box-sizing: border-box;
       font-size: 1.7svh;
     }
-
+/* 
     div {
       border: 0.1px solid blue;
-    }
+    } */
 
 
     body {
@@ -124,6 +124,11 @@
     /* box options, box-shadow on buttons and pop-up interfaces + box-shine on cool stuff*/
     .box-shadow {
       box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .box-shine {
+      position: relative;
+      overflow: hidden; 
     }
 
     .box-shine::before {
