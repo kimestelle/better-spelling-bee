@@ -61,7 +61,7 @@ function Dashboard() {
         </span>
 
         <div className='w-full h-[15svh] flex flex-row mb-[10svh] mt-[5svh] justify-center items-end gap-[10svh]'>
-          <div className="w-[15svh] h-[18svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-contain bg-no-repeat rounded-[2svh]">
+          <div className="w-[17svh] h-[21svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-contain bg-center bg-no-repeat rounded-[2svh] pb-[1svh]">
             <span className={`text-[7svh] leading-[8svh] bg-gradient-to-t ${isDarkMode ? 'from-white to-gray-100' : 'from-black to-gray-600'} bg-clip-text text-transparent`}>
               {points}
             </span>
@@ -69,7 +69,7 @@ function Dashboard() {
               points
             </span>
           </div>
-          <div className="w-[15svh] h-[19svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/streak-flame.svg')] bg-contain bg-no-repeat rounded-[2svh]">
+          <div className="w-[17svh] h-[21svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/streak-flame.svg')] bg-contain bg-center bg-no-repeat rounded-[2svh] pb-[1svh]">
             <span className={`text-[7svh] leading-[8svh] bg-gradient-to-t ${isDarkMode ? 'from-white to-gray-100' : 'from-black to-gray-600'} bg-clip-text text-transparent`}>
               {streak}
             </span>
