@@ -10,6 +10,7 @@ export interface GameLogicReturnType {
   complete: boolean;
   winScreenDisplayed: boolean;
   setWinScreenDisplayed: (displayed: boolean) => void;
+  resetData: () => Promise<void>;
 }
 
 interface SubmitResult {
@@ -45,6 +46,21 @@ export default function useGameLogic(
       localStorage.removeItem('gameUpdates');
     }
   }, []);
+
+  const resetData = async () => {
+    try {
+      setPoints(0);
+      setFoundWords([]);
+      setCounterPosition(1);
+      setWin(false);
+      setComplete(false);
+      setWinScreenDisplayed(false);
+      setStatusMessage('');
+    } catch (error) {
+      console.error('Failed to refresh game data:', error);
+    }
+  };
+
 
   const handleSubmit = (word: string): SubmitResult | undefined => {
     if (!gameData || word.length === 0) {
@@ -148,7 +164,7 @@ export default function useGameLogic(
     }
   };
 
-  return { handleSubmit, statusMessage, foundWords, points, counterPosition, win, complete, winScreenDisplayed, setWinScreenDisplayed };
+  return { handleSubmit, statusMessage, foundWords, points, counterPosition, win, complete, winScreenDisplayed, setWinScreenDisplayed, resetData };
 }
 
 class ScoreCounter {

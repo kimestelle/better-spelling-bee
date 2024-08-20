@@ -10,6 +10,10 @@ from django.db import transaction
 # Connect to Redis
 r = redis.Redis(host='localhost', port=6379, db=0)
 
+import logging
+
+logger = logging.getLogger('better-spelling-bee')
+
 def validate(words, letters, center_letter):
     dict = {}
 

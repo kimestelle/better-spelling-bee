@@ -1,13 +1,17 @@
 'use client'
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import SettingsInterface from '../../components/SettingsInterface';
+import SettingsInterface from './SettingsInterface';
 
-const TopBar: React.FC = () => {
-  const [settingsOpen, setSettingsOpen] = useState(false)
+interface TopBarProps {
+  daily: boolean;
+}
+
+const TopBar: React.FC<TopBarProps> = () => {
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const handleOpenCloseSettings = () => {
-    setSettingsOpen(prev => !prev)
+    setSettingsOpen(prev => !prev);
   }
 
   const router = useRouter();
@@ -16,30 +20,22 @@ const TopBar: React.FC = () => {
   };
 
   return (
-    <>
-      <div className="w-full h-[10svh] flex flex-row justify-between items-center px-[3svh]">
-        <button className='w-[5svh] h-[5svh] bg-transparent shadow-none' onClick={routeProfile}>
+      <div className="relative w-full h-[8svh] pt-[2svh] flex flex-row justify-between items-center px-[3svh]">
+        <button className='w-[5svh] h-[5svh] mt-[1svh] bg-transparent shadow-none' onClick={routeProfile}>
         <img src='/icons/home-icon.svg'/>
         </button>
         <img src='/logo.svg' className='h-[5svh]'/>
-        <button className='w-[5svh] h-[5svh] bg-transparent shadow-none' onClick={handleOpenCloseSettings}>
-          {/* <div className='face-container'>
-            <img src='/avatar-assets/duck-face.svg' className='face'/>
-          </div> */}
+        <button className='w-[5svh] h-[5svh] mt-[1svh] bg-transparent shadow-none' onClick={handleOpenCloseSettings}>
           {settingsOpen ? (
             <img src='/icons/x-icon.svg'/>
           ) : (
             <img src='/icons/settings-icon.svg'/>
-          )
-
-          }
+          )}
         </button>
+        {settingsOpen && (
+        <SettingsInterface/>
+        )}
       </div>
-      {settingsOpen && (
-          <SettingsInterface/>
-          )
-        }
-    </>
   );
 };
 

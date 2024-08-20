@@ -140,6 +140,7 @@ const patchFoundWords = async (token: string, words: string[], score: number, da
     center_letter: string
   ): Promise<any> => {
     try {
+      console.log(data, win_threshold, letters, center_letter)
       const response = await axios.patch(
         `${API_URL}/users/me/`,
         {

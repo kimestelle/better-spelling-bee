@@ -47,8 +47,8 @@
       box-sizing: border-box;
       font-size: 1.7svh;
     }
-/* 
-    div {
+
+    /* div {
       border: 0.1px solid blue;
     } */
 
@@ -98,6 +98,8 @@
       padding: 1svh;
 
       box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+
+      -webkit-tap-highlight-color: transparent;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -246,6 +248,9 @@
       background-image: url('/game-assets/duck.svg');
       z-index: 1;
       margin: 0 -2svh; /* Negative margin to create overlap */
+
+      outline: none; /* Removes the focus outline */
+      -webkit-tap-highlight-color: transparent;
     }
 
     .duck-container:active {
