@@ -80,8 +80,8 @@ function Dashboard() {
         </div>
 
         <div className='w-full h-[15svh] -mt-[3svh] flex flex-col gap-[1.5svh] justify-top items-center'>
-          <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center justify-center bg-button-green rounded-[2svh] clickable' onClick={routeDaily}>
-            <div className='checkbox w-[3svh] h-[3svh]'></div>
+          <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center justify-center bg-button-green overflow-hidden box-shine rounded-[2svh] clickable' onClick={routeDaily}>
+            {/* <div className='checkbox w-[3svh] h-[3svh]'></div> */}
             <span className='text-[2.5svh]'>
               PLAY the DAILY
             </span>
