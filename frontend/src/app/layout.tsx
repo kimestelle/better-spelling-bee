@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Arvo } from "next/font/google";
 
 import ClientLayout from './ClientLayout'
+import { SettingsProvider } from "@/context/SettingsContext";
+
 
 import "./globals.css";
 
@@ -29,9 +31,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </head>
       <body className={`${arvo.className} flex justify-center items-center`}>
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+        <SettingsProvider>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+        </SettingsProvider>
       </body>
     </html>
   );

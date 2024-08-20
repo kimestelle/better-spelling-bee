@@ -45,7 +45,7 @@ const FoundWords: React.FC<FoundWordsProps> = ({ foundWords }) => {
 
   return (
     <div className='w-[50svh] h-[10svh]'>
-      <div className="dropdown">
+      <div className="dropdown inverse-color">
         <img src="/game-assets/arrow.svg" className={`dropdown-toggle ${isOpen ? 'up' : 'down'}`} onClick={toggleMenu} />
         {isOpen || isDesktop ? (
           <p className="words-found">
@@ -68,7 +68,7 @@ const FoundWords: React.FC<FoundWordsProps> = ({ foundWords }) => {
             exit="exit"
             className="dropdown container"
           >
-            <ul className="dropdown-list open">
+            <ul className="dropdown-list open inverse-color">
               {sortedWords.map((word, index) => (
                 <li key={index}>{word.toLowerCase()}</li>
               ))}

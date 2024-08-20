@@ -43,18 +43,18 @@ function Dashboard() {
 
   return (
     <div
-      className='w-[100svw] h-[75svh] bottom-04 flex justify-center mt-[-2.5svh] z-10 pt-[5svh]'
+      className='w-[100svw] h-[70svh] bottom-04 flex justify-center mt-[-2.5svh] z-10 pt-[5svh]'
       style={{
         backgroundImage: `url(${
           isDarkMode
             ? '/background-assets/waves-dark.svg'
-            : '/background-assets/waves-light.svg'
+            : '/background-assets/waves.svg'
         })`,
         backgroundRepeat: 'repeat-x',
         backgroundSize: '200svh',
       }}
     >
-      <div className='w-[50svh] h-full flex flex-col items-center p-[2svh] gap-[1svh]'>
+      <div className='w-[50svh] h-full flex flex-col items-center  gap-[1svh]'>
         <h1>{username}</h1>
         <span className='relative overflow-hidden box-shine bg-white bg-opacity-10 rounded-[1svh] p-[0.5svh] px-[1svh]'>
           duckling
@@ -80,20 +80,20 @@ function Dashboard() {
         </div>
 
         <div className='w-full h-[15svh] -mt-[3svh] flex flex-col gap-[1.5svh] justify-top items-center'>
-          <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center clickable' onClick={routeDaily}>
+          <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center justify-center bg-button-green rounded-[2svh] clickable' onClick={routeDaily}>
             <div className='checkbox w-[3svh] h-[3svh]'></div>
             <span className='text-[2.5svh]'>
               PLAY the DAILY
             </span>
           </div>
-          <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center clickable' onClick={routeInfinite}>
-            <div className='checkbox w-[3svh] h-[3svh]'></div>
+          <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center justify-center bg-white bg-opacity-30 rounded-[2svh] clickable' onClick={routeInfinite}>
+            {/* <div className='checkbox w-[3svh] h-[3svh]'></div> */}
             <span className='text-[2.5svh]'>
               PLAY INFINITE
             </span>
           </div>
         </div>
-        <button onClick={logout}>
+        <button onClick={logout} className='rounded-[2svh] bg-button-red'>
           Log Out
         </button>
 

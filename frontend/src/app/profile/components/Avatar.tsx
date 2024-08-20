@@ -78,14 +78,14 @@ const SketchExample: React.FC = () => {
   };
 
   return (
-    <div className="w-[50svh] h-[25svh] flex flex-row gap-[3svh] justify-end items-end overflow-hidden">
+    <div className="w-[50svh] h-[30svh] flex flex-row gap-[3svh] justify-end items-end overflow-hidden">
       {displayColorOrCostume === 1 ? (
         // color selector
-        <div id='color selector' className='flex flex-col items-center h-[21svh] w-[22svh] gap-[2svh]'>
-          <div className='custom-slider-picker h-[5svh] w-[22svh]'>
+        <div id='color selector' className='flex flex-col items-center h-[24svh] w-[22svh] gap-[2svh]'>
+          <div className='custom-slider-picker max-h-[6svh] w-[22svh]'>
             <SliderPicker color={topColor} onChange={handleTopChange} />
           </div>
-          <div className='custom-slider-picker h-[5svh] w-[22svh]'>
+          <div className='custom-slider-picker max-h-[6svh] w-[22svh]'>
             <SliderPicker color={bottomColor} onChange={handleBottomChange} />
           </div>
           <button className='h-[2.8svh] p-[0.4svh] m-0 mt-[0.7svh] text-[1.4svh]' onClick={handleSubmitColor}>

@@ -18,12 +18,6 @@
     z-index: 5;
     border: none;
   }
-
-  @media (prefers-color-scheme: dark) {
-    .dropdown {
-      color: black;
-    }
-  }
   
   .dropdown.container {
     transform-origin: top;
