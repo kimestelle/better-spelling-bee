@@ -8,14 +8,16 @@
       --foreground-rgb: 0, 0, 0;
       --background-start-color: #7EC8E3;
       --background-end-color: #FAF9F6;
+
       position: relative;
     }
 
     /* dark mode bg gradient */
     @media (prefers-color-scheme: dark) {
       :root {
-        --background-start-color: #1A3B5D; /* Dark mode start color */
-        --background-end-color: #2C3E50;   /* Dark mode end color */
+        --foreground-rgb: 255, 255, 255;
+        --background-start-color: #0F2143; 
+        --background-end-color: #364961;
       }
     }
 
@@ -71,6 +73,8 @@
       padding: 1svh;
 
       box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+
+      color: black;
     }
 
     input[type="checkbox"] {
@@ -90,6 +94,13 @@
       padding: 1svh;
 
       box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      button {
+        background-color: #acacac;
+        box-shadow: 0.2svh 0.3svh 0px rgba(255, 255, 255, 0.1);
+      }
     }
 
     button:active {
@@ -139,6 +150,12 @@
     /* sand background for popup interfaces and some screen background */
     .bg-sand {
       background-color: #FAF9F6;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .bg-sand {
+        background: linear-gradient(to bottom, #FAF9F6 50%, #364961 50%);
+      }
     }
 
     @layer utilities {

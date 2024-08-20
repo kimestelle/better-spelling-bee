@@ -18,6 +18,12 @@
     z-index: 5;
     border: none;
   }
+
+  @media (prefers-color-scheme: dark) {
+    .dropdown {
+      color: black;
+    }
+  }
   
   .dropdown.container {
     transform-origin: top;
@@ -50,6 +56,11 @@
     margin-bottom: 1.2svh;
     border-bottom: 1px solid white;
     overflow: hidden;
+  }
+  @media (prefers-color-scheme: dark) {
+    .dropdown-list.open li {
+      border-bottom: 1px solid lightgray;
+    }
   }
   
   .dropdown-list.closed {

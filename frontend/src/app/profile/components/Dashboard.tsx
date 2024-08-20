@@ -9,6 +9,7 @@ function Dashboard() {
   const [username, setUsername] = useState('');
   const [points, setPoints] = useState(0);
   const [streak, setStreak] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const router = useRouter();
 
@@ -20,6 +21,18 @@ function Dashboard() {
     }
   }, [user]);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => setIsDarkMode(e.matches);
+
+    handleChange(mediaQuery); // Set initial value
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange);
+    };
+  }, []);
+
   const routeDaily = () => {
     router.push('/play/daily');
   };
@@ -29,7 +42,18 @@ function Dashboard() {
   };
 
   return (
-    <div className='w-[100svw] h-[75svh] bottom-04 flex justify-center bg-[url("/background-assets/waves.svg")] bg-repeat-x bg-[length:200svh] mt-[-2.5svh] z-10 pt-[5svh]'>
+    <div
+      className='w-[100svw] h-[75svh] bottom-04 flex justify-center mt-[-2.5svh] z-10 pt-[5svh]'
+      style={{
+        backgroundImage: `url(${
+          isDarkMode
+            ? '/background-assets/waves-dark.svg'
+            : '/background-assets/waves-light.svg'
+        })`,
+        backgroundRepeat: 'repeat-x',
+        backgroundSize: '200svh',
+      }}
+    >
       <div className='w-[50svh] h-full flex flex-col items-center p-[2svh] gap-[1svh]'>
         <h1>{username}</h1>
         <span className='relative overflow-hidden box-shine bg-gray-200 rounded-[1svh] p-[0.5svh] px-[1svh]'>
@@ -37,17 +61,17 @@ function Dashboard() {
         </span>
 
         <div className='w-full h-[15svh] flex flex-row my-[10svh] justify-center items-end gap-[10svh]'>
-          <div className="w-[15.5svh] h-[18svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-cover rounded-[2svh]">
-            <span className="text-[7svh] leading-[8svh] bg-gradient-to-t from-black to-gray-600 bg-clip-text text-transparent">
+          <div className="w-[15svh] h-[18svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-contain bg-no-repeat rounded-[2svh]">
+            <span className={`text-[7svh] leading-[8svh] bg-gradient-to-t ${isDarkMode ? 'from-white to-gray-100' : 'from-black to-gray-600'} bg-clip-text text-transparent`}>
               {points}
             </span>
             <span>
               points
             </span>
           </div>
-          <div className="w-[15.5svh] h-[19svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/streak-flame.svg')] bg-cover rounded-[2svh]">
-            <span className="text-[7svh] leading-[8svh] bg-gradient-to-t from-black to-gray-600 bg-clip-text text-transparent">
-                {streak}
+          <div className="w-[15svh] h-[19svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/streak-flame.svg')] bg-contain bg-no-repeat rounded-[2svh]">
+            <span className={`text-[7svh] leading-[8svh] bg-gradient-to-t ${isDarkMode ? 'from-white to-gray-100' : 'from-black to-gray-600'} bg-clip-text text-transparent`}>
+              {streak}
             </span>
             <span>
               day streak
@@ -79,4 +103,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
