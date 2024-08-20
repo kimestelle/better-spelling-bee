@@ -27,7 +27,7 @@ interface DuckDragDropProps {
 }
 
 const createDucks = (letter: string): LetterItem[] => {
-  return Array.from({ length: 7 }, (_, index) => ({
+  return Array.from({ length: 12 }, (_, index) => ({
     id: `${letter}-${index}`,
     letter,
   }));

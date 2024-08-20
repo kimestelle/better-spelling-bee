@@ -4,7 +4,7 @@ export default function SettingsInterface() {
   const { isDarkMode, toggleDarkMode, isMusicOn, toggleMusic, isSoundEffectsOn, toggleSoundEffects } = useSettings();
 
   return (
-    <div className='absolute w-[50svh] h-[20svh] flex flex-col justify-center items-center gap-[3svh] bg-sand rounded-[3svh] top-[8svh] z-[100]'>
+    <div className='absolute w-[50svh] h-[20svh] flex flex-col justify-center items-center gap-[3svh] bg-sand rounded-[3svh] top-[8.5svh] z-[100]'>
       <div className='w-full flex flex-row justify-center items-center gap-[2svh]'>
         <span onClick={toggleDarkMode}>
           {isDarkMode ? 'Dark Mode' : 'Light Mode'}
