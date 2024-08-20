@@ -4,6 +4,8 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 interface SettingsContextProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
+  isSoundEffectsOn: boolean;
+  toggleSoundEffects: () => void;
 }
 
 const SettingsContext = createContext<SettingsContextProps | undefined>(undefined);
@@ -18,6 +20,7 @@ export const useSettings = (): SettingsContextProps => {
 
 export const SettingsProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isSoundEffectsOn, setIsSoundEffectsOn] = useState(true);
 
   const toggleDarkMode = () => {
     const newMode = !isDarkMode;
@@ -27,6 +30,10 @@ export const SettingsProvider: React.FC<{ children: ReactNode }> = ({ children }
     } else {
       document.documentElement.style.setProperty('color-scheme', 'light');
     }
+  };
+
+  const toggleSoundEffects = () => {
+    setIsSoundEffectsOn(!isSoundEffectsOn);
   };
 
   useEffect(() => {
@@ -42,7 +49,7 @@ export const SettingsProvider: React.FC<{ children: ReactNode }> = ({ children }
   }, []);
 
   return (
-    <SettingsContext.Provider value={{ isDarkMode, toggleDarkMode }}>
+    <SettingsContext.Provider value={{ isDarkMode, toggleDarkMode, isSoundEffectsOn, toggleSoundEffects }}>
       {children}
     </SettingsContext.Provider>
   );
