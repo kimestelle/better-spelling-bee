@@ -2,9 +2,9 @@ from django.db import models
 from django.utils import timezone
 
 class DailyData(models.Model):
-    date = models.DateField(default=timezone.now)
+    date = models.DateField(default=timezone.now, unique=True)
     data = models.TextField() 
-    letters = models.CharField(default='abcdefg', max_length=7)
+    letters = models.JSONField(default=list, null=False, blank=False) 
     center_letter = models.CharField(default='a', max_length=1)
     win_threshold = models.IntegerField(default=0)
     

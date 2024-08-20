@@ -5,6 +5,7 @@ from .models import DailyData
 import random, string, os, json
 from django.core.cache import cache
 from django.http import HttpResponse
+from django.db import transaction
 
 # Connect to Redis
 r = redis.Redis(host='localhost', port=6379, db=0)
@@ -72,7 +73,7 @@ def generate_letters():
         lines = fp.readlines()
     pangram_line_no = random.randint(0, len(lines) - 1)
     selected_line = lines[pangram_line_no].strip()
-    return list(selected_line) if selected_line else []
+    return list(set(selected_line)) if selected_line else []
 
 def fetch_daily_data():
     """
@@ -91,8 +92,27 @@ def cache_daily_data():
     r.set(cache_key, data, ex=86400)  # Cache for 24 hours
 
     # Save data in the database
-    DailyData.objects.create(date=today, data=data, win_threshold=win_threshold, letters=letters, center_letter=center_letter)
+    try:
+        with transaction.atomic():
+            DailyData.objects.update_or_create(
+                date=today,
+                defaults={
+                    'data': data,
+                    'win_threshold': win_threshold,
+                    'letters': letters,
+                    'center_letter': center_letter
+                }
+            )
+    except Exception as e:
+        print(f"Error saving daily data: {e}")
+
     return data, win_threshold, letters, center_letter
+
+
+def get_cached_daily_data():
+    today = timezone.now().date()
+    cache_key = f"daily_data:{today}"
+    data = r.get(cache_key)
 
 
 def get_cached_daily_data():
@@ -102,11 +122,16 @@ def get_cached_daily_data():
 
     if data:
         try:
-            daily_data = DailyData.objects.get(date=today)
+            daily_data = DailyData.objects.filter(date=today).last()
+            if not daily_data:
+                raise DailyData.DoesNotExist
             win_threshold = daily_data.win_threshold
             letters = daily_data.letters
+            excluded_chars = set(string.punctuation + string.digits + " ")
+            letters_array = [char for char in list(letters) if char not in excluded_chars]
+            
             center_letter = daily_data.center_letter
-            return data, win_threshold, letters, center_letter
+            return data, win_threshold, letters_array, center_letter
         except DailyData.DoesNotExist:
             data, win_threshold, letters, center_letter = cache_daily_data()
             return data, win_threshold, letters, center_letter
@@ -126,3 +151,26 @@ def print_cache():
     print(cache_output)
 
     return HttpResponse("Cache contents printed to console")
+
+def reset_daily_data():
+    data, win_threshold, letters, center_letter = fetch_daily_data()
+
+    today = timezone.now().date()
+    cache_key = f"daily_data:{today}"
+    r.set(cache_key, data, ex=86400) 
+
+    try:
+        DailyData.objects.update_or_create(
+            date=today,
+            defaults={
+                'data': data,
+                'win_threshold': win_threshold,
+                'letters': letters,
+                'center_letter': center_letter
+            }
+        )
+    except Exception as e:
+        print(f"Error resetting daily data: {e}")
+
+    DailyData.objects.create(date=today, data=data, win_threshold=win_threshold, letters=letters, center_letter=center_letter)
+    return data, win_threshold, letters, center_letter

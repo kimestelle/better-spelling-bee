@@ -13,34 +13,50 @@ import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortab
 import Droppable from './duck-components/Droppable';
 import Duck from './duck-components/Duck';
 import DuckSortable from './duck-components/DuckSortable';
-import { useGameLogicContext } from './game-logic/DailyLogicProvider';
 
 interface LetterItem {
   id: string;
   letter: string;
 }
 
-const createDucks = (letter: string) => {
-  return Array.from({ length: 12 }, (_, index) => ({
+interface DuckDragDropProps {
+  letterArray: string[];
+  centerLetter: string;
+  handleSubmit: (word: string) => any;
+  statusMessage: string;
+}
+
+const createDucks = (letter: string): LetterItem[] => {
+  return Array.from({ length: 7 }, (_, index) => ({
     id: `${letter}-${index}`,
     letter,
   }));
 };
 
-const DuckDragDrop: React.FC = () => {
-  const initialLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].flatMap(createDucks);
-  const [letters, setLetters] = useState<LetterItem[]>(initialLetters);
+const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray, centerLetter, handleSubmit, statusMessage }) => {
+  const [letters, setLetters] = useState<LetterItem[]>([]);
   const [droppedLetters, setDroppedLetters] = useState<LetterItem[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [word, setWord] = useState<string>('');
   const [animationClass, setAnimationClass] = useState<string>('');
-  const { handleSubmit, statusMessage } = useGameLogicContext();
-
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    console.log('Received letterArray:', letterArray);
+    if (Array.isArray(letterArray) && letterArray.length > 0) {
+      console.log('Initializing letters:', letterArray);
+      const filteredLetters = letterArray.filter(letter => letter !== centerLetter);
+      const arrangedLetters = [centerLetter, ...filteredLetters];
+
+      setLetters(arrangedLetters.flatMap(createDucks));
+    } else {
+      console.error('letterArray is not a valid array:', letterArray);
+    }
+  }, [letterArray, centerLetter]);
 
   const shuffleArray = (array: any[]) => {
     const centerItem = array[0];
@@ -59,7 +75,7 @@ const DuckDragDrop: React.FC = () => {
 
   const handleEnter = useCallback(() => {
     const currentWord = droppedLetters.map((item) => item.letter).join('');
-    const result = handleSubmit(currentWord, letters.map(letter => letter.letter));
+    const result = handleSubmit(currentWord);
     if (result) {
       if (result.reset) {
         if (result.sink) {
@@ -70,12 +86,11 @@ const DuckDragDrop: React.FC = () => {
         setTimeout(() => {
           setDroppedLetters([]);
           setAnimationClass('');
-        }, 400); // Duration of the animation
+        }, 400);
       }
     }
     setWord(currentWord);
-  }, [droppedLetters, handleSubmit, letters]);
-  
+  }, [droppedLetters, handleSubmit]);
 
   const handleDragStart = useCallback((event: DragStartEvent) => {
     setActiveId(event.active.id as string);
@@ -155,17 +170,16 @@ const DuckDragDrop: React.FC = () => {
         handleEnter();
       } else if (event.key === 'Backspace') {
         handleDeleteDuck();
-      } else if (letters.some((letter) => letter.letter === event.key.toUpperCase())) {
-        handleAddDuck(event.key.toUpperCase());
+      } else if (letters.some((letter) => letter.letter === event.key.toLowerCase())) {
+        handleAddDuck(event.key.toLowerCase());
       }
     };
-  
+
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [letters, handleAddDuck, handleDeleteDuck, handleEnter]); 
-
+  }, [letters, handleAddDuck, handleDeleteDuck, handleEnter]);
 
   if (!isMounted) {
     return null;
@@ -187,7 +201,7 @@ const DuckDragDrop: React.FC = () => {
                   id={item.id}
                   letter={item.letter}
                   index={index}
-                  center={item.letter === letters[0].letter ? true : false}
+                  center={item.letter === letters[0].letter}
                   animation={animationClass}
                 />
               ))}
@@ -205,7 +219,7 @@ const DuckDragDrop: React.FC = () => {
                   index={subIndex}
                   isActive={activeId === item.id && droppedLetters.some((droppedItem) => droppedItem.id === item.id)}
                   stackIndex={subIndex}
-                  center={item.letter === letters[0].letter ? true : false}
+                  center={item.letter === letters[0].letter}
                 />
               ))}
             </div>

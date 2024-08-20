@@ -18,9 +18,6 @@ const DuckSortable: React.FC<DuckSortableProps> = ({ letter, id, index, center, 
   const style = {
     transform: CSS.Translate.toString(transform),
     transition,
-    width: '7.6svh',
-    height: '8.3svh',
-    zIndex: 1,
   };
 
   return (
@@ -32,7 +29,7 @@ const DuckSortable: React.FC<DuckSortableProps> = ({ letter, id, index, center, 
       {...attributes}
     >
       <span className={`duck-letter relative z-5 text-[4svh] flex justify-center items-end pl-[2svh] ${center ? 'center' : ''}`}>
-        {letter}
+        {letter.toUpperCase()}
       </span>
     </div>
   );

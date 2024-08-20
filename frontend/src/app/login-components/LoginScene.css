@@ -1,9 +1,9 @@
 .duck-box {
     position: absolute;
     height: 8svh;
-    width: 2.73svh;
-    bottom: 17.6svh;
-    left: 4.42svh;
+    width: 2.9svh;
+    bottom: 18.2svh;
+    left: 68.8svh;
     z-index: 2;
     display: flex;
     align-items: flex-end;
@@ -28,7 +28,7 @@
     height: 15svh;
     width: 12svh;
     bottom: 4svh;
-    left: 33svh;
+    left: 98svh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -47,7 +47,7 @@
 .tractor {
     position: relative;
     height: 100%;
-    margin-bottom: -5.9svh;
+    margin-bottom: -5.5svh;
     margin-left: 0svh;
     z-index: 3;
 }
@@ -61,7 +61,7 @@
 }
 
 .tractor-box:hover .tractor-inner-box {
-    animation: TractorRotate 1.5s ease infinite;
+    animation: TractorRotate 1s ease infinite;
 }
 
 .login-scene {
@@ -73,8 +73,8 @@
 .windmill-arms {
     position: absolute;
     height: 15svh;
-    bottom: 16svh;
-    left: -1.6svh;
+    bottom: 17svh;
+    left: 62.78svh;
     z-index: 3;
     user-select: none;
     pointer-events: none;

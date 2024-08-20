@@ -9,7 +9,7 @@ import DailyWinScreen from './DailyWinScreen';
 import { useGameLogicContext } from '../components/game-logic/DailyLogicProvider';
 
 const PlayDaily: React.FC = () => {
-  const { win, winScreenDisplayed } = useGameLogicContext();
+  const { win, winScreenDisplayed, gameData, points, foundWords, counterPosition, handleSubmit, statusMessage } = useGameLogicContext();
 
   return (
     <>
@@ -20,11 +20,18 @@ const PlayDaily: React.FC = () => {
           <TopBar />
           <div className='flex flex-col md:flex-row-reverse'>
             <div className='relative h-full w-[50svh] flex flex-col md:mt-[2svh]'>
-              <ScoreBar />
-              <FoundWords />
+              <ScoreBar points={points} counterPosition={counterPosition} />
+              <FoundWords foundWords={foundWords} />
             </div>
             <div className="flex flex-col h-[77svh] w-[50svh] md:mt-[8svh]">
-              <DuckDragDrop />
+              {gameData && gameData.letters && (
+              <DuckDragDrop 
+                letterArray={gameData.letters} 
+                centerLetter={gameData.center_letter} 
+                handleSubmit={handleSubmit} 
+                statusMessage={statusMessage} 
+              />
+              )}
             </div>
           </div>
         </div>

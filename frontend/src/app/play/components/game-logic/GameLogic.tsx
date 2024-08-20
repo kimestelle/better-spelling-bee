@@ -19,24 +19,35 @@ interface SubmitResult {
   sink: boolean;
 }
 
-export interface GameData {
-  data: string[];
-  letters: string[];
-  center_letter: string;
-  win_threshold: number;
-}
-
-export default function useGameLogic(gameData: GameData): GameLogicReturnType {
-  const [foundWords, setFoundWords] = useState<string[]>([]);
+export default function useGameLogic(
+  updateFoundWords: (words: string[], score: number, daily: boolean) => Promise<void>, 
+  gameData: any,
+  initScore: number,
+  initWords: string[],
+  daily: boolean,
+): GameLogicReturnType {
+  const [foundWords, setFoundWords] = useState<string[]>(initWords || []);
+  const [points, setPoints] = useState<number>(initScore || 0);
+  
   const [statusMessage, setStatusMessage] = useState<string>('');
-  const [points, setPoints] = useState<number>(0);
   const [counterPosition, setCounterPosition] = useState<number>(1);
   const [win, setWin] = useState<boolean>(false);
   const [complete, setComplete] = useState<boolean>(false);
   const [winScreenDisplayed, setWinScreenDisplayed] = useState<boolean>(false);
 
+  useEffect(() => {
+    const storedUpdates = JSON.parse(localStorage.getItem('gameUpdates') || '[]');
+    if (storedUpdates.length > 0) {
+      storedUpdates.forEach((update: any) => {
+        setPoints((prevPoints) => prevPoints + update.score);
+        setFoundWords((prevWords) => [...prevWords, ...update.words]);
+      });
+      localStorage.removeItem('gameUpdates');
+    }
+  }, []);
+
   const handleSubmit = (word: string): SubmitResult | undefined => {
-    if (word.length === 0) {
+    if (!gameData || word.length === 0) {
       return;
     }
 
@@ -59,12 +70,37 @@ export default function useGameLogic(gameData: GameData): GameLogicReturnType {
         const { score, message } = ScoreCounter.calculateScore(word);
         setPoints((prevPoints) => prevPoints + score); 
         setStatusMessage(message);
+
+        const newFoundWords = [...foundWords, word];
+        const newScore = points + score
+        if (navigator.onLine) {
+          patchFoundWords(newFoundWords, newScore);
+        } else {
+          saveLocally(newFoundWords, newScore);
+        }
+        
         return { message, animation: 1, reset: true, sink: false };
       }
     }
 
     setStatusMessage('Not in word list');
     return { message: 'Not in word list', animation: 2, reset: true, sink: true };
+  };
+
+  const saveLocally = (words: string[], score: number) => {
+    const existingUpdates = JSON.parse(localStorage.getItem('gameUpdates') || '[]');
+    existingUpdates.push({ words, score });  // Store both words and score together
+    localStorage.setItem('gameUpdates', JSON.stringify(existingUpdates));
+  };  
+
+  const patchFoundWords = async (words: string[], score: number) => {
+    try {
+      await updateFoundWords(words, score, daily);
+      console.log('Patched words:', words, score);
+    } catch (error) {
+      console.error('Failed to patch found words:', error);
+      saveLocally(words, score);
+    }
   };
 
   useEffect(() => {
@@ -80,6 +116,7 @@ export default function useGameLogic(gameData: GameData): GameLogicReturnType {
   }, [points, gameData]);
 
   const getCounterPosition = () => {
+    if (!gameData) return 0;
     const percentage = (points / gameData.win_threshold) * 100;
 
     if (gameData.win_threshold <= 0) {
@@ -102,12 +139,11 @@ export default function useGameLogic(gameData: GameData): GameLogicReturnType {
     } else if (percentage <= 70) {
       setWin(true);
       return 8;
-    } else if (percentage <= 70) {
+    } else if (percentage > 70) {
       setWin(true);
       setComplete(true);
       return 8;
-    }
-    else {
+    } else {
       return 0;
     }
   };
@@ -121,7 +157,7 @@ class ScoreCounter {
       return { score: 1, message: 'good!' };
     } else if (word.length === 5) {
       return { score: 5, message: 'great!' };
-    } else if (word.length === 7 && this.isPangram(word)) {
+    } else if (word.length >= 7 && this.isPangram(word)) {
       return { score: 14, message: 'PANGRAM!' };
     } else {
       return { score: word.length, message: 'quack-tastic!' };
@@ -129,14 +165,7 @@ class ScoreCounter {
   }
 
   static isPangram(word: string) {
-    const counter: Record<string, boolean> = {};
-    for (const char of word) {
-      if (counter[char]) {
-        return false;
-      } else {
-        counter[char] = true;
-      }
-    }
-    return Object.keys(counter).length === 7;
+    const uniqueLetters = new Set(word);
+    return uniqueLetters.size === 7;
   }
 }

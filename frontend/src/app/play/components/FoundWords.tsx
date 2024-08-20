@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useGameLogicContext } from './game-logic/DailyLogicProvider';
+import './FoundWords.css'
 
-import './FoundWords.css';
+interface FoundWordsProps {
+  foundWords: string[];
+}
 
-const FoundWords: React.FC = () => {
+const FoundWords: React.FC<FoundWordsProps> = ({ foundWords }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { foundWords } = useGameLogicContext();
   const [isDesktop, setIsDesktop] = useState(false);
 
   const toggleMenu = () => {
@@ -14,6 +15,7 @@ const FoundWords: React.FC = () => {
   };
 
   const sortedWords = [...foundWords].sort();
+  foundWords = [...foundWords]
 
   const menuVars = {
     initial: {
@@ -31,7 +33,6 @@ const FoundWords: React.FC = () => {
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 768);
-      console.log(isDesktop)
     };
 
     handleResize();
@@ -44,7 +45,7 @@ const FoundWords: React.FC = () => {
 
   return (
     <div className='w-[50svh] h-[10svh]'>
-      <div className="dropdown">
+      <div className="dropdown inverse-color">
         <img src="/game-assets/arrow.svg" className={`dropdown-toggle ${isOpen ? 'up' : 'down'}`} onClick={toggleMenu} />
         {isOpen || isDesktop ? (
           <p className="words-found">
@@ -67,7 +68,7 @@ const FoundWords: React.FC = () => {
             exit="exit"
             className="dropdown container"
           >
-            <ul className="dropdown-list open">
+            <ul className="dropdown-list open inverse-color">
               {sortedWords.map((word, index) => (
                 <li key={index}>{word.toLowerCase()}</li>
               ))}

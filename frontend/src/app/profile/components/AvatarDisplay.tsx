@@ -1,15 +1,19 @@
 import React from 'react';
+import { Accessories } from './Accessories';
 
 interface AvatarDisplayProps {
   bottomColor: string;
   topColor: string;
+  accessory: number;
 }
 
-const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ bottomColor, topColor }) => {
+const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ bottomColor, topColor, accessory }) => {
   const fillColor = bottomColor;
   const gradientColor = topColor;
 
   return (
+    <div className='h-[20svh]'>
+          <img src={Accessories[accessory].side} className='absolute h-[7.245svh]'/>
     <svg
       id="Layer_2"
       data-name="Layer 2"
@@ -70,6 +74,7 @@ const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ bottomColor, topColor }) 
         />
       </g>
     </svg>
+    </div>
   );
 };
 

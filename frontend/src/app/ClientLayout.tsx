@@ -1,8 +1,10 @@
 "use client";
 
 import { Arvo } from "next/font/google";
-import { AuthProvider } from '../context/AuthContext'; // Ensure the correct path
+import { AuthProvider } from '../context/AuthContext'; 
 import "./globals.css";
+import { useQuackOnClick } from './QuackOnClick';
+
 
 const arvo = Arvo({
   weight: ["400", "700"],
@@ -14,6 +16,7 @@ export default function ClientLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useQuackOnClick();
   return (
     <div className={`${arvo.className} h-[100svh] w-full overflow-hidden flex items-center justify-center`}>
       <AuthProvider>

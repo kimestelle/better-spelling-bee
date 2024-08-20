@@ -2,8 +2,7 @@
 
 import React, { createContext, useState, useContext, ReactNode, useEffect, useCallback } from 'react';
 import Cookies from 'js-cookie';
-import axios, { AxiosRequestConfig } from 'axios';
-import UserService, { Player } from '../app/services/UserService';
+import api, { Player } from '../app/services/UserService';
 import { useRouter } from 'next/navigation';
 
 interface AuthContextProps {
@@ -12,20 +11,13 @@ interface AuthContextProps {
   register: (username: string, password: string, email: string, emailUpdates: boolean) => Promise<void>;
   logout: () => void;
   updateUser: (userData: Partial<Player>) => Promise<void>;
-}
-
-interface AxiosError extends Error {
-  config: AxiosRequestConfig;
-  code?: string;
-  request?: any;
-  response?: {
-    status: number;
-    data: any;
-    headers: Record<string, any>;
-    config: AxiosRequestConfig;
-  };
-  isAxiosError: boolean;
-  toJSON: () => object;
+  updateFoundWords: (words: string[], score: number, daily: boolean) => Promise<void>;
+  updateInfiniteData: (
+    data: string[],
+    win_threshold: number,
+    letters: string[],
+    center_letter: string
+  ) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -44,64 +36,69 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const refreshToken = useCallback(async () => {
     const refresh = Cookies.get('refresh_token');
-    if (refresh) {
-      try {
-        const response = await axios.post('http://127.0.0.1:8000/users/refresh/', { refresh });
-        const { access } = response.data;
-        Cookies.set('access_token', access);
-        return access;
-      } catch (error) {
-        console.error('Failed to refresh token:', error);
-        logout();
-      }
+    if (!refresh) return;
+
+    try {
+      const response = await api.refreshToken(refresh);
+      const { access } = response.data;
+      Cookies.set('access_token', access);
+      return access;
+    } catch (error) {
+      console.error('Failed to refresh token:', error);
+      logout();
     }
   }, [logout]);
 
   const getCurrentUserDataWithRefresh = useCallback(async () => {
     let token = Cookies.get('access_token');
+
+    if (!token) {
+      setLoading(false);
+      return;
+    }
+
     try {
-      const userData = await UserService.getCurrentUserData(token);
+      const userData = await api.getCurrentUserData(token);
       setUser(userData);
     } catch (error) {
-      if ((error as AxiosError).response && (error as AxiosError).response.status === 401) {
-        token = await refreshToken();
-        if (token) {
-          const userData = await UserService.getCurrentUserData(token);
+      if ((error as any).response?.status === 401) {
+        const newToken = await refreshToken();
+        if (newToken) {
+          const userData = await api.getCurrentUserData(newToken);
           setUser(userData);
         }
+      } else {
+        console.error('Failed to fetch user data:', error);
       }
+    } finally {
+      setLoading(false);
     }
   }, [refreshToken]);
 
   useEffect(() => {
     const token = Cookies.get('access_token');
     if (token) {
-      getCurrentUserDataWithRefresh();
-    }
-  }, [getCurrentUserDataWithRefresh]);
-
-  useEffect(() => {
-    const token = Cookies.get('access_token');
-    if (token) {
-      getUserData(token)
-        .then(setUser)
-        .catch(() => setUser(null))
-        .finally(() => setLoading(false));
+      getCurrentUserDataWithRefresh().finally(() => setLoading(false));
     } else {
       setLoading(false);
     }
-  }, []);
+  }, [getCurrentUserDataWithRefresh]);
 
   const login = async (username: string, password: string) => {
     try {
-      const response = await axios.post('http://127.0.0.1:8000/users/login/', { username, password });
+      Cookies.remove('access_token');
+      Cookies.remove('refresh_token');
+      setUser(null);
+
+      const response = await api.login(username, password);
       const { access, refresh } = response.data;
+
       Cookies.set('access_token', access);
       Cookies.set('refresh_token', refresh);
-      console.log('Access Token:', access);  // Correct position
-      console.log('Refresh Token:', refresh);  // Correct position
-      const userData = await UserService.getCurrentUserData(access);
+
+      const userData = await api.getCurrentUserData(access as string);
       setUser(userData);
+
       router.push('/profile');
     } catch (error) {
       console.error('Login failed:', error);
@@ -111,20 +108,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const register = async (username: string, password: string, email: string, emailUpdates: boolean) => {
     try {
-      const response = await axios.post('http://127.0.0.1:8000/users/register/', {
-        username,
-        password,
-        email,
-        email_updates: emailUpdates,
-      });
+      const response = await api.register(username, password, email, emailUpdates);
       const { access, refresh } = response.data;
       Cookies.set('access_token', access);
       Cookies.set('refresh_token', refresh);
-      const userData = await UserService.getCurrentUserData(access);
+      const userData = await api.getCurrentUserData(access as string);
       setUser(userData);
       router.push('/profile');
     } catch (error) {
-      console.error('Registration failed:', error);
+      console.error('Registration failed in context:', error);
       throw error;
     }
   };
@@ -133,28 +125,61 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const token = Cookies.get('access_token');
     if (token) {
       try {
-        await UserService.updateUserData(token, userData);
-        const updatedUser = await UserService.getCurrentUserData(token);
+        const updatedUser = await api.updateUserData(token as string, userData);
         setUser(updatedUser);
       } catch (error) {
         console.error('Failed to update user data:', error);
-        throw error;  
+        throw error;
       }
     }
   };
 
-  const getUserData = async (token: string): Promise<Player> => {
-    try {
-      const response = await axios.get('http://127.0.0.1:8000/users/me/', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log('User Data:', response.data);
-      return response.data;
-    } catch (error) {
-      console.error('Failed to fetch user data:', error);
-      throw error;
+  const updateFoundWords = async (words: string[], score: number, daily: boolean) => {
+    const token = Cookies.get('access_token');
+    if (token) {
+      try {
+        await api.patchFoundWords(token, words, score, daily);
+        setUser((prevUser) =>
+          prevUser ? { ...prevUser, daily_words: words.join(',') } : null
+        );
+      } catch (error) {
+        console.error('Failed to update found words:', error);
+        throw error;
+      }
+    }
+  };
+
+  const updateInfiniteData = async (
+    data: string[],
+    win_threshold: number,
+    letters: string[],
+    center_letter: string
+  ) => {
+    const token = Cookies.get('access_token');
+    if (token) {
+      try {
+        const updatedUser = await api.patchInfiniteData(
+          token,
+          data,
+          win_threshold,
+          letters,
+          center_letter
+        );
+        setUser((prevUser) =>
+          prevUser
+            ? {
+                ...prevUser,
+                infinite_data: data,
+                infinite_win_threshold: win_threshold,
+                infinite_letters: letters,
+                infinite_center_letter: center_letter,
+              }
+            : null
+        );
+      } catch (error) {
+        console.error('Failed to update infinite data:', error);
+        throw error;
+      }
     }
   };
 
@@ -163,7 +188,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, updateUser }}>
+    <AuthContext.Provider value={{ user, login, register, logout, updateUser, updateFoundWords, updateInfiniteData }}>
       {children}
     </AuthContext.Provider>
   );

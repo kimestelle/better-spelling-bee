@@ -1,12 +1,16 @@
 from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.contrib.auth.models import User
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
 from .models import Player
 from .serializer import PlayerSerializer, UserSerializer
 from django.http import HttpResponse
+from django.db.models import F
+
 
 import logging
 
@@ -15,19 +19,27 @@ logger = logging.getLogger('better-spelling-bee')
 def favicon_view(request):
     return HttpResponse(status=204)
 
+class DailyLeaderboardView(generics.ListAPIView):
+    permission_classes = [AllowAny]
+    serializer_class = PlayerSerializer
+
+    def get_queryset(self):
+        return Player.objects.all().order_by('-daily_score')
+
+
+class TotalLeaderboardView(generics.ListAPIView):
+    permission_classes = [AllowAny]
+    serializer_class = PlayerSerializer
+
+    def get_queryset(self):
+        return Player.objects.all().order_by('-points')
+
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
-    permission_classes = (AllowAny,)
+    permission_classes = [AllowAny]
     serializer_class = UserSerializer
 
-class CustomTokenObtainPairView(TokenObtainPairView):
-    permission_classes = (AllowAny,)
-
-class CustomTokenRefreshView(TokenRefreshView):
-    permission_classes = (AllowAny,)
-
 class UserListView(APIView):
-    # permission_classes = [IsAuthenticated]
 
     def get(self, request):
         logger.debug("Fetching all players")
@@ -35,11 +47,18 @@ class UserListView(APIView):
         serializer = PlayerSerializer(players, many=True)
         logger.debug(f"Fetched players data: {serializer.data}")
         return Response(serializer.data)
+    
+# from django.views.decorators.csrf import csrf_exempt
+
+# @csrf_exempt
 
 class CurrentUserView(APIView):
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
-
+    @method_decorator(never_cache)
     def get(self, request):
+        # Corrected the logging statement
+        logger.debug(f'Request headers: {request.headers}')
         try:
             logger.debug(f"Fetching current user data for user: {request.user}")
             player = Player.objects.get(user=request.user)
