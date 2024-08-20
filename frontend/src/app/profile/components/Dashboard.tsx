@@ -43,7 +43,7 @@ function Dashboard() {
 
   return (
     <div
-      className='w-[100svw] h-[70svh] bottom-04 flex justify-center mt-[-2.5svh] z-10 pt-[5svh]'
+      className='w-[100svw] h-[70svh] bottom-04 flex flex-col justify-center items-center  mt-[-2.5svh] z-10 pt-[5svh]'
       style={{
         backgroundImage: `url(${
           isDarkMode
@@ -54,9 +54,9 @@ function Dashboard() {
         backgroundSize: '200svh',
       }}
     >
-      <div className='w-[50svh] h-full flex flex-col items-center  gap-[1svh]'>
+      <div className='w-[50svh] h-full flex flex-col items-center gap-[1svh] bg-white bg-opacity-30 p-[2svh] pb-[1svh] mb-[2svh] rounded-[5svh]'>
         <h1>{username}</h1>
-        <span className='relative overflow-hidden box-shine bg-white bg-opacity-10 rounded-[1svh] p-[0.5svh] px-[1svh]'>
+        <span className='relative overflow-hidden box-shine bg-white bg-opacity-30 rounded-[1svh] p-[0.5svh] px-[1svh]'>
           duckling
         </span>
 
@@ -93,11 +93,10 @@ function Dashboard() {
             </span>
           </div>
         </div>
-        <button onClick={logout} className='rounded-[2svh] bg-button-red'>
+      </div>
+      <button onClick={logout} className='rounded-[2svh] bg-button-red'>
           Log Out
         </button>
-
-      </div>
     </div>
   );
 }
