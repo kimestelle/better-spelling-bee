@@ -10,7 +10,7 @@ interface DailyDataContextProps {
   fetchDailyData: () => Promise<void>;
 }
 
-const DailyDataContext = createContext<DailyDataContextProps | undefined>(undefined);
+export const DailyDataContext = createContext<DailyDataContextProps | undefined>(undefined);
 
 export const DailyDataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [dailyData, setDailyData] = useState<DailyData | null>(null);
