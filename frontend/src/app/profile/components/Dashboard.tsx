@@ -60,7 +60,7 @@ function Dashboard() {
           duckling
         </span>
 
-        <div className='w-full h-[15svh] flex flex-row my-[10svh] justify-center items-end gap-[10svh]'>
+        <div className='w-full h-[15svh] flex flex-row mb-[10svh] mt-[5svh] justify-center items-end gap-[10svh]'>
           <div className="w-[15svh] h-[18svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-contain bg-no-repeat rounded-[2svh]">
             <span className={`text-[7svh] leading-[8svh] bg-gradient-to-t ${isDarkMode ? 'from-white to-gray-100' : 'from-black to-gray-600'} bg-clip-text text-transparent`}>
               {points}
