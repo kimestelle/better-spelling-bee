@@ -257,7 +257,8 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      padding-left: 1.2svh;
+      padding-left: 0.6svh;
+      padding-bottom: 0.1svh;
       line-height: 4.8svh;
 
       z-index: 5;
