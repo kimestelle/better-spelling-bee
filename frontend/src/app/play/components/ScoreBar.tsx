@@ -11,7 +11,7 @@ const ScoreBar: React.FC<ScoreBarProps> = ({ points, counterPosition }) => {
       <div className='flex justify-center items-center bg-white pt-[0.4svh] absolute w-[4svh] h-[4svh] pb-[0.2svh] rounded-[2svh]' style={{ left: `${counterPosition * 5.3 - 3.7}svh` }}>
         <p className='inverse-color'>{points}</p>
       </div>
-      <img src='/game-assets/score-line.svg' alt="Score Line"/>
+      <img src='/game-assets/score-line.svg' alt="Score Line" className='w-full'/>
     </div>
   );
 };

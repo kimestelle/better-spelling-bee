@@ -18,7 +18,7 @@ const GameLogicContext = createContext<ExtendedGameLogicReturnType | undefined>(
 
 export const InfiniteLogicProvider: React.FC<InfiniteLogicProviderProps> = ({ children }) => {
   const { infiniteData, loading } = useInfiniteData();
-  const { updateFoundWords, updateInfiniteData, user } = useAuth();  // Include updateInfiniteData from useAuth
+  const { updateFoundWords, updateInfiniteData, user } = useAuth();
 
   const gameLogic = useGameLogic(
     updateFoundWords, 

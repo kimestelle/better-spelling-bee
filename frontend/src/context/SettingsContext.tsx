@@ -20,7 +20,7 @@ export const useSettings = (): SettingsContextProps => {
 
 export const SettingsProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isSoundEffectsOn, setIsSoundEffectsOn] = useState(true);
+  const [isSoundEffectsOn, setIsSoundEffectsOn] = useState(false);
 
   const toggleDarkMode = () => {
     const newMode = !isDarkMode;
