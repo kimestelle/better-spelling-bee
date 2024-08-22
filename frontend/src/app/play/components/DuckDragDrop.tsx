@@ -194,7 +194,7 @@ const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray, centerLetter, 
       <DndContext sensors={sensors} onDragStart={handleDragStart} onDragOver={handleDragOver} onDragEnd={handleDragEnd}>
         <Droppable id="droppable">
           <SortableContext items={droppedLetters.map((item) => item.id)} strategy={rectSortingStrategy}>
-            <div className="h-[15svh] w-full flex flex-row justify-center items-center">
+            <div className="h-[15svh] w-full flex flex-row justify-center items-center pt-[6svh] border-b-[0.3svh] border-dotted border-white">
               {droppedLetters.map((item, index) => (
                 <DuckSortable
                   key={item.id}
@@ -208,7 +208,7 @@ const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray, centerLetter, 
             </div>
           </SortableContext>
         </Droppable>
-        <div className="h-[40svh] w-full mt-[8svh] flex justify-center items-center relative pond">
+        <div className="relative h-[40svh] w-full mt-[7svh] flex justify-center items-center relative pond">
           {letters.filter((item, index, self) => self.findIndex(t => t.letter === item.letter) === index).map((letter, index) => (
             <div key={index} onClick={() => handleAddDuck(letter.letter)} className={`absolute duck-${index} ${index === Math.floor(letters.length / 2) ? 'center' : ''}`}>
               {letters.filter((item) => item.letter === letter.letter && !droppedLetters.some((dropped) => dropped.id === item.id)).map((item, subIndex) => (
@@ -225,7 +225,7 @@ const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray, centerLetter, 
             </div>
           ))}
         </div>
-        <div className='h-[12svh] flex flex-row justify-center items-center'>
+        <div className='h-[9svh] pb-[9svh] flex flex-row justify-center items-center'>
           <button onClick={handleDeleteDuck}>Delete</button>
           <button onClick={handleShuffle} className='w-[6svh] h-[6svh] m-[1svh] rounded-[5svh]'>
             <img src='/game-assets/shuffle.svg'/>

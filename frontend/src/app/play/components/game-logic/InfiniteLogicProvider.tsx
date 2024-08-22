@@ -18,7 +18,7 @@ const GameLogicContext = createContext<ExtendedGameLogicReturnType | undefined>(
 
 export const InfiniteLogicProvider: React.FC<InfiniteLogicProviderProps> = ({ children }) => {
   const { infiniteData, loading } = useInfiniteData();
-  const { updateFoundWords, updateInfiniteData, user } = useAuth();  // Include updateInfiniteData from useAuth
+  const { updateFoundWords, updateInfiniteData, user } = useAuth();
 
   const gameLogic = useGameLogic(
     updateFoundWords, 
@@ -30,12 +30,13 @@ export const InfiniteLogicProvider: React.FC<InfiniteLogicProviderProps> = ({ ch
 
   useEffect(() => {
     if (infiniteData) {
-      console.log(
-        infiniteData.data,
-        infiniteData.win_threshold,
-        infiniteData.letters,
-        infiniteData.center_letter
-      );
+      // console.log(
+      //   infiniteData.data,
+      //   infiniteData.win_threshold,
+      //   infiniteData.letters,
+      //   infiniteData.center_letter
+      // );
+      console.log('updating infinite with user data')
   
       updateInfiniteData(
         infiniteData.data,

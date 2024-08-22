@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useAuth } from '@/context/AuthContext';
 
 export interface GameLogicReturnType {
   handleSubmit: (word: string) => SubmitResult | undefined;
@@ -10,6 +11,7 @@ export interface GameLogicReturnType {
   complete: boolean;
   winScreenDisplayed: boolean;
   setWinScreenDisplayed: (displayed: boolean) => void;
+  resetData: () => Promise<void>;
 }
 
 interface SubmitResult {
@@ -26,6 +28,7 @@ export default function useGameLogic(
   initWords: string[],
   daily: boolean,
 ): GameLogicReturnType {
+  const { addPoints } = useAuth(); 
   const [foundWords, setFoundWords] = useState<string[]>(initWords || []);
   const [points, setPoints] = useState<number>(initScore || 0);
   
@@ -46,46 +49,66 @@ export default function useGameLogic(
     }
   }, []);
 
+  const resetData = async () => {
+    try {
+      setPoints(0);
+      setFoundWords([]);
+      setCounterPosition(1);
+      setWin(false);
+      setComplete(false);
+      setWinScreenDisplayed(false);
+      setStatusMessage('');
+    } catch (error) {
+      console.error('Failed to refresh game data:', error);
+    }
+  };
+
+
   const handleSubmit = (word: string): SubmitResult | undefined => {
     if (!gameData || word.length === 0) {
       return;
     }
-
+  
     if (word.length <= 3) {
       setStatusMessage('Too Short!');
       return { message: 'Too Short!', animation: 2, reset: false, sink: false };
     }
-
+  
     if (!word.includes(gameData.center_letter)) {
       setStatusMessage('Missing center letter');
       return { message: 'Missing center letter', animation: 2, reset: true, sink: true };
     }
-
+  
     if (gameData.data.includes(word)) {
       if (foundWords.includes(word)) {
         setStatusMessage('Already found!');
         return { message: 'Already found!', animation: 2, reset: true, sink: true };
       } else {
-        setFoundWords((prevWords) => [...prevWords, word]);
-        const { score, message } = ScoreCounter.calculateScore(word);
-        setPoints((prevPoints) => prevPoints + score); 
-        setStatusMessage(message);
-
         const newFoundWords = [...foundWords, word];
-        const newScore = points + score
-        if (navigator.onLine) {
-          patchFoundWords(newFoundWords, newScore);
-        } else {
-          saveLocally(newFoundWords, newScore);
-        }
+        const { score, message } = ScoreCounter.calculateScore(word);
+  
+        setPoints(prevPoints => {
+          const newPoints = prevPoints + score;
+          
+          // Ensure API patch happens only after state is updated
+          addPoints(newPoints).then(() => {
+            patchFoundWords(newFoundWords, newPoints);
+          });
+  
+          return newPoints;
+        });
+  
+        setFoundWords(newFoundWords);
+        setStatusMessage(message);
         
         return { message, animation: 1, reset: true, sink: false };
       }
     }
-
+  
     setStatusMessage('Not in word list');
     return { message: 'Not in word list', animation: 2, reset: true, sink: true };
   };
+  
 
   const saveLocally = (words: string[], score: number) => {
     const existingUpdates = JSON.parse(localStorage.getItem('gameUpdates') || '[]');
@@ -148,7 +171,7 @@ export default function useGameLogic(
     }
   };
 
-  return { handleSubmit, statusMessage, foundWords, points, counterPosition, win, complete, winScreenDisplayed, setWinScreenDisplayed };
+  return { handleSubmit, statusMessage, foundWords, points, counterPosition, win, complete, winScreenDisplayed, setWinScreenDisplayed, resetData };
 }
 
 class ScoreCounter {

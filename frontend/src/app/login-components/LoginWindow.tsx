@@ -26,7 +26,7 @@ const LoginWindow: React.FC<LoginWindowProps> = ({ setLoginScreen }) => {
   };
 
   return (
-    <div className='w-full h-full flex flex-col items-center gap-y-[1svh] justify-center bg-sand rounded-lg box-shadow'>
+    <div className='w-[35svh] h-full flex flex-col items-center gap-y-[1svh] justify-center bg-sand rounded-lg box-shadow'>
       <p className='w-[30svh] text-center'>
         {error}
       </p>

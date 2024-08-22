@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.core.cache import cache
+
 from .utils import get_cached_daily_data, reset_daily_data, make_subset
 from django.http import HttpResponse
 from rest_framework.response import Response
@@ -8,6 +9,7 @@ from rest_framework.decorators import api_view
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import authentication_classes, permission_classes
+from django.views.decorators.cache import never_cache
 
 def cache_test_view(request):
     cache.set('my_cached_data', 'Hello, this is cached data!', timeout=300)
@@ -62,6 +64,7 @@ def reset_daily_data_view(request):
         "center_letter": center_letter
     })
 
+@never_cache
 @api_view(['GET'])
 def infinite_data_view(request):
     

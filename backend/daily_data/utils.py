@@ -10,6 +10,10 @@ from django.db import transaction
 # Connect to Redis
 r = redis.Redis(host='localhost', port=6379, db=0)
 
+import logging
+
+logger = logging.getLogger('better-spelling-bee')
+
 def validate(words, letters, center_letter):
     dict = {}
 
@@ -73,6 +77,7 @@ def generate_letters():
         lines = fp.readlines()
     pangram_line_no = random.randint(0, len(lines) - 1)
     selected_line = lines[pangram_line_no].strip()
+    logger.info(f"Generated letters: {selected_line}")
     return list(set(selected_line)) if selected_line else []
 
 def fetch_daily_data():

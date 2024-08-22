@@ -1,10 +1,13 @@
-// QuackOnClick.tsx
-
 'use client'
 import { useEffect } from 'react';
+import { useSettings } from "@/context/SettingsContext";
 
 export function useQuackOnClick() {
+  const { isSoundEffectsOn } = useSettings();
+
   useEffect(() => {
+    if (!isSoundEffectsOn) return;
+
     const smallQuack = '/audio/small-quack.mp3';
     const smallSound = new Audio(smallQuack);
 
@@ -13,7 +16,6 @@ export function useQuackOnClick() {
 
     const playSound = () => {
       const randomProb = Math.floor(Math.random() * 8);
-      console.log('quack')
 
       // 1/8 chance to play big quack
       if (randomProb === 0) {
@@ -26,7 +28,6 @@ export function useQuackOnClick() {
       }
     };
 
-
     document.addEventListener('mousedown', playSound);
     document.addEventListener('keydown', playSound);
     document.addEventListener('touchstart', playSound);
@@ -36,5 +37,5 @@ export function useQuackOnClick() {
       document.removeEventListener('keydown', playSound);
       document.removeEventListener('touchstart', playSound);
     };
-  }, []);
+  }, [isSoundEffectsOn]);
 }

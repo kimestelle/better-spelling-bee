@@ -23,8 +23,8 @@
     transform-origin: top;
     display: block;
     margin-top: 6svh;
-    height: 79svh;
-    max-height: 79svh;
+    height: 75svh;
+    max-height: 75svh;
   }
   
   .dropdown-list {
@@ -97,13 +97,13 @@
     }
 
     .dropdown.container {
-      height: 69.5svh;
-      max-height: 69.5svh;
+      height: 64.1svh;
+      max-height: 64.1svh;
     }
 
     .dropdown-list.open {
-      height: 59.5svh;
-      max-height: 59.5svh;
+      height: 59.6svh;
+      max-height: 59.6svh;
     }
   }
 
