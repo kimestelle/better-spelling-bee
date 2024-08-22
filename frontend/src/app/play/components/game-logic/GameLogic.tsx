@@ -68,44 +68,47 @@ export default function useGameLogic(
     if (!gameData || word.length === 0) {
       return;
     }
-
+  
     if (word.length <= 3) {
       setStatusMessage('Too Short!');
       return { message: 'Too Short!', animation: 2, reset: false, sink: false };
     }
-
+  
     if (!word.includes(gameData.center_letter)) {
       setStatusMessage('Missing center letter');
       return { message: 'Missing center letter', animation: 2, reset: true, sink: true };
     }
-
+  
     if (gameData.data.includes(word)) {
       if (foundWords.includes(word)) {
         setStatusMessage('Already found!');
         return { message: 'Already found!', animation: 2, reset: true, sink: true };
       } else {
-        setFoundWords((prevWords) => [...prevWords, word]);
-        const { score, message } = ScoreCounter.calculateScore(word);
-// add the score to both game score and total points
-        setPoints((prevPoints) => prevPoints + score); 
-        addPoints(score);
-        setStatusMessage(message);
-
         const newFoundWords = [...foundWords, word];
-        const newScore = points + score
-        if (navigator.onLine) {
-          patchFoundWords(newFoundWords, newScore);
-        } else {
-          saveLocally(newFoundWords, newScore);
-        }
+        const { score, message } = ScoreCounter.calculateScore(word);
+  
+        setPoints(prevPoints => {
+          const newPoints = prevPoints + score;
+          
+          // Ensure API patch happens only after state is updated
+          addPoints(newPoints).then(() => {
+            patchFoundWords(newFoundWords, newPoints);
+          });
+  
+          return newPoints;
+        });
+  
+        setFoundWords(newFoundWords);
+        setStatusMessage(message);
         
         return { message, animation: 1, reset: true, sink: false };
       }
     }
-
+  
     setStatusMessage('Not in word list');
     return { message: 'Not in word list', animation: 2, reset: true, sink: true };
   };
+  
 
   const saveLocally = (words: string[], score: number) => {
     const existingUpdates = JSON.parse(localStorage.getItem('gameUpdates') || '[]');
