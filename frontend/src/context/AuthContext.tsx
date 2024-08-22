@@ -19,6 +19,7 @@ interface AuthContextProps {
     center_letter: string
   ) => Promise<void>;
   resetUserInfiniteData: () => void;
+  addPoints: (points: number) => Promise<void>; 
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -198,6 +199,27 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       }
     }
   };
+
+
+  const addPoints = async (points: number) => {
+    const token = Cookies.get('access_token');
+    if (token) {
+      try {
+        const updatedUser = await api.updateUserData(token, {
+          points: (user?.points || 0) + points,
+        });
+        setUser(updatedUser);
+        console.log(updatedUser.points)
+      } catch (error) {
+        console.error('Failed to add points:', error);
+        throw error;
+      }
+    }
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   
 
   if (loading) {
@@ -205,7 +227,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, updateUser, updateFoundWords, updateInfiniteData, resetUserInfiniteData }}>
+    <AuthContext.Provider value={{ user, login, register, logout, updateUser, updateFoundWords, updateInfiniteData, resetUserInfiniteData, addPoints }}>
       {children}
     </AuthContext.Provider>
   );

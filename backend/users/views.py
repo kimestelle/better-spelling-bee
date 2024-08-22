@@ -73,10 +73,11 @@ class CurrentUserView(APIView):
         try:
             logger.debug(f"Received PATCH data for user: {request.user}, data: {request.data}")
             player = Player.objects.get(user=request.user)
+
             serializer = PlayerSerializer(player, data=request.data, partial=True)
             if serializer.is_valid():
                 serializer.save()
-                logger.debug(f"Updated player data: {serializer.data}")
+                # logger.debug(f"Updated player data: {serializer.data}")
                 return Response(serializer.data)
             logger.error(f"Serializer errors: {serializer.errors}")
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -46,8 +46,40 @@ export const InfiniteDataProvider: React.FC<{ children: ReactNode }> = ({ childr
     };
 
     useEffect(() => {
-      fetchAndUpdateInfiniteData();
+      const checkAndFetchData = async () => {
+        try {
+          const token = Cookies.get('access_token');
+          if (!token) {
+            throw new Error('No access token found');
+          }
+    
+          // Get the current user data
+          const userData = await api.getCurrentUserData(token);
+    
+          // Check if the user has infinite data
+          if (!userData.infinite_data || userData.infinite_data.length === 0) {
+            // User has no infinite data, so fetch and update
+            await fetchAndUpdateInfiniteData();
+          } else {
+            // User already has infinite data, set it to the context
+            setInfiniteData({
+              data: userData.infinite_data,
+              win_threshold: userData.infinite_win_threshold,
+              letters: userData.infinite_letters,
+              center_letter: userData.infinite_center_letter,
+            });
+          }
+        } catch (error) {
+          console.error('Failed to check and fetch infinite data:', error);
+        } finally {
+          setLoading(false);
+        }
+      };
+    
+      checkAndFetchData();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+    
 
     return (
       <InfiniteDataContext.Provider value={{ infiniteData, loading, fetchAndUpdateInfiniteData }}>

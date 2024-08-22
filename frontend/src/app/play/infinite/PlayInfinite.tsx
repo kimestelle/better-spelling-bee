@@ -17,11 +17,13 @@ const PlayInfinite: React.FC = () => {
     const { resetUserInfiniteData } = useAuth();
   
     const handleResetGame = async () => {
-      await resetUserInfiniteData(); // Reset the user’s infinite score and words
-      resetData();
-      await fetchAndUpdateInfiniteData(); // fetch new data if none
-    };
-  
+      const confirmed = window.confirm("Are you sure you want to reset the game? This cannot be undone.");
+      if (confirmed) {
+        await resetUserInfiniteData(); // Reset the user’s infinite score and words
+        resetData();
+        await fetchAndUpdateInfiniteData(); // fetch new data if none
+      }
+    };    
 
   return (
     <>

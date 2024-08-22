@@ -42,12 +42,12 @@ const getCurrentUserData = async (token: string): Promise<Player> => {
       userData.daily_words = userData.daily_words.filter((word: string) => word !== '[' && word !== ']');
     }
     
-    console.log(userData.infinite_words);
+    // console.log(userData.infinite_words);
     if (Array.isArray(userData.infinite_words)) {
       userData.infinite_words = userData.infinite_words.filter((word: string) => word !== '[' && word !== ']');
     }
     
-    console.log(userData.infinite_words);
+    // console.log(userData.infinite_words);
 
     if (Array.isArray(userData.infinite_data)) {
       userData.infinite_data = userData.infinite_data.map((word: string) => word.replace(/[\[\]]/g, ''));
@@ -89,7 +89,7 @@ const login = async (username: string, password: string) => {
 
 const register = async (username: string, password: string, email: string, emailUpdates: boolean) => {
   try {
-    console.log(username, password, email, emailUpdates)
+    // console.log(username, password, email, emailUpdates)
     const response = await axios.post(`${API_URL}/users/register/`, {
       username,
       password,
@@ -140,7 +140,7 @@ const patchFoundWords = async (token: string, words: string[], score: number, da
     center_letter: string
   ): Promise<any> => {
     try {
-      console.log(data, win_threshold, letters, center_letter)
+      console.log(win_threshold, letters, center_letter)
       const response = await axios.patch(
         `${API_URL}/users/me/`,
         {

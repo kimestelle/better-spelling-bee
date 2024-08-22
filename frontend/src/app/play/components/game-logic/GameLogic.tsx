@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useAuth } from '@/context/AuthContext';
 
 export interface GameLogicReturnType {
   handleSubmit: (word: string) => SubmitResult | undefined;
@@ -27,6 +28,7 @@ export default function useGameLogic(
   initWords: string[],
   daily: boolean,
 ): GameLogicReturnType {
+  const { addPoints } = useAuth(); 
   const [foundWords, setFoundWords] = useState<string[]>(initWords || []);
   const [points, setPoints] = useState<number>(initScore || 0);
   
@@ -84,7 +86,9 @@ export default function useGameLogic(
       } else {
         setFoundWords((prevWords) => [...prevWords, word]);
         const { score, message } = ScoreCounter.calculateScore(word);
+// add the score to both game score and total points
         setPoints((prevPoints) => prevPoints + score); 
+        addPoints(score);
         setStatusMessage(message);
 
         const newFoundWords = [...foundWords, word];

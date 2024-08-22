@@ -11,6 +11,7 @@ const API_URL = 'http://127.0.0.1:8000';
 
 const InfiniteDataService = {
   getInfiniteData: async (token: string): Promise<InfiniteData> => {
+    console.log('getting infinite data')
     const response = await axios.get(`${API_URL}/daily-data/api/infinite-data/`, {
       headers: {
         Authorization: `Bearer ${token}`,

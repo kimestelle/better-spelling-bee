@@ -30,12 +30,13 @@ export const InfiniteLogicProvider: React.FC<InfiniteLogicProviderProps> = ({ ch
 
   useEffect(() => {
     if (infiniteData) {
-      console.log(
-        infiniteData.data,
-        infiniteData.win_threshold,
-        infiniteData.letters,
-        infiniteData.center_letter
-      );
+      // console.log(
+      //   infiniteData.data,
+      //   infiniteData.win_threshold,
+      //   infiniteData.letters,
+      //   infiniteData.center_letter
+      // );
+      console.log('updating infinite with user data')
   
       updateInfiniteData(
         infiniteData.data,
