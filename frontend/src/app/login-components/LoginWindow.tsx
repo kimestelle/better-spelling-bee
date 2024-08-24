@@ -26,8 +26,8 @@ const LoginWindow: React.FC<LoginWindowProps> = ({ setLoginScreen }) => {
   };
 
   return (
-    <div className='w-[35svh] h-full flex flex-col items-center gap-y-[1svh] justify-center bg-sand rounded-lg box-shadow'>
-      <p className='w-[30svh] text-center'>
+    <div className='w-[35svh] h-full flex flex-col items-center gap-y-[1svh] justify-center '>
+      <p className='w-[30svh] text-center text-red-500'>
         {error}
       </p>
       <input
@@ -44,11 +44,11 @@ const LoginWindow: React.FC<LoginWindowProps> = ({ setLoginScreen }) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button className='mt-[3svh]' onClick={handleLogin}>
+      <button className='mt-[3svh] bg-button-green' onClick={handleLogin}>
         log in
       </button>
-      <span className='clickable' onClick={() => setLoginScreen(false)}>
-        sign up
+      <span className='clickable underline' onClick={() => setLoginScreen(false)}>
+        sign up!
       </span>
     </div>
   );

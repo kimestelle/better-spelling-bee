@@ -23,7 +23,7 @@ function Dashboard() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e) => setIsDarkMode(e.matches);
+    const handleChange = (e: any) => setIsDarkMode(e.matches);
 
     handleChange(mediaQuery); // Set initial value
     mediaQuery.addEventListener('change', handleChange);
@@ -54,15 +54,25 @@ function Dashboard() {
         backgroundSize: '200svh',
       }}
     >
-      <div className='w-[50svh] h-full flex flex-col items-center gap-[1svh] bg-white bg-opacity-30 p-[2svh] pb-[1svh] mb-[2svh] rounded-[5svh]'>
-        <h1>{username}</h1>
-        <span className='relative overflow-hidden box-shine bg-white bg-opacity-30 rounded-[1svh] p-[0.5svh] px-[1svh]'>
-          duckling
-        </span>
-
-        <div className='w-full h-[15svh] flex flex-row mb-[10svh] mt-[5svh] justify-center items-end gap-[10svh]'>
+      <div className='w-[50svh] h-full flex flex-col items-center justify-center gap-[1svh] bg-white bg-opacity-30 p-[2svh] pb-[1svh] mb-[2svh] rounded-[5svh]'>
+        <h1 className={`${username.length >= 11 ? 'text-[3svh]' : ''} text-center overflow-auto w-[48svh]`}>{username}</h1>
+        {/* <div className='flex flex-row gap-[1svh]'> */}
+        <span className='relative overflow-hidden bg-white bg-opacity-30 rounded-[1svh] p-[0.5svh] px-[1svh]'>
+  {/* different nickname by tier */}
+            {points <= 100 ? 'duckling' : (
+              points <= 500 ? 'wobbly wings' : (
+                points  <= 1000 ? 'big bird' : (
+                  points <= 2000 ? 'chief chirper' : (
+                    points <= 5000 ? 'queen quacker' : 'idek'
+                  )
+                )
+              )
+            )}
+          </span>
+        {/* </div> */}
+        <div className='w-full h-[21svh] flex flex-row justify-center items-end gap-[10svh]'>
           <div className="w-[17svh] h-[21svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/egg.svg')] bg-contain bg-center bg-no-repeat rounded-[2svh] pb-[1svh]">
-            <span className={`text-[7svh] leading-[8svh] bg-gradient-to-t ${isDarkMode ? 'from-white to-gray-100' : 'from-black to-gray-600'} bg-clip-text text-transparent`}>
+            <span className={`${points >= 100 ? 'text-[3svh]': 'text-[7svh]'} leading-[8svh] bg-gradient-to-t ${isDarkMode ? 'from-white to-gray-100' : 'from-black to-gray-600'} bg-clip-text text-transparent`}>
               {points}
             </span>
             <span>
@@ -70,7 +80,7 @@ function Dashboard() {
             </span>
           </div>
           <div className="w-[17svh] h-[21svh] flex flex-col items-center justify-end bg-[url('/avatar-assets/streak-flame.svg')] bg-contain bg-center bg-no-repeat rounded-[2svh] pb-[1svh]">
-            <span className={`text-[7svh] leading-[8svh] bg-gradient-to-t ${isDarkMode ? 'from-white to-gray-100' : 'from-black to-gray-600'} bg-clip-text text-transparent`}>
+            <span className={`${streak >= 100 ? 'text-[3svh]': 'text-[7svh]'} leading-[8svh] bg-gradient-to-t ${isDarkMode ? 'from-white to-gray-100' : 'from-black to-gray-600'} bg-clip-text text-transparent`}>
               {streak}
             </span>
             <span>
@@ -78,8 +88,11 @@ function Dashboard() {
             </span>
           </div>
         </div>
+        {/* <span className='absolute overflow-hidden underline box-shine bg-opacity-30 rounded-[1svh] p-[0.5svh] px-[1svh]'>
+              leaderboard &gt;
+        </span> */}
 
-        <div className='w-full h-[15svh] -mt-[3svh] flex flex-col gap-[1.5svh] justify-top items-center'>
+        <div className='w-full h-[15svh] flex flex-col gap-[1.5svh] mt-[5svh] justify-top items-center'>
           <div className='w-full h-[5svh] flex flex-row gap-[1svh] items-center justify-center bg-button-green box-shadow overflow-hidden box-shine rounded-[2svh] clickable' onClick={routeDaily}>
             {/* <div className='checkbox w-[3svh] h-[3svh]'></div> */}
             <span className='text-[2.5svh]'>

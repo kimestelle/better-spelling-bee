@@ -6,6 +6,8 @@ import { useInfiniteData } from '@/context/InfiniteDataContext';
 import { useAuth } from '@/context/AuthContext';
 import { InfiniteData } from '@/app/services/InfiniteDataService';
 
+import Loading from '../Loading';
+
 interface InfiniteLogicProviderProps {
   children: ReactNode;
 }
@@ -49,7 +51,7 @@ export const InfiniteLogicProvider: React.FC<InfiniteLogicProviderProps> = ({ ch
   
 
   if (loading || !infiniteData) {
-    return <div>Loading...</div>;
+    return <Loading/>;
   }
 
   return (

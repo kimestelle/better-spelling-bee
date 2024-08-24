@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 
+import Loading from '../play/components/Loading';
+
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user } = useAuth();
   const router = useRouter();
@@ -15,7 +17,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   }, [user, router]);
 
   if (!user) {
-    return <div>Loading...</div>; // Or a loading spinner
+    return <Loading/>;
   }
 
   return <>{children}</>;

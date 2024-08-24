@@ -3,7 +3,7 @@
 import { Arvo } from "next/font/google";
 import { AuthProvider } from '../context/AuthContext'; 
 import "./globals.css";
-import { useQuackOnClick } from './QuackOnClick';
+import { useQuackOnClick } from './components/QuackOnClick';
 
 
 const arvo = Arvo({

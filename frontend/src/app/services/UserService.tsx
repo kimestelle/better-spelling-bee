@@ -28,7 +28,6 @@ export interface Player {
   infinite_center_letter: string;
   infinite_win_threshold: number;
 }
-
 const getCurrentUserData = async (token: string): Promise<Player> => {
   try {
     const response = await axios.get(`${API_URL}/users/me/`, {

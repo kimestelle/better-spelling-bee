@@ -88,17 +88,25 @@ const SketchExample: React.FC = () => {
           <div className='custom-slider-picker max-h-[6svh] w-[22svh]'>
             <SliderPicker color={bottomColor} onChange={handleBottomChange} />
           </div>
-          <button className='h-[2.8svh] p-[0.4svh] m-0 mt-[0.7svh] text-[1.4svh]' onClick={handleSubmitColor}>
-            Save
+          <button className='w-[5svh] m-0 mt-[0.3svh] text-[1.4svh] bg-transparent' onClick={handleSubmitColor}>
+            <img src='icons/green-checkmark.svg'/>
           </button>
         </div>
       ) : (displayColorOrCostume === 2 ? (
         //accessory selector
-        <div id='accesory-selector' className='flex justify-center items-center w-[30svh]'>
-          <img src='background-assets/sunnies-store.svg'/>
-          <button onClick={handleAccessoryPrev} className='absolute w-[5svh] -translate-x-full'>&lt;</button>
-          <button onClick={handleSubmitAccessory} className='absolute w-[5svh]'>!</button>
-          <button onClick={handleAccessoryNext} className='absolute w-[5svh] translate-x-full'>&gt;</button>
+        <div id='accesory-selector' className='flex flex-col justify-center items-center w-[30svh] pb-[10svh] gap-[2svh]'>
+          <img src='avatar-assets/sunnies-top.svg'/>
+          <div className='flex flex-row items-start justify-center'>
+          <button onClick={handleAccessoryPrev} className='absolute w-[5svh] flex items-center -translate-x-[150%] bg-transparent shadow-none'>
+            <img src='icons/arrow.svg'/>
+          </button>
+          <button onClick={handleSubmitAccessory} className='absolute w-[5svh] bg-transparent'>
+            <img src='icons/green-checkmark.svg'/>
+          </button>
+          <button onClick={handleAccessoryNext} className='absolute w-[5svh] flex items-center translate-x-[150%] bg-transparent shadow-none'>
+            <img src='icons/arrow.svg' className='rotate-180'/>
+          </button>
+          </div>
         </div>
       ) : null)}
       <div className='clickable mb-[-2svh] avatar-animate' onClick={handleClick}>
@@ -107,6 +115,8 @@ const SketchExample: React.FC = () => {
         ):(
           <AvatarDisplay bottomColor={bottomColor} topColor={topColor} accessory={accessory}/>)}
       </div>
+      <img src='background-assets/blue-cloud-1.svg' className='absolute w-[30svh] top-[2svh]'/>
+      <img src='background-assets/blue-cloud-2.svg' className='absolute w-[15svh] top-[8svh] mr-[30svh]'/>
     </div>
   );
 };

@@ -35,9 +35,11 @@ const Duck: React.FC<DuckProps> = React.memo(({ id, letter, index, isActive, sta
       {...listeners}
       {...attributes}
     >
-      <span className={`duck-letter relative z-5 text-[4svh] flex justify-center items-end pl-[2svh] ${center ? 'center' : ''}`}>
+      <div className='relative z-5'>
+      <span className={`duck-letter z-5 text-[4svh] flex justify-center items-end pl-[2svh] ${center ? 'center' : ''}`}>
         {letter.toUpperCase()}
       </span>
+      </div>
     </div>
   );
 });

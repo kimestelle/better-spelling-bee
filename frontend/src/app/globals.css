@@ -119,6 +119,8 @@
 
     .bg-button-green {
       background-color: #81BF6A;
+      color: white;
+      box-shadow: 0.2svh 0.3svh 0px rgba(255, 255, 255, 0.1);
     }
 
 
@@ -315,4 +317,15 @@
 
     .face {
       width: 100%;
+    }
+
+    /* animations */
+
+    .twirl-infinite-animation {
+      animation: Rotate 2s linear infinite;
+    }
+
+    @keyframes Twirl
+      {0% { transform: rotateY(0deg) }
+      20% { transform: rotateY(360deg) }
     }

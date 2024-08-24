@@ -1,3 +1,19 @@
+.cloud-1 {
+    position: absolute;
+    top: -65svh;
+    left: 60svh;
+    width: 30svh;
+    animation: Hover 4s ease infinite;
+}
+
+.cloud-2 {
+    position: absolute;
+    top: -52svh;
+    right: 60svh;
+    width: 15svh;
+    animation: Hover2 5s ease infinite;
+}
+
 .duck-box {
     position: absolute;
     height: 8svh;
@@ -84,13 +100,34 @@
     animation: Rotate 15s linear infinite;
 }
 
+.no-interaction {
+    user-select: none;
+    pointer-events: none;
+}
+
 @keyframes TractorRotate
-{0% { transform: rotate(-4deg) }
- 20% { transform: rotate(-10deg) }
+{
+    0% { transform: rotate(-4deg) }
+    20% { transform: rotate(-10deg) }
     100% { transform: rotate(-4deg) }
 }
 
 @keyframes Rotate
-{from { transform: rotate(0deg) }
- to { transform: rotate(360deg) }
+{
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+}
+
+@keyframes Hover
+{
+    0% { transform: translateY(0) }
+    40% { transform: translateY(-10%) }
+    100% { transform: translateY(0%) }
+}
+
+@keyframes Hover2
+{
+    0% { transform: translateY(-10%) }
+    40% { transform: translateY(0%) }
+    100% { transform: translateY(-10%) }
 }
