@@ -194,7 +194,7 @@ const DuckDragDrop: React.FC<DuckDragDropProps> = ({ letterArray, centerLetter, 
       <DndContext sensors={sensors} onDragStart={handleDragStart} onDragOver={handleDragOver} onDragEnd={handleDragEnd}>
         <Droppable id="droppable">
           <SortableContext items={droppedLetters.map((item) => item.id)} strategy={rectSortingStrategy}>
-            <div className="h-[15svh] w-full flex flex-row justify-center items-center pt-[6svh] border-b-[0.3svh] border-dotted border-white">
+            <div className="relative h-[15svh] w-full flex flex-row justify-center items-center pt-[6svh] border-b-[0.3svh] border-dotted border-white">
               {droppedLetters.map((item, index) => (
                 <DuckSortable
                   key={item.id}

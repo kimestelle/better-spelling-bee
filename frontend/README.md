@@ -5,6 +5,9 @@
 - Tailwind CSS Library: efficient built-in CSS classes
 - Axios: for API requests
 
+## File Structure
+- All assets are in 'public'
+
 ## Pages
 - '/': login/signup page
 - '/profile': user dashboard + avatar customization + link to game pages, user auth required
