@@ -5,6 +5,8 @@ import { useDailyData } from '@/context/DailyDataContext';
 import { useAuth } from '@/context/AuthContext';
 import { DailyData } from '@/app/services/DailyDataService';
 
+import Loading from '../Loading';
+
 interface DailyLogicProviderProps {
   children: ReactNode;
 }
@@ -22,7 +24,7 @@ export const DailyLogicProvider: React.FC<DailyLogicProviderProps> = ({ children
   const gameLogic = useGameLogic(updateFoundWords, dailyData, user?.daily_score, user?.daily_words, true);
 
   if (loading || !dailyData) {
-    return <div>Loading...</div>;
+    return <Loading/>;
   }
 
   return (

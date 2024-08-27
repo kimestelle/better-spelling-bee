@@ -91,7 +91,7 @@ export default function useGameLogic(
           const newPoints = prevPoints + score;
           
           // Ensure API patch happens only after state is updated
-          addPoints(newPoints).then(() => {
+          addPoints(score).then(() => {
             patchFoundWords(newFoundWords, newPoints);
           });
   

@@ -119,6 +119,8 @@
 
     .bg-button-green {
       background-color: #81BF6A;
+      color: white;
+      box-shadow: 0.2svh 0.3svh 0px rgba(255, 255, 255, 0.1);
     }
 
 
@@ -234,7 +236,7 @@
 
     /* formatting for game object ducks (still need to figure out how to get letters in front */
     .duck-container {
-      position: relative;
+      /* position: relative; */
       user-select: none;
       cursor: grab;
       transition: transform 0.2s ease, opacity 0.1s ease;
@@ -246,8 +248,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-image: url('/game-assets/duck.svg');
-      z-index: 1;
-      margin: 0 -2svh; /* Negative margin to create overlap */
+      margin: 0 -2.2svh; /* Negative margin to create overlap */
 
       outline: none; /* Removes the focus outline */
       -webkit-tap-highlight-color: transparent;
@@ -260,19 +261,19 @@
 
     .duck-letter {
       position: absolute;
-      height: 100%;
-      width: 100%;
+      width: 7.6svh;
+      height: 8.3svh;
       padding-left: 0.6svh;
-      padding-bottom: 0.1svh;
       line-height: 4.8svh;
 
-      z-index: 5;
+      z-index: 100;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       font-style: normal;
       font-size: 4svh;
       color: black;
+      border: 1px solid green;
 
       -webkit-mask-image: url('/game-assets/duck.svg');
       mask-image: url('/game-assets/duck.svg');
@@ -315,4 +316,15 @@
 
     .face {
       width: 100%;
+    }
+
+    /* animations */
+
+    .twirl-infinite-animation {
+      animation: Rotate 2s linear infinite;
+    }
+
+    @keyframes Twirl
+      {0% { transform: rotateY(0deg) }
+      20% { transform: rotateY(360deg) }
     }

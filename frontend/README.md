@@ -1,3 +1,27 @@
+# Frontend Guide
+
+## Framework/Libraries
+- React Next.js App Router with Typescript (each subfile is a route named after the file)
+- Tailwind CSS Library: efficient built-in CSS classes
+- Axios: for API requests
+
+## File Structure
+- All assets are in 'public'
+
+## Pages
+- '/': login/signup page
+- '/profile': user dashboard + avatar customization + link to game pages, user auth required
+- '/daily': daily game mode
+- '/infinite': infinite game mode
+
+## UI
+- 
+
+## Data Handling
+- '...Services.tsx' directly handle api calls to back end
+- '...Context.tsx' implement specific functions and create contexts for user data + game data (game logic context is implemented in React in separate file)
+
+## Next.js
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
