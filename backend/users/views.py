@@ -42,10 +42,10 @@ class RegisterView(generics.CreateAPIView):
 class UserListView(APIView):
 
     def get(self, request):
-        logger.debug("Fetching all players")
+        # logger.debug("Fetching all players")
         players = Player.objects.all()
         serializer = PlayerSerializer(players, many=True)
-        logger.debug(f"Fetched players data: {serializer.data}")
+        # logger.debug(f"Fetched players data: {serializer.data}")
         return Response(serializer.data)
     
 # from django.views.decorators.csrf import csrf_exempt
@@ -58,12 +58,12 @@ class CurrentUserView(APIView):
     @method_decorator(never_cache)
     def get(self, request):
         # Corrected the logging statement
-        logger.debug(f'Request headers: {request.headers}')
+        # logger.debug(f'Request headers: {request.headers}')
         try:
-            logger.debug(f"Fetching current user data for user: {request.user}")
+            # logger.debug(f"Fetching current user data for user: {request.user}")
             player = Player.objects.get(user=request.user)
             serializer = PlayerSerializer(player)
-            logger.debug(f"Fetched player data: {serializer.data}")
+            # logger.debug(f"Fetched player data: {serializer.data}")
             return Response(serializer.data)
         except Player.DoesNotExist:
             logger.error(f"Player not found for user: {request.user}")
@@ -71,7 +71,7 @@ class CurrentUserView(APIView):
     
     def patch(self, request):
         try:
-            logger.debug(f"Received PATCH data for user: {request.user}, data: {request.data}")
+            # logger.debug(f"Received PATCH data for user: {request.user}, data: {request.data}")
             player = Player.objects.get(user=request.user)
 
             serializer = PlayerSerializer(player, data=request.data, partial=True)
