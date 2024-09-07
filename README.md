@@ -1,5 +1,9 @@
 # better-spelling-bee
 
+To run frontend:
+Navigate to ...\better-spelling-bee\frontend
+In commandline type: npm run dev
+
 To run backend: 
 Navigate to ...\better-spelling-bee\backend 
 on powershell run: 
