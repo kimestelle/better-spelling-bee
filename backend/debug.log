@@ -1206,3 +1206,1141 @@ File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-
 File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\migrations\0004_alter_user_username_opts.py first seen with mtime 1725855903.3973854
 File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\users\migrations\0002_player_color_bottom_player_color_top_player_streak.py first seen with mtime 1725855175.7236195
 File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\migrations\0001_initial.py first seen with mtime 1725855902.8872952
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\backend\settings.py previous mtime: 1725912070.7525482, current mtime: 1725913340.732897
+C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\backend\settings.py notified as changed. Signal results: [(<function template_changed at 0x000001D5559A5BC0>, None), (<function translation_file_changed at 0x000001D556D7D8A0>, None)].
+C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Waiting for apps ready_event.
+Apps ready_event triggered. Sending autoreload_started signal.
+Watching dir C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates with glob **/*.
+Watching dir C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\templates with glob **/*.
+Watching dir C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\myapp\templates with glob **/*.
+Watching dir C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\locale with glob **/*.mo.
+Watching dir C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\locale with glob **/*.mo.
+Watching dir C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\users\locale with glob **/*.mo.
+Watching dir C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale with glob **/*.mo.
+Watching dir C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale with glob **/*.mo.
+Watching dir C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\token_blacklist\locale with glob **/*.mo.
+Watching dir C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\corsheaders\locale with glob **/*.mo.
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\version.py first seen with mtime 1725855905.2944002
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\migrations\utils.py first seen with mtime 1725855905.1100955
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\functools.py first seen with mtime 1725855468.109709
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sessions\__init__.py first seen with mtime 1725855904.5708241
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\zoneinfo\__init__.py first seen with mtime 1725855471.3196125
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\__init__.py first seen with mtime 1725855909.134979
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\typing.py first seen with mtime 1725855471.0496795
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\abc.py first seen with mtime 1725855468.630055
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\views.py first seen with mtime 1725855175.7079532
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\abc.py first seen with mtime 1725855468.6610775
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\div.py first seen with mtime 1725855908.652661
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\tz\win.py first seen with mtime 1725855901.7132142
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\exceptions.py first seen with mtime 1725855908.1779408
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\__init__.py first seen with mtime 1725855898.4223497
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\connectionpool.py first seen with mtime 1725855897.327167
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\bz2.py first seen with mtime 1725855467.427042
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\migrations\operations\base.py first seen with mtime 1725855905.1100955
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\compression.py first seen with mtime 1725855908.6103127
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\opcode.py first seen with mtime 1725855469.109619
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\schedules.py first seen with mtime 1725855909.7341108
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_overlapped.pyd first seen with mtime 1725855467.0096698
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\sql.py first seen with mtime 1725855897.9077065
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\__init__.py first seen with mtime 1725855904.9953728
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\handlers\wsgi.py first seen with mtime 1725855905.0274658
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\tokens.py first seen with mtime 1725855903.2291002
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\metadata.py first seen with mtime 1725855908.976012
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\base\features.py first seen with mtime 1725855905.0716133
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\_parsers\hiredis.py first seen with mtime 1725855898.0150568
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\url.py first seen with mtime 1725855897.343569
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\__init__.py first seen with mtime 1725855905.2271602
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_queue.pyd first seen with mtime 1725855467.0176349
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\schemas\coreapi.py first seen with mtime 1725855909.0501468
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\log.py first seen with mtime 1725855467.2782352
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\__init__.py first seen with mtime 1725855901.6248724
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py first seen with mtime 1725855909.140625
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\vine\promises.py first seen with mtime 1725855897.29723
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\loaders\filesystem.py first seen with mtime 1725855905.2482903
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\colorama\win32.py first seen with mtime 1725855901.314322
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\_parsers\resp2.py first seen with mtime 1725855898.0150568
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\collections\abc.py first seen with mtime 1725855467.4366505
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\corsheaders\signals.py first seen with mtime 1725855909.507307
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\aggregates.py first seen with mtime 1725855905.1156316
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\_request_methods.py first seen with mtime 1725855897.327167
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\forms\utils.py first seen with mtime 1725855905.150956
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\images.py first seen with mtime 1725855905.0167382
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\filter.py first seen with mtime 1725855898.4275718
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_tasks.py first seen with mtime 1725855467.2716856
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\parser.py first seen with mtime 1725855467.5914764
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\asgiref\local.py first seen with mtime 1725855901.580851
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\mixins.py first seen with mtime 1725855467.2782352
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\taskgroups.py first seen with mtime 1725855467.2889717
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\app\utils.py first seen with mtime 1725855909.747377
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\module_loading.py first seen with mtime 1725855905.2873418
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\timezone.py first seen with mtime 1725855909.140625
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\schemas\generators.py first seen with mtime 1725855909.0501468
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\transaction.py first seen with mtime 1725855905.0633104
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\nodenames.py first seen with mtime 1725855909.8073685
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\metadata\_collections.py first seen with mtime 1725855468.6302192
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\__init__.py first seen with mtime 1725855467.4491224
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\metadata\_meta.py first seen with mtime 1725855468.6302192
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\exceptions.py first seen with mtime 1725855908.9710002
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\charset_normalizer\md.cp312-win_amd64.pyd first seen with mtime 1725855901.3679597
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\urls\utils.py first seen with mtime 1725855905.2587636
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\uuid.py first seen with mtime 1725855908.6585164
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\pools.py first seen with mtime 1725855908.6173825
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\poolmanager.py first seen with mtime 1725855897.327167
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\quoprimime.py first seen with mtime 1725855467.5969954
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\__init__.py first seen with mtime 1725855903.2188337
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\users\apps.py first seen with mtime 1725855175.7191093
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\_compat_pickle.py first seen with mtime 1725855471.3468776
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\abstract.py first seen with mtime 1725855909.8013144
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\sql\__init__.py first seen with mtime 1725855905.1371374
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\filters\reindent.py first seen with mtime 1725855897.9127285
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\loaders\__init__.py first seen with mtime 1725855909.7955537
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\http\request.py first seen with mtime 1725855905.2216375
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\colorama\ansi.py first seen with mtime 1725855901.314322
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\defaults.py first seen with mtime 1725855905.3002255
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\__init__.py first seen with mtime 1725855908.647414
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\whitenoise\base.py first seen with mtime 1725908592.7690234
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\defaulttags.py first seen with mtime 1725855905.2325046
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\filters\__init__.py first seen with mtime 1725855897.9127285
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\backends\base.py first seen with mtime 1725855905.2375927
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\compat.py first seen with mtime 1725855898.0040984
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\decorators.py first seen with mtime 1725855902.533597
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\ssl_match_hostname.py first seen with mtime 1725855897.3394465
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\fields\mixins.py first seen with mtime 1725855905.1272948
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\protocols.py first seen with mtime 1725855467.2782352
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sessions\exceptions.py first seen with mtime 1725855904.572349
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\datastructures.py first seen with mtime 1725855905.2690458
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\commands\sentinel.py first seen with mtime 1725855898.0272262
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\token_blacklist\models.py first seen with mtime 1725855909.6424165
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\contenttypes\fields.py first seen with mtime 1725855903.4072165
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\expressions.py first seen with mtime 1725855905.1199846
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\__init__.py first seen with mtime 1725855909.728954
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\cache.py first seen with mtime 1725855905.2690458
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\i18n.py first seen with mtime 1725855905.3002255
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\certs.py first seen with mtime 1725855901.628407
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\serializers\python.py first seen with mtime 1725855905.0580747
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\sqlite3\schema.py first seen with mtime 1725855905.099826
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\compatibility\__init__.py first seen with mtime 1725855905.011039
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\backends\__init__.py first seen with mtime 1725855905.2375927
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\deconstruct.py first seen with mtime 1725855905.27406
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\__init__.py first seen with mtime 1725855909.8013144
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\vine\__init__.py first seen with mtime 1725855897.29723
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\helpers.py first seen with mtime 1725855902.5356145
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\http\cookie.py first seen with mtime 1725855905.2171216
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\schemas\inspectors.py first seen with mtime 1725855909.0501468
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\query.py first seen with mtime 1725855905.1217399
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\apps.py first seen with mtime 1725855908.96726
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\backend\urls.py first seen with mtime 1725855175.670807
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\asgiref\__init__.py first seen with mtime 1725855901.580851
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\tz\_factories.py first seen with mtime 1725855901.7132142
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\sql\constants.py first seen with mtime 1725855905.1371374
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\_policybase.py first seen with mtime 1725855467.6020267
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\windows_events.py first seen with mtime 1725855467.2992764
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\resource.py first seen with mtime 1725855908.6173825
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\__init__.py first seen with mtime 1725855905.0155585
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\validators.py first seen with mtime 1725855908.9872
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\locks.py first seen with mtime 1725855467.2782352
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\contenttypes\views.py first seen with mtime 1725855903.412336
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\caches.py first seen with mtime 1725855905.0070126
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\header.py first seen with mtime 1725855467.5551167
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\asyncio\lock.py first seen with mtime 1725855898.020496
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\checks.py first seen with mtime 1725855908.9708045
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\regex_helper.py first seen with mtime 1725855905.289366
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\exceptions.py first seen with mtime 1725855905.2325046
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\text.py first seen with mtime 1725855905.289366
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\handlers.py first seen with mtime 1725855904.9871035
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\_common.py first seen with mtime 1725855468.662083
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_ctypes.pyd first seen with mtime 1725855466.996768
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\__init__.py first seen with mtime 1725855902.2072694
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\_encoded_words.py first seen with mtime 1725855467.5969954
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\exceptions.py first seen with mtime 1725855908.6103127
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\wsgiref\__init__.py first seen with mtime 1725855471.1766057
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\serializers\__init__.py first seen with mtime 1725855905.0570276
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\staggered.py first seen with mtime 1725855467.287338
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\sysconfig.py first seen with mtime 1725855470.886659
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\generic\detail.py first seen with mtime 1725855905.3110511
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\cookies.py first seen with mtime 1725855901.628407
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\test\__init__.py first seen with mtime 1725855905.2482903
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\ipv6.py first seen with mtime 1725855905.2843235
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\views.py first seen with mtime 1725855909.610677
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\sessions.py first seen with mtime 1725855901.6334498
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\retry.py first seen with mtime 1725855897.3394465
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\functional.py first seen with mtime 1725855909.8013144
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\traceback.py first seen with mtime 1725855470.9802012
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\filters\others.py first seen with mtime 1725855897.9127285
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\generic\dates.py first seen with mtime 1725855905.3110511
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\backend\celery.py first seen with mtime 1725855175.670807
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\html\entities.py first seen with mtime 1725855468.116847
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\wsgiref\util.py first seen with mtime 1725855471.1735528
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\validators.py first seen with mtime 1725855904.9975116
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\http\response.py first seen with mtime 1725855905.2216375
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\feedparser.py first seen with mtime 1725855467.5500987
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\_parsers\socket.py first seen with mtime 1725855898.0171938
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\tokens.py first seen with mtime 1725855897.9077065
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\users\admin.py first seen with mtime 1725855175.7191093
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\base\validation.py first seen with mtime 1725855905.0741198
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\struct.py first seen with mtime 1725855470.8800411
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\token.py first seen with mtime 1725855470.9695415
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\migrations\operations\fields.py first seen with mtime 1725855905.1100955
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\corsheaders\__init__.py first seen with mtime 1725855909.5007389
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\__init__.py first seen with mtime 1725855897.323628
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\utils.py first seen with mtime 1725855905.0633104
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\urls.py first seen with mtime 1725855909.140625
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\contentmanager.py first seen with mtime 1725855467.5500987
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\regexopt.py first seen with mtime 1725855898.4321878
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\views.py first seen with mtime 1725855908.9872
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\request.py first seen with mtime 1725855897.3394465
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_zoneinfo.pyd first seen with mtime 1725855467.03697
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\forms\models.py first seen with mtime 1725855905.1474185
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\xml\dom\xmlbuilder.py first seen with mtime 1725855471.2136464
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\engine\grouping.py first seen with mtime 1725855897.9127285
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\widgets.py first seen with mtime 1725855902.537154
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_uuid.pyd first seen with mtime 1725855467.0304294
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\messages\middleware.py first seen with mtime 1725855904.2492704
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\platforms.py first seen with mtime 1725855909.7341108
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\crypto.py first seen with mtime 1725855905.2690458
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\__init__.py first seen with mtime 1725855905.0059872
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\migrations\state.py first seen with mtime 1725855905.1100955
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\query_utils.py first seen with mtime 1725855905.1217399
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\loaders\__init__.py first seen with mtime 1725855905.2429848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\views\main.py first seen with mtime 1725855903.0147803
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\sqlite3\operations.py first seen with mtime 1725855905.099826
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\html.py first seen with mtime 1725855909.13823
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\engine\statement_splitter.py first seen with mtime 1725855897.9127285
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\objects.py first seen with mtime 1725855908.6585164
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py first seen with mtime 1725855467.2832723
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\proxy.py first seen with mtime 1725855897.3394465
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\charset_normalizer\cd.py first seen with mtime 1725855901.3679597
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\socket.py first seen with mtime 1725855470.864438
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\encoders.py first seen with mtime 1725855909.134979
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\sqlite3\__init__.py first seen with mtime 1725855905.094753
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\lorem_ipsum.py first seen with mtime 1725855905.2873418
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\mime\nonmultipart.py first seen with mtime 1725855467.5654602
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sessions\backends\base.py first seen with mtime 1725855904.5779762
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\signing.py first seen with mtime 1725855904.9975116
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\gettext.py first seen with mtime 1725855468.1127381
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\tokenize.py first seen with mtime 1725855470.9695415
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\termcolors.py first seen with mtime 1725855905.289366
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\_parsers\helpers.py first seen with mtime 1725855898.0150568
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\dataclasses.py first seen with mtime 1725855467.5234513
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\files.py first seen with mtime 1725855905.0070126
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\headerregistry.py first seen with mtime 1725855467.556661
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\renderers.py first seen with mtime 1725855908.979071
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\uploadedfile.py first seen with mtime 1725855905.0172584
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\management\sql.py first seen with mtime 1725855905.0314865
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\lexer.py first seen with mtime 1725855897.9077065
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\apps.py first seen with mtime 1725855903.2188337
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\metadata\_adapters.py first seen with mtime 1725855468.6302192
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\token.py first seen with mtime 1725855898.4328053
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\uuid.py first seen with mtime 1725855471.1370003
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\decorators\cache.py first seen with mtime 1725855905.3002255
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\loaders\base.py first seen with mtime 1725855905.2471173
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_socket.pyd first seen with mtime 1725855467.020454
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\ctypes\__init__.py first seen with mtime 1725855467.494241
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py first seen with mtime 1725855469.1853511
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\authentication.py first seen with mtime 1725855908.96726
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\log.py first seen with mtime 1725855908.6103127
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\_adapters.py first seen with mtime 1725855468.662083
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\models.py first seen with mtime 1725855901.6334498
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\urls\exceptions.py first seen with mtime 1725855905.2587636
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\parser\__init__.py first seen with mtime 1725855901.707466
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\types.py first seen with mtime 1725855471.0496795
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\mimetypes.py first seen with mtime 1725855468.9900904
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\dates.py first seen with mtime 1725855905.2690458
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\storage\base.py first seen with mtime 1725855905.0214274
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\contenttypes\admin.py first seen with mtime 1725855903.4072165
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\logging\__init__.py first seen with mtime 1725855468.9636931
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\__init__.py first seen with mtime 1725855905.2999723
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\_parsers\base.py first seen with mtime 1725855898.0096147
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\ctypes\wintypes.py first seen with mtime 1725855467.4912193
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\migrations\migration.py first seen with mtime 1725855905.1048632
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\app\defaults.py first seen with mtime 1725855909.7393289
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\billiard\__init__.py first seen with mtime 1725855901.4508812
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\timesince.py first seen with mtime 1725855905.289366
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\tz\tz.py first seen with mtime 1725855901.7132142
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\crc.py first seen with mtime 1725855898.007879
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\async_checks.py first seen with mtime 1725855905.0059872
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\vine\utils.py first seen with mtime 1725855897.300159
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\test\html.py first seen with mtime 1725855905.25341
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\admin.py first seen with mtime 1725855175.6763346
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\transports.py first seen with mtime 1725855467.293979
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\keywords.py first seen with mtime 1725855897.9077065
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\management\__init__.py first seen with mtime 1725855903.3910553
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\hashable.py first seen with mtime 1725855905.2793176
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\urls\converters.py first seen with mtime 1725855905.2587636
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\whitenoise\responders.py first seen with mtime 1725908592.7690234
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\datetime.py first seen with mtime 1725855467.5234513
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\cluster.py first seen with mtime 1725855898.0040984
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\unittest\__init__.py first seen with mtime 1725855471.0606508
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\functional.py first seen with mtime 1725855908.652661
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\engine\__init__.py first seen with mtime 1725855897.9077065
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\base.py first seen with mtime 1725855905.2271602
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\status_codes.py first seen with mtime 1725855901.6334498
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\unittest\result.py first seen with mtime 1725855471.0601442
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\json\encoder.py first seen with mtime 1725855468.7205415
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\templatetags\l10n.py first seen with mtime 1725855905.2482903
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\wait.py first seen with mtime 1725855897.343569
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\management\commands\__init__.py first seen with mtime 1725855905.0370307
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\functions\text.py first seen with mtime 1725855905.1371374
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\formatter.py first seen with mtime 1725855897.9077065
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\billiard\process.py first seen with mtime 1725855901.4596398
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\queue.py first seen with mtime 1725855469.1788883
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\unittest\main.py first seen with mtime 1725855471.0567667
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\security\sessions.py first seen with mtime 1725855905.011039
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\fields\files.py first seen with mtime 1725855905.1272948
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\mixins.py first seen with mtime 1725855908.976012
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\__init__.py first seen with mtime 1725855908.0673263
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\client\sentinel.py first seen with mtime 1725855909.4374754
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\asyncio\utils.py first seen with mtime 1725855898.020496
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sessions\apps.py first seen with mtime 1725855904.5708241
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\__init__.py first seen with mtime 1725855905.0633104
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_subprocess.py first seen with mtime 1725855467.2716856
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\certifi\__init__.py first seen with mtime 1725855901.4271855
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\middleware.py first seen with mtime 1725855903.2274673
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\styles\_mapping.py first seen with mtime 1725855898.6172433
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\collections\__init__.py first seen with mtime 1725855467.4381888
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\sqlite3\dbapi2.py first seen with mtime 1725855470.864438
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\queues.py first seen with mtime 1725855467.2832723
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\vine\synchronization.py first seen with mtime 1725855897.2998738
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\decorators\common.py first seen with mtime 1725855905.3052325
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\streams.py first seen with mtime 1725855467.2889717
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\csv.py first seen with mtime 1725855467.4699836
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\base64mime.py first seen with mtime 1725855467.5475214
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\token_blacklist\apps.py first seen with mtime 1725855909.6424165
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\_version.py first seen with mtime 1725855901.7042282
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\postgres\utils.py first seen with mtime 1725855904.2670312
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\mime\multipart.py first seen with mtime 1725855467.5654602
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\manage.py first seen with mtime 1725855175.7130036
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\contenttypes\__init__.py first seen with mtime 1725855903.4072165
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\request.py first seen with mtime 1725855908.981087
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\ssl_.py first seen with mtime 1725855897.3394465
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\re\_compiler.py first seen with mtime 1725855469.1803365
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\cli.py first seen with mtime 1725855897.9077065
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\__init__.py first seen with mtime 1725855901.7010972
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\billiard\util.py first seen with mtime 1725855901.466331
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\abstract_channel.py first seen with mtime 1725855908.1728342
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\filters.py first seen with mtime 1725855902.533597
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\base_user.py first seen with mtime 1725855903.22395
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\lexers\special.py first seen with mtime 1725855898.587183
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\decorators\csrf.py first seen with mtime 1725855905.3072872
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\schemas\utils.py first seen with mtime 1725855909.0501468
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\decorators.py first seen with mtime 1725855908.9710002
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\contextlib.py first seen with mtime 1725855467.4697669
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\safestring.py first seen with mtime 1725855905.289366
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\_parseaddr.py first seen with mtime 1725855467.5969954
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\utils.py first seen with mtime 1725855467.5969954
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\utils.py first seen with mtime 1725855909.607104
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\_parsers\encoders.py first seen with mtime 1725855898.0147383
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\fields\related.py first seen with mtime 1725855905.131466
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\storage\filesystem.py first seen with mtime 1725855905.0214274
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\ddl_references.py first seen with mtime 1725855905.0633104
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admindocs\__init__.py first seen with mtime 1725855903.0147803
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\indexes.py first seen with mtime 1725855905.121005
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\inspect.py first seen with mtime 1725855905.2793176
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\utils.py first seen with mtime 1725855905.0673306
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\selector_events.py first seen with mtime 1725855467.2832723
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\_parsers\__init__.py first seen with mtime 1725855898.0096147
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_hashlib.pyd first seen with mtime 1725855467.0040743
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\fields\__init__.py first seen with mtime 1725855905.1272948
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\wsgi.py first seen with mtime 1725855904.9975116
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\app\__init__.py first seen with mtime 1725855909.7371335
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\base.py first seen with mtime 1725855905.1171856
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\storage.py first seen with mtime 1725855904.9871035
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\inspect.py first seen with mtime 1725855468.7167854
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\nturl2path.py first seen with mtime 1725855469.106784
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\postgresql\__init__.py first seen with mtime 1725855905.089746
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\__init__.py first seen with mtime 1725855467.2992764
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\billiard\exceptions.py first seen with mtime 1725855901.4543934
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\transport.py first seen with mtime 1725855908.1779408
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\http\server.py first seen with mtime 1725855468.1418653
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\reprlib.py first seen with mtime 1725855469.1803365
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\vine\abstract.py first seen with mtime 1725855897.29723
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\url.py first seen with mtime 1725855908.6585164
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\connection.py first seen with mtime 1725855898.0072222
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\events.py first seen with mtime 1725855467.2729087
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\security\__init__.py first seen with mtime 1725855905.011039
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admindocs\utils.py first seen with mtime 1725855903.0173194
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\text.py first seen with mtime 1725855909.8138301
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\__init__.py first seen with mtime 1725855897.3378222
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\billiard\context.py first seen with mtime 1725855901.4543934
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\apps\registry.py first seen with mtime 1725855902.2139378
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\templatetags\admin_urls.py first seen with mtime 1725855903.0082276
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\asyncio\client.py first seen with mtime 1725855898.0171938
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\generics.py first seen with mtime 1725855908.9710002
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\colorama\__init__.py first seen with mtime 1725855901.3132198
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\sslproto.py first seen with mtime 1725855467.287338
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\urls.py first seen with mtime 1725855905.011039
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\engine.py first seen with mtime 1725855905.2325046
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\process.py first seen with mtime 1725855469.0169604
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\collections.py first seen with mtime 1725855909.8013144
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\termui.py first seen with mtime 1725855908.0713642
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\exceptions.py first seen with mtime 1725855909.7330587
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\functions\comparison.py first seen with mtime 1725855905.1349733
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\hmac.py first seen with mtime 1725855468.116847
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\futures.py first seen with mtime 1725855467.278077
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\postgres\forms\array.py first seen with mtime 1725855904.2798054
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sessions\backends\__init__.py first seen with mtime 1725855904.572349
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\_header_value_parser.py first seen with mtime 1725855467.5969954
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\hashlib.py first seen with mtime 1725855468.116847
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\utils.py first seen with mtime 1725855897.9077065
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\pprint.py first seen with mtime 1725855469.1274636
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\postgres\forms\hstore.py first seen with mtime 1725855904.280943
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\cache\utils.py first seen with mtime 1725855905.0005271
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\lexer.py first seen with mtime 1725855898.4275718
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\__init__.py first seen with mtime 1725855905.2628965
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\sqlite3\features.py first seen with mtime 1725855905.0972857
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\unittest\loader.py first seen with mtime 1725855471.0547554
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_sqlite3.pyd first seen with mtime 1725855467.020454
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\fields\reverse_related.py first seen with mtime 1725855905.131466
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\urls\__init__.py first seen with mtime 1725855905.2587636
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\__version__.py first seen with mtime 1725855901.6248724
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\engine\filter_stack.py first seen with mtime 1725855897.9077065
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\management\commands\runserver.py first seen with mtime 1725855904.9901695
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\secrets.py first seen with mtime 1725855469.206083
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\util.py first seen with mtime 1725855897.343569
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\selectors.py first seen with mtime 1725855469.207115
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\connection.py first seen with mtime 1725855897.3378222
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\itercompat.py first seen with mtime 1725855905.2843235
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\response.py first seen with mtime 1725855908.981087
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\messages\utils.py first seen with mtime 1725855904.254276
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\whitenoise\middleware.py first seen with mtime 1725908592.7690234
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\proactor_events.py first seen with mtime 1725855467.2782352
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\backend\__init__.py first seen with mtime 1725855175.665577
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\conf\locale\__init__.py first seen with mtime 1725855902.2180672
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\locks.py first seen with mtime 1725855905.0172584
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\tz\__init__.py first seen with mtime 1725855901.7132142
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\storage\memory.py first seen with mtime 1725855905.0214274
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\management\__init__.py first seen with mtime 1725855904.9901695
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\enums.py first seen with mtime 1725855905.1199846
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\html\__init__.py first seen with mtime 1725855468.1200948
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\charset_normalizer\models.py first seen with mtime 1725855901.3713512
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\contenttypes\forms.py first seen with mtime 1725855903.412336
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\registry.py first seen with mtime 1725855905.0070126
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\client.py first seen with mtime 1725855898.0040984
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py first seen with mtime 1725855467.686449
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\zipfile\_path\__init__.py first seen with mtime 1725855471.303737
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\ssltransport.py first seen with mtime 1725855897.3394465
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\serializers\base.py first seen with mtime 1725855905.0580747
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\database.py first seen with mtime 1725855905.0070126
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\translation.py first seen with mtime 1725855905.011039
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\heapq.py first seen with mtime 1725855468.116847
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\wsgiref\handlers.py first seen with mtime 1725855471.1715899
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\__init__.py first seen with mtime 1725855908.96726
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\options.py first seen with mtime 1725855905.1217399
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\metadata\_text.py first seen with mtime 1725855468.6302192
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\mime\base.py first seen with mtime 1725855467.560445
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\compat.py first seen with mtime 1725855908.9710002
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\dispatch\dispatcher.py first seen with mtime 1725855905.1418793
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\charset_normalizer\legacy.py first seen with mtime 1725855901.3679597
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\filters\right_margin.py first seen with mtime 1725855897.9127285
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\model_checks.py first seen with mtime 1725855905.0070126
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\metadata\_itertools.py first seen with mtime 1725855468.6302192
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\spec.py first seen with mtime 1725855908.1779408
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\permissions.py first seen with mtime 1725855908.979071
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\fields\proxy.py first seen with mtime 1725855905.1272948
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\fields\related_lookups.py first seen with mtime 1725855905.131466
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\generic\__init__.py first seen with mtime 1725855905.3110511
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\utils.py first seen with mtime 1725855908.1779408
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\__init__.py first seen with mtime 1725855897.9989815
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\functions\window.py first seen with mtime 1725855905.1371374
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\xml\dom\domreg.py first seen with mtime 1725855471.2081485
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\__init__.py first seen with mtime 1725855902.530302
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\loader_tags.py first seen with mtime 1725855905.2375927
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\apps.py first seen with mtime 1725855902.530302
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\lookups.py first seen with mtime 1725855905.1217399
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\hooks.py first seen with mtime 1725855901.628407
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\select.pyd first seen with mtime 1725855466.8696344
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\context.py first seen with mtime 1725855905.2312
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\json\decoder.py first seen with mtime 1725855468.7167854
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\sqlite3\client.py first seen with mtime 1725855905.0972857
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\__init__.py first seen with mtime 1725855905.0633104
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\constraints.py first seen with mtime 1725855905.1171856
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\xml\dom\NodeFilter.py first seen with mtime 1725855471.2081485
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\templatetags\static.py first seen with mtime 1725855905.2482903
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\plugin.py first seen with mtime 1725855898.4275718
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\serialization.py first seen with mtime 1725855909.8073685
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\re\_constants.py first seen with mtime 1725855469.1803365
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\idna\core.py first seen with mtime 1725855901.1205225
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\log.py first seen with mtime 1725855905.2843235
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\parsers.py first seen with mtime 1725855908.9770453
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\corsheaders\middleware.py first seen with mtime 1725855909.507307
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\urllib\error.py first seen with mtime 1725855471.109061
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\response.py first seen with mtime 1725855897.3321848
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\ast.py first seen with mtime 1725855467.2676692
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\base64.py first seen with mtime 1725855467.4235315
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\__init__.py first seen with mtime 1725855902.530302
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\postgres\lookups.py first seen with mtime 1725855904.2650125
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\asyncio\connection.py first seen with mtime 1725855898.020496
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\http\client.py first seen with mtime 1725855468.136776
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\hash_ring.py first seen with mtime 1725855909.4329584
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\commands\helpers.py first seen with mtime 1725855898.0272262
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\signal.py first seen with mtime 1725855469.207115
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\middleware\common.py first seen with mtime 1725855905.2216375
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\charset_normalizer\__init__.py first seen with mtime 1725855901.3623788
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\imports.py first seen with mtime 1725855909.8063304
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_wmi.pyd first seen with mtime 1725855467.0304294
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\apps.py first seen with mtime 1725855175.6763346
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\connection.py first seen with mtime 1725855908.6103127
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\translation\__init__.py first seen with mtime 1725855905.2944002
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\exceptions.py first seen with mtime 1725855897.327167
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\_state.py first seen with mtime 1725855909.728954
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\base.py first seen with mtime 1725855905.0162337
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\imports.py first seen with mtime 1725855908.652661
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\messages.py first seen with mtime 1725855905.0070126
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\security\csrf.py first seen with mtime 1725855905.011039
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\static.py first seen with mtime 1725855905.3002255
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\iterators.py first seen with mtime 1725855467.5586958
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\dispatch\__init__.py first seen with mtime 1725855909.8174279
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\urls\conf.py first seen with mtime 1725855905.2587636
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\encoding.py first seen with mtime 1725855905.2770865
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\autoreload.py first seen with mtime 1725855905.2271602
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\response.py first seen with mtime 1725855905.2375927
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\trsock.py first seen with mtime 1725855467.2970743
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\password_validation.py first seen with mtime 1725855903.2291002
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\loaders\cached.py first seen with mtime 1725855905.2482069
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\retry.py first seen with mtime 1725855898.0096147
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\parser\isoparser.py first seen with mtime 1725855901.7115953
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\xml\dom\minidom.py first seen with mtime 1725855471.2081485
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\urls\base.py first seen with mtime 1725855905.2587636
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\enum.py first seen with mtime 1725855468.098954
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\utils.py first seen with mtime 1725855901.6334498
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\sql\query.py first seen with mtime 1725855905.1418793
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\signals.py first seen with mtime 1725855905.0633104
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\numberformat.py first seen with mtime 1725855905.2873418
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\calendar.py first seen with mtime 1725855467.430605
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\http\cookies.py first seen with mtime 1725855468.136776
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\whitenoise\string_utils.py first seen with mtime 1725908592.7737403
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\loaders\app.py first seen with mtime 1725855909.797073
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\cache.py first seen with mtime 1725855909.4329584
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\__init__.py first seen with mtime 1725855175.670807
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\formatters\__init__.py first seen with mtime 1725855898.4328053
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\backoff.py first seen with mtime 1725855897.9989815
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\duration.py first seen with mtime 1725855905.27406
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\_version.py first seen with mtime 1725855897.327167
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\users\urls.py first seen with mtime 1725855175.7341726
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\functions\__init__.py first seen with mtime 1725855905.131466
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\wsgiref\headers.py first seen with mtime 1725855471.1715899
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\certifi\core.py first seen with mtime 1725855901.4341376
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\temp.py first seen with mtime 1725855905.0172584
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\fields\generated.py first seen with mtime 1725855905.1272948
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\util.py first seen with mtime 1725855909.4329584
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\metadata\_functools.py first seen with mtime 1725855468.6302192
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\pkgutil.py first seen with mtime 1725855469.1217954
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\_compression.py first seen with mtime 1725855471.3468776
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\vine\funtools.py first seen with mtime 1725855897.29723
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\charset_normalizer\utils.py first seen with mtime 1725855901.3734698
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\colorama\winterm.py first seen with mtime 1725855901.314322
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\operator.py first seen with mtime 1725855469.109619
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py first seen with mtime 1725855467.4491224
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\unicodedata.pyd first seen with mtime 1725855466.9825537
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\unittest\runner.py first seen with mtime 1725855471.0606508
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\forms\__init__.py first seen with mtime 1725855905.1418793
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\asyncio\retry.py first seen with mtime 1725855898.020496
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\asyncio\__init__.py first seen with mtime 1725855898.0171938
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\charset_normalizer\md__mypyc.cp312-win_amd64.pyd first seen with mtime 1725855901.3713512
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\channel.py first seen with mtime 1725855908.1768827
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\fnmatch.py first seen with mtime 1725855468.1040168
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\templatetags\base.py first seen with mtime 1725855903.0082276
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\templatetags\__init__.py first seen with mtime 1725855905.2482903
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\smartif.py first seen with mtime 1725855905.2375927
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\core.py first seen with mtime 1725855908.0673263
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\mail\utils.py first seen with mtime 1725855905.0274658
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\colorama\initialise.py first seen with mtime 1725855901.314322
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\actions.py first seen with mtime 1725855902.530302
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\choices.py first seen with mtime 1725855905.2690458
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\structures.py first seen with mtime 1725855901.6334498
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\backends\django.py first seen with mtime 1725855905.2375927
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\test\signals.py first seen with mtime 1725855905.25341
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\conf\global_settings.py first seen with mtime 1725855902.2139378
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\whitenoise\media_types.py first seen with mtime 1725908592.7690234
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_decimal.pyd first seen with mtime 1725855467.0015664
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\settings.py first seen with mtime 1725855908.981087
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\functions\math.py first seen with mtime 1725855905.1364806
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\fields.py first seen with mtime 1725855897.327167
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\shutil.py first seen with mtime 1725855469.207115
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\middleware\csrf.py first seen with mtime 1725855905.2216375
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\base\introspection.py first seen with mtime 1725855905.0716133
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\formats.py first seen with mtime 1725855905.2793176
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\mime\text.py first seen with mtime 1725855467.5669987
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\logging\config.py first seen with mtime 1725855468.9584763
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\api.py first seen with mtime 1725855901.628407
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\billiard\compat.py first seen with mtime 1725855901.4508812
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\postgres\search.py first seen with mtime 1725855904.2650125
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\commands\redismodules.py first seen with mtime 1725855898.0272262
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\difflib.py first seen with mtime 1725855467.537085
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\contrib\__init__.py first seen with mtime 1725855897.3321848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\corsheaders\conf.py first seen with mtime 1725855909.5007389
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\timeout.py first seen with mtime 1725855897.343569
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\apps.py first seen with mtime 1725855904.98483
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\json\__init__.py first seen with mtime 1725855468.7205415
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\json.py first seen with mtime 1725855909.1403372
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\generic\edit.py first seen with mtime 1725855905.3110511
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\client\sharded.py first seen with mtime 1725855909.4374754
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\authentication.py first seen with mtime 1725855909.600501
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\decimal.py first seen with mtime 1725855467.537085
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\html.py first seen with mtime 1725855905.2793176
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\asgiref\current_thread_executor.py first seen with mtime 1725855901.580851
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\model_meta.py first seen with mtime 1725855909.140625
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\sasl.py first seen with mtime 1725855908.1779408
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\entity.py first seen with mtime 1725855908.6103127
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\urllib\__init__.py first seen with mtime 1725855464.1967328
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\time.py first seen with mtime 1725855909.8138301
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\tree.py first seen with mtime 1725855905.289366
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\contenttypes\apps.py first seen with mtime 1725855903.4072165
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\idna\intranges.py first seen with mtime 1725855901.1255443
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\mediatypes.py first seen with mtime 1725855909.140625
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\threads.py first seen with mtime 1725855467.293979
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\backends.py first seen with mtime 1725855903.2234411
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\dateparse.py first seen with mtime 1725855905.2690458
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sessions\middleware.py first seen with mtime 1725855904.572349
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\relations.py first seen with mtime 1725855908.979071
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\views.py first seen with mtime 1725855904.9901695
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\stringprep.py first seen with mtime 1725855470.8800411
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\exceptions.py first seen with mtime 1725855909.4329584
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\textwrap.py first seen with mtime 1725855470.8903458
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\urllib\request.py first seen with mtime 1725855471.1130784
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\handlers\__init__.py first seen with mtime 1725855905.0214274
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\_itertools.py first seen with mtime 1725855468.662083
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\tempfile.py first seen with mtime 1725855470.8903458
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\__init__.py first seen with mtime 1725855467.4642766
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\charset_normalizer\version.py first seen with mtime 1725855901.3734698
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\threads.py first seen with mtime 1725855909.8138301
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\urllib\response.py first seen with mtime 1725855471.1130784
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\utils.py first seen with mtime 1725855175.7079532
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\filters\__init__.py first seen with mtime 1725855898.4328053
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\_abc.py first seen with mtime 1725855468.6869795
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\conf\urls\__init__.py first seen with mtime 1725855902.5274534
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\decorators.py first seen with mtime 1725855905.27406
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\representation.py first seen with mtime 1725855909.140625
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\bisect.py first seen with mtime 1725855467.427042
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\generic\base.py first seen with mtime 1725855905.3110511
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\subprocess.py first seen with mtime 1725855470.8845882
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\idna\__init__.py first seen with mtime 1725855901.1205225
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\filters\aligned_indent.py first seen with mtime 1725855897.9127285
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\forms\fields.py first seen with mtime 1725855905.1474185
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\paginator.py first seen with mtime 1725855904.9953728
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\basic_message.py first seen with mtime 1725855908.1728342
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\translation\trans_real.py first seen with mtime 1725855905.2974558
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\http\__init__.py first seen with mtime 1725855468.1418653
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\util.py first seen with mtime 1725855469.026648
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\platform.py first seen with mtime 1725855469.1248248
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\app\builtins.py first seen with mtime 1725855909.7393289
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\checks.py first seen with mtime 1725855903.22395
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\compatibility\django_4_0.py first seen with mtime 1725855905.011039
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\formatting.py first seen with mtime 1725855909.13823
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\readers.py first seen with mtime 1725855468.6569338
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\__init__.py first seen with mtime 1725855904.98483
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\sqlite3\base.py first seen with mtime 1725855905.0972857
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\charset_normalizer\api.py first seen with mtime 1725855901.3674424
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\manager.py first seen with mtime 1725855905.1217399
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\json\scanner.py first seen with mtime 1725855468.7205415
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_bz2.pyd first seen with mtime 1725855466.9942577
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\xml\dom\__init__.py first seen with mtime 1725855471.2136464
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\decorators\__init__.py first seen with mtime 1725855905.3002255
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\models.py first seen with mtime 1725855903.2289836
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\serialization.py first seen with mtime 1725855908.1779408
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\middleware\security.py first seen with mtime 1725855905.2271602
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\handlers\base.py first seen with mtime 1725855905.0264482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\constants.py first seen with mtime 1725855905.1171856
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\compat.py first seen with mtime 1725855901.628407
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\copy.py first seen with mtime 1725855467.4699836
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\apps\__init__.py first seen with mtime 1725855902.2123728
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py first seen with mtime 1725855903.0082276
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\exceptions.py first seen with mtime 1725855898.0096147
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\_os.py first seen with mtime 1725855905.2639203
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\views\decorators.py first seen with mtime 1725855903.0132594
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\formatting.py first seen with mtime 1725855908.0713642
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\exceptions.py first seen with mtime 1725855908.0713642
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\gzip.py first seen with mtime 1725855468.1158383
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\xml\dom\minicompat.py first seen with mtime 1725855471.2081485
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\templatetags\i18n.py first seen with mtime 1725855905.2482903
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\schemas\__init__.py first seen with mtime 1725855909.0501468
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\ssl.py first seen with mtime 1725855470.8800411
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\connection.py first seen with mtime 1725855908.1779408
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\shortcuts.py first seen with mtime 1725855902.2072694
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\functions\mixins.py first seen with mtime 1725855905.1371374
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\term.py first seen with mtime 1725855909.8133206
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\copyreg.py first seen with mtime 1725855467.4699836
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\threading.py first seen with mtime 1725855470.8903458
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\dis.py first seen with mtime 1725855467.5396307
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\formatters\html.py first seen with mtime 1725855898.4381006
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\autoreload.py first seen with mtime 1725855905.2674353
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\whitenoise\__init__.py first seen with mtime 1725908592.7616959
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\test\client.py first seen with mtime 1725855905.25341
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\socketserver.py first seen with mtime 1725855470.864438
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\sqlite3\creation.py first seen with mtime 1725855905.0972857
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\collections.py first seen with mtime 1725855908.647414
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\windows_utils.py first seen with mtime 1725855467.2992764
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\encodings\utf_8.py first seen with mtime 1725855467.767038
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\utils.py first seen with mtime 1725855908.077412
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\base\client.py first seen with mtime 1725855905.068854
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\asyncio.py first seen with mtime 1725855905.2639203
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\weakref.py first seen with mtime 1725855471.16683
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\encodings\idna.py first seen with mtime 1725855467.7238796
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\decorators.py first seen with mtime 1725855903.22395
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\contenttypes\checks.py first seen with mtime 1725855903.4072165
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\messages\apps.py first seen with mtime 1725855904.2492704
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\reduction.py first seen with mtime 1725855469.021571
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\templatetags\cache.py first seen with mtime 1725855905.2482903
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\corsheaders\defaults.py first seen with mtime 1725855909.5057673
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\keyword.py first seen with mtime 1725855468.7372055
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\transport\__init__.py first seen with mtime 1725855908.6311946
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\reverse.py first seen with mtime 1725855908.981087
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sites\requests.py first seen with mtime 1725855904.7878506
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\utils.py first seen with mtime 1725855905.0214274
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\migrations\exceptions.py first seen with mtime 1725855905.099826
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\ipaddress.py first seen with mtime 1725855468.7167854
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\argparse.py first seen with mtime 1725855467.2624528
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\signals.py first seen with mtime 1725855905.1262662
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\management\commands\runserver.py first seen with mtime 1725855905.047778
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\migrations\__init__.py first seen with mtime 1725855905.099826
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\fields.py first seen with mtime 1725855908.9710002
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\logging\handlers.py first seen with mtime 1725855468.9636931
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\base\creation.py first seen with mtime 1725855905.068854
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\charset_normalizer\constant.py first seen with mtime 1725855901.3679597
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\messages\storage\base.py first seen with mtime 1725855904.2572246
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\defaultfilters.py first seen with mtime 1725855905.2325046
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\settings.py first seen with mtime 1725855909.607104
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\exceptions.py first seen with mtime 1725855897.9077065
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\move.py first seen with mtime 1725855905.0172584
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\fields\related_descriptors.py first seen with mtime 1725855905.131466
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\test\utils.py first seen with mtime 1725855905.2587636
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\__init__.py first seen with mtime 1725855908.1728342
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\signals.py first seen with mtime 1725855909.7371335
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\templatetags\admin_modify.py first seen with mtime 1725855903.0082276
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\formatters\_mapping.py first seen with mtime 1725855898.4374907
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\glob.py first seen with mtime 1725855468.1147053
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\ctypes\_endian.py first seen with mtime 1725855467.4912193
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\storage\__init__.py first seen with mtime 1725855905.0214274
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\mime\message.py first seen with mtime 1725855467.560445
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\http\__init__.py first seen with mtime 1725855905.2171216
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\colorama\ansitowin32.py first seen with mtime 1725855901.314322
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\utils.py first seen with mtime 1725855905.2375927
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\dispatch\signal.py first seen with mtime 1725855909.8174279
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\encodings\__init__.py first seen with mtime 1725855467.767038
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\forms\boundfield.py first seen with mtime 1725855905.1418793
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py first seen with mtime 1725855471.0547554
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\templatetags\tz.py first seen with mtime 1725855905.2482903
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\security\base.py first seen with mtime 1725855905.011039
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\connection.py first seen with mtime 1725855905.2690458
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_ssl.pyd first seen with mtime 1725855467.0267313
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\__init__.py first seen with mtime 1725855909.4329584
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\types.py first seen with mtime 1725855908.0713642
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\test\testcases.py first seen with mtime 1725855905.257423
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\encoders.py first seen with mtime 1725855467.5500987
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\deletion.py first seen with mtime 1725855905.1171856
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\sql\subqueries.py first seen with mtime 1725855905.1418793
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\generator.py first seen with mtime 1725855467.5500987
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\__init__.py first seen with mtime 1725855905.1156316
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\messaging.py first seen with mtime 1725855908.615335
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\templatetags\rest_framework.py first seen with mtime 1725855909.1298368
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\__init__.py first seen with mtime 1725855909.600501
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\coroutines.py first seen with mtime 1725855467.2729087
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\_internal_utils.py first seen with mtime 1725855901.6273835
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\base\operations.py first seen with mtime 1725855905.0716133
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\client\default.py first seen with mtime 1725855909.4329584
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\lexers\_mapping.py first seen with mtime 1725855898.4615536
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\numbers.py first seen with mtime 1725855469.106784
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\dispatch\__init__.py first seen with mtime 1725855905.1418793
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\client\herd.py first seen with mtime 1725855909.4329584
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\util.py first seen with mtime 1725855898.4328053
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\negotiation.py first seen with mtime 1725855908.9770453
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\exceptions.py first seen with mtime 1725855909.6060736
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\signals.py first seen with mtime 1725855903.2291002
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\dateformat.py first seen with mtime 1725855905.2690458
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\users\__init__.py first seen with mtime 1725855175.7130036
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\wsgiref\simple_server.py first seen with mtime 1725855471.173042
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\cache\__init__.py first seen with mtime 1725855904.9975116
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\_winconsole.py first seen with mtime 1725855908.0673263
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\asyncio\cluster.py first seen with mtime 1725855898.020496
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\management\base.py first seen with mtime 1725855905.0314865
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\packages.py first seen with mtime 1725855901.6334498
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\checks.py first seen with mtime 1725855902.5324154
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\cache\backends\__init__.py first seen with mtime 1725855905.0007808
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\utils.py first seen with mtime 1725855902.537154
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\fixups\django.py first seen with mtime 1725855909.7955537
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\validators.py first seen with mtime 1725855903.2291002
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\handlers\asgi.py first seen with mtime 1725855905.0264482
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\_markupbase.py first seen with mtime 1725855471.3468776
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\storage\mixins.py first seen with mtime 1725855905.0214274
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\checks.py first seen with mtime 1725855904.98483
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\readers.py first seen with mtime 1725855468.662083
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\apps\config.py first seen with mtime 1725855902.2123728
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\lexers\__init__.py first seen with mtime 1725855898.4474769
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\app\annotations.py first seen with mtime 1725855909.7393289
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\views\autocomplete.py first seen with mtime 1725855903.0132594
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\__future__.py first seen with mtime 1725855471.3668537
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\app\backends.py first seen with mtime 1725855909.7393289
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\modeline.py first seen with mtime 1725855898.4275718
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\templatetags\__init__.py first seen with mtime 1725855903.0082276
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\contenttypes\models.py first seen with mtime 1725855903.412336
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\sql\datastructures.py first seen with mtime 1725855905.1418793
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\unittest\util.py first seen with mtime 1725855471.0606508
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\_parsers\commands.py first seen with mtime 1725855898.0096147
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\cache\backends\base.py first seen with mtime 1725855905.0007808
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\zipfile\_path\glob.py first seen with mtime 1725855471.2987256
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\string.py first seen with mtime 1725855470.8800411
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\options.py first seen with mtime 1725855902.537154
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\common.py first seen with mtime 1725855908.6103127
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\users\views.py first seen with mtime 1725855175.7341726
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\tokens.py first seen with mtime 1725855909.607104
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\fractions.py first seen with mtime 1725855468.1070702
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\lzma.py first seen with mtime 1725855468.9848511
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\postgres\validators.py first seen with mtime 1725855904.2670312
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\_collections.py first seen with mtime 1725855897.3266366
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\adapters.py first seen with mtime 1725855901.628407
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\users\models.py first seen with mtime 1725855175.7291646
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\generic\list.py first seen with mtime 1725855905.3155818
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\sqlite3\introspection.py first seen with mtime 1725855905.099826
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\quopri.py first seen with mtime 1725855469.1788883
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\format_helpers.py first seen with mtime 1725855467.2729087
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\backend\settings.py first seen with mtime 1725913340.732897
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\models.py first seen with mtime 1725855175.7023182
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py first seen with mtime 1725855471.0606508
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\users\serializer.py first seen with mtime 1725855175.7291646
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\migrations\operations\__init__.py first seen with mtime 1725855905.1100955
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\schemas\openapi.py first seen with mtime 1725855909.0501468
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\parser.py first seen with mtime 1725855908.0713642
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\base\schema.py first seen with mtime 1725855905.0741198
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\app\registry.py first seen with mtime 1725855909.744339
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\unittest\signals.py first seen with mtime 1725855471.0606508
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\compat.py first seen with mtime 1725855908.647414
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\token_blacklist\__init__.py first seen with mtime 1725855909.6424165
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\formatter.py first seen with mtime 1725855898.4275718
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\mail\__init__.py first seen with mtime 1725855905.0274658
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\commands\cluster.py first seen with mtime 1725855898.02561
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\warnings.py first seen with mtime 1725855471.16683
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\xml\__init__.py first seen with mtime 1725855471.2981565
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\forms.py first seen with mtime 1725855903.22395
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\cache\backends\filebased.py first seen with mtime 1725855905.0007808
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\auth.py first seen with mtime 1725855901.628407
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\csrf.py first seen with mtime 1725855905.3002255
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\hashers.py first seen with mtime 1725855903.2274673
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\objects.py first seen with mtime 1725855909.8073685
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\requests\exceptions.py first seen with mtime 1725855901.628407
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\messages\__init__.py first seen with mtime 1725855904.2492704
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\__init__.py first seen with mtime 1725855468.6671517
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\corsheaders\apps.py first seen with mtime 1725855909.5007389
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\uploadhandler.py first seen with mtime 1725855905.0172584
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\asyncio\sentinel.py first seen with mtime 1725855898.020496
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\context.py first seen with mtime 1725855469.0094144
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\utils.py first seen with mtime 1725855898.0096147
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\pool.py first seen with mtime 1725855909.4329584
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\zoneinfo\_common.py first seen with mtime 1725855471.3196125
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\encoding.py first seen with mtime 1725855908.652661
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py first seen with mtime 1725855467.2676692
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\http\multipartparser.py first seen with mtime 1725855905.2171216
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\fixups\__init__.py first seen with mtime 1725855909.7904332
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\loaders\base.py first seen with mtime 1725855909.797073
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\postgres\__init__.py first seen with mtime 1725855904.259992
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\migrations\operations\models.py first seen with mtime 1725855905.1100955
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\subprocess.py first seen with mtime 1725855467.2889717
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\protocol.py first seen with mtime 1725855908.1779408
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\lock.py first seen with mtime 1725855898.0096147
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\asgiref\sync.py first seen with mtime 1725855901.5859165
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\sentinel.py first seen with mtime 1725855898.0096147
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\constants.py first seen with mtime 1725855467.2729087
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\connection.py first seen with mtime 1725855897.327167
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\status.py first seen with mtime 1725855908.981087
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\utils.py first seen with mtime 1725855904.9871035
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\exceptions.py first seen with mtime 1725855902.533597
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\migrations\operations\special.py first seen with mtime 1725855905.1100955
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\app\base.py first seen with mtime 1725855909.7393289
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\urllib\parse.py first seen with mtime 1725855471.1130784
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\exceptions.py first seen with mtime 1725855467.2729087
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\zipfile\__init__.py first seen with mtime 1725855471.309875
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\zoneinfo\_tzpath.py first seen with mtime 1725855471.3196125
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\typing.py first seen with mtime 1725855898.0096147
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\forms\forms.py first seen with mtime 1725855905.1474185
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py first seen with mtime 1725855467.4491224
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\contenttypes\management\__init__.py first seen with mtime 1725855903.5977612
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\http.py first seen with mtime 1725855905.2793176
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\forms\renderers.py first seen with mtime 1725855905.1474185
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\random.py first seen with mtime 1725855469.1803365
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_lzma.pyd first seen with mtime 1725855467.0076103
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\sqlite3\_functions.py first seen with mtime 1725855905.094753
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\serializers\json.py first seen with mtime 1725855905.0580747
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\getpass.py first seen with mtime 1725855468.1127381
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\handlers\exception.py first seen with mtime 1725855905.0274658
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\linecache.py first seen with mtime 1725855468.9584763
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\filters\tokens.py first seen with mtime 1725855897.9127285
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\__init__.py first seen with mtime 1725855897.9026704
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\sql\where.py first seen with mtime 1725855905.1418793
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\base\base.py first seen with mtime 1725855905.068854
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\functions\datetime.py first seen with mtime 1725855905.1349733
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sessions\models.py first seen with mtime 1725855904.572349
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\breadcrumbs.py first seen with mtime 1725855909.134979
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\platform.py first seen with mtime 1725855908.1779408
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\auth\admin.py first seen with mtime 1725855903.2188337
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\tz\_common.py first seen with mtime 1725855901.7132142
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\globals.py first seen with mtime 1725855908.0713642
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\sites.py first seen with mtime 1725855902.537154
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\fields\json.py first seen with mtime 1725855905.1272948
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\deprecation.py first seen with mtime 1725855905.27406
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\serializers.py first seen with mtime 1725855908.981087
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\_compat.py first seen with mtime 1725855908.0673263
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\parser\_parser.py first seen with mtime 1725855901.7115953
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\commands\__init__.py first seen with mtime 1725855898.02561
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\files\storage\handler.py first seen with mtime 1725855905.0214274
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\humanize_datetime.py first seen with mtime 1725855909.13823
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sessions\base_session.py first seen with mtime 1725855904.572349
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\signals.py first seen with mtime 1725855904.9975116
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\_legacy.py first seen with mtime 1725855468.6666007
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\clocks.py first seen with mtime 1725855908.6103127
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\click\decorators.py first seen with mtime 1725855908.0713642
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\abstract.py first seen with mtime 1725855908.610144
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\amqp\method_framing.py first seen with mtime 1725855908.1779408
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\serialization.py first seen with mtime 1725855908.6173825
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\forms\formsets.py first seen with mtime 1725855905.1474185
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sites\__init__.py first seen with mtime 1725855904.7675254
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\graphlib.py first seen with mtime 1725855468.115234
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\checks\templates.py first seen with mtime 1725855905.011039
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\kombu\utils\json.py first seen with mtime 1725855908.657279
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\metadata\__init__.py first seen with mtime 1725855468.6302192
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\library.py first seen with mtime 1725855905.2325046
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\middleware\cache.py first seen with mtime 1725855905.2216375
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py first seen with mtime 1725855469.1803365
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\_base_connection.py first seen with mtime 1725855897.323628
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\statistics.py first seen with mtime 1725855470.8800411
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\messages\storage\__init__.py first seen with mtime 1725855904.254276
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\forms\widgets.py first seen with mtime 1725855905.150956
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\token_blacklist\admin.py first seen with mtime 1725855909.6424165
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\six.py first seen with mtime 1725855897.982468
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\filepost.py first seen with mtime 1725855897.327167
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\utils\log.py first seen with mtime 1725855909.8073685
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\_weakrefset.py first seen with mtime 1725855471.3647642
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\conf\urls\static.py first seen with mtime 1725855902.5300734
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\DLLs\_asyncio.pyd first seen with mtime 1725855466.9924364
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\messages\constants.py first seen with mtime 1725855904.2492704
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\commands\core.py first seen with mtime 1725855898.0272262
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\encodings\aliases.py first seen with mtime 1725855467.670911
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\relativedelta.py first seen with mtime 1725855901.7042282
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\policy.py first seen with mtime 1725855467.5914764
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\message.py first seen with mtime 1725855467.5586958
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\loader.py first seen with mtime 1725855905.2375927
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\html\parser.py first seen with mtime 1725855468.1200948
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py first seen with mtime 1725855468.6889892
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django_redis\client\__init__.py first seen with mtime 1725855909.4329584
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\mime\__init__.py first seen with mtime 1725855462.8895583
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\templatetags\__init__.py first seen with mtime 1725855909.1298368
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\__init__.py first seen with mtime 1725855469.026648
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\charset.py first seen with mtime 1725855467.5475214
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\middleware\__init__.py first seen with mtime 1725855905.2216375
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\conf\__init__.py first seen with mtime 1725855902.2139378
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework\utils\field_mapping.py first seen with mtime 1725855909.137102
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\management\color.py first seen with mtime 1725855905.0314865
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\sqlite3\__init__.py first seen with mtime 1725855470.8669815
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\messages\api.py first seen with mtime 1725855904.2492704
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\contextvars.py first seen with mtime 1725855467.4699836
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\urls.py first seen with mtime 1725855175.7079532
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\debug.py first seen with mtime 1725855905.3002255
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\template\loaders\app_directories.py first seen with mtime 1725855905.2429848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\urls\resolvers.py first seen with mtime 1725855905.2587636
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\functional.py first seen with mtime 1725855905.2793176
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\management\__init__.py first seen with mtime 1725855905.0314865
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\local.py first seen with mtime 1725855909.7341108
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\models\utils.py first seen with mtime 1725855905.1272948
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\timezone.py first seen with mtime 1725855905.289366
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\sqlparse\filters\output.py first seen with mtime 1725855897.9127285
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\dateutil\_common.py first seen with mtime 1725855901.7010972
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\urllib3\util\response.py first seen with mtime 1725855897.3394465
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\servers\__init__.py first seen with mtime 1725855905.0623043
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\pathlib.py first seen with mtime 1725855469.111131
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admindocs\views.py first seen with mtime 1725855903.0186572
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\exceptions.py first seen with mtime 1725855904.9953728
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\templatetags\log.py first seen with mtime 1725855903.012251
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\servers\basehttp.py first seen with mtime 1725855905.0633104
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\_parsers\resp3.py first seen with mtime 1725855898.0171938
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\corsheaders\checks.py first seen with mtime 1725855909.5007389
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\idna\package_data.py first seen with mtime 1725855901.1270893
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\pygments\styles\__init__.py first seen with mtime 1725855898.613506
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py first seen with mtime 1725855467.2889717
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\management\commands\__init__.py first seen with mtime 1725855904.9901695
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\pickle.py first seen with mtime 1725855469.1166806
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_futures.py first seen with mtime 1725855467.2676692
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\views\decorators\debug.py first seen with mtime 1725855905.3072872
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\redis\credentials.py first seen with mtime 1725855898.007879
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\asyncio\timeouts.py first seen with mtime 1725855467.293979
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\celery\app\autoretry.py first seen with mtime 1725855909.7393289
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\utils\translation\reloader.py first seen with mtime 1725855905.2944002
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\db\backends\base\__init__.py first seen with mtime 1725855905.0673306
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\__init__.py first seen with mtime 1725855467.6020267
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\core\mail\message.py first seen with mtime 1725855905.0274658
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\locale.py first seen with mtime 1725855468.9584763
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\rest_framework_simplejwt\models.py first seen with mtime 1725855909.607104
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\views\__init__.py first seen with mtime 1725855903.012251
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\http\cookiejar.py first seen with mtime 1725855468.136776
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\idna\idnadata.py first seen with mtime 1725855901.1255443
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\re\_casefix.py first seen with mtime 1725855469.1803365
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\staticfiles\finders.py first seen with mtime 1725855904.98483
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\admin\models.py first seen with mtime 1725855902.5356145
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\Lib\email\errors.py first seen with mtime 1725855467.5500987
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\lib\site-packages\django\contrib\sites\shortcuts.py first seen with mtime 1725855904.7878506
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework first seen with mtime 1725855909.1245775
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\admin first seen with mtime 1725855909.092846
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\admin.html first seen with mtime 1725855909.0818899
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\api.html first seen with mtime 1725855909.0818899
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\base.html first seen with mtime 1725855909.0818899
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs first seen with mtime 1725855909.0980978
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\filters first seen with mtime 1725855909.1064858
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal first seen with mtime 1725855909.1139665
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline first seen with mtime 1725855909.1224694
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\login.html first seen with mtime 1725855909.0818899
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\login_base.html first seen with mtime 1725855909.0876188
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\pagination first seen with mtime 1725855909.1245775
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\raw_data_form.html first seen with mtime 1725855909.0876188
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\schema.js first seen with mtime 1725855909.0876188
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical first seen with mtime 1725855909.1298368
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\admin\detail.html first seen with mtime 1725855909.0876188
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\admin\dict_value.html first seen with mtime 1725855909.0907426
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\admin\list.html first seen with mtime 1725855909.0907426
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\admin\list_value.html first seen with mtime 1725855909.0907426
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\admin\simple_list_value.html first seen with mtime 1725855909.092846
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\auth first seen with mtime 1725855909.0980978
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\document.html first seen with mtime 1725855909.092846
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\error.html first seen with mtime 1725855909.092846
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\index.html first seen with mtime 1725855909.092846
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\interact.html first seen with mtime 1725855909.092846
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\langs first seen with mtime 1725855909.1033561
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\link.html first seen with mtime 1725855909.092846
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\sidebar.html first seen with mtime 1725855909.0974684
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\filters\base.html first seen with mtime 1725855909.1033561
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\filters\ordering.html first seen with mtime 1725855909.1033561
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\filters\search.html first seen with mtime 1725855909.1064858
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\checkbox.html first seen with mtime 1725855909.1071079
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\checkbox_multiple.html first seen with mtime 1725855909.1071079
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\dict_field.html first seen with mtime 1725855909.108848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\fieldset.html first seen with mtime 1725855909.108848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\form.html first seen with mtime 1725855909.108848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\input.html first seen with mtime 1725855909.108848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\list_field.html first seen with mtime 1725855909.108848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\list_fieldset.html first seen with mtime 1725855909.108848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\radio.html first seen with mtime 1725855909.108848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\select.html first seen with mtime 1725855909.108848
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\select_multiple.html first seen with mtime 1725855909.1139665
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\horizontal\textarea.html first seen with mtime 1725855909.1139665
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\checkbox.html first seen with mtime 1725855909.1139665
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\checkbox_multiple.html first seen with mtime 1725855909.1139665
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\dict_field.html first seen with mtime 1725855909.1170983
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\fieldset.html first seen with mtime 1725855909.1170983
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\form.html first seen with mtime 1725855909.1170983
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\input.html first seen with mtime 1725855909.1170983
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\list_field.html first seen with mtime 1725855909.119223
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\list_fieldset.html first seen with mtime 1725855909.119223
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\radio.html first seen with mtime 1725855909.12085
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\select.html first seen with mtime 1725855909.12085
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\select_multiple.html first seen with mtime 1725855909.1224694
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\inline\textarea.html first seen with mtime 1725855909.1224694
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\pagination\numbers.html first seen with mtime 1725855909.1245775
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\pagination\previous_and_next.html first seen with mtime 1725855909.1245775
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\checkbox.html first seen with mtime 1725855909.1245775
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\checkbox_multiple.html first seen with mtime 1725855909.1245775
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\dict_field.html first seen with mtime 1725855909.1272085
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\fieldset.html first seen with mtime 1725855909.1272085
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\form.html first seen with mtime 1725855909.1272085
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\input.html first seen with mtime 1725855909.1298368
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\list_field.html first seen with mtime 1725855909.1298368
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\list_fieldset.html first seen with mtime 1725855909.1298368
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\radio.html first seen with mtime 1725855909.1298368
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\select.html first seen with mtime 1725855909.1298368
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\select_multiple.html first seen with mtime 1725855909.1298368
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\vertical\textarea.html first seen with mtime 1725855909.1298368
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\auth\basic.html first seen with mtime 1725855909.0980978
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\auth\session.html first seen with mtime 1725855909.0980978
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\auth\token.html first seen with mtime 1725855909.0980978
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\langs\javascript-intro.html first seen with mtime 1725855909.0980978
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\langs\javascript.html first seen with mtime 1725855909.0980978
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\langs\python-intro.html first seen with mtime 1725855909.1022453
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\langs\python.html first seen with mtime 1725855909.1022453
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\langs\shell-intro.html first seen with mtime 1725855909.1033561
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\templates\rest_framework\docs\langs\shell.html first seen with mtime 1725855909.1033561
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\templates\cache_test.html first seen with mtime 1725855175.7064373
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\daily_data\templates\daily_data.html first seen with mtime 1725855175.7064373
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\ach\LC_MESSAGES\django.mo first seen with mtime 1725855908.9970114
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\ar\LC_MESSAGES\django.mo first seen with mtime 1725855908.9970114
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\az\LC_MESSAGES\django.mo first seen with mtime 1725855908.9970114
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\be\LC_MESSAGES\django.mo first seen with mtime 1725855908.9970114
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\bg\LC_MESSAGES\django.mo first seen with mtime 1725855908.9970114
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\ca\LC_MESSAGES\django.mo first seen with mtime 1725855908.9970114
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\ca_ES\LC_MESSAGES\django.mo first seen with mtime 1725855908.9970114
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\cs\LC_MESSAGES\django.mo first seen with mtime 1725855909.0021763
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\da\LC_MESSAGES\django.mo first seen with mtime 1725855909.0021763
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\de\LC_MESSAGES\django.mo first seen with mtime 1725855909.0021763
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\el\LC_MESSAGES\django.mo first seen with mtime 1725855909.0021763
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\el_GR\LC_MESSAGES\django.mo first seen with mtime 1725855909.0021763
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\en\LC_MESSAGES\django.mo first seen with mtime 1725855909.0021763
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\en_AU\LC_MESSAGES\django.mo first seen with mtime 1725855909.0072055
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\en_CA\LC_MESSAGES\django.mo first seen with mtime 1725855909.0077336
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\en_US\LC_MESSAGES\django.mo first seen with mtime 1725855909.0077336
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\es\LC_MESSAGES\django.mo first seen with mtime 1725855909.0108724
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\et\LC_MESSAGES\django.mo first seen with mtime 1725855909.0118997
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\fa\LC_MESSAGES\django.mo first seen with mtime 1725855909.0124109
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\fa_IR\LC_MESSAGES\django.mo first seen with mtime 1725855909.0129297
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\fi\LC_MESSAGES\django.mo first seen with mtime 1725855909.0129297
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\fr\LC_MESSAGES\django.mo first seen with mtime 1725855909.0129297
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\fr_CA\LC_MESSAGES\django.mo first seen with mtime 1725855909.0129297
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\gl\LC_MESSAGES\django.mo first seen with mtime 1725855909.0129297
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\gl_ES\LC_MESSAGES\django.mo first seen with mtime 1725855909.0129297
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\he_IL\LC_MESSAGES\django.mo first seen with mtime 1725855909.017452
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\hu\LC_MESSAGES\django.mo first seen with mtime 1725855909.018471
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\hy\LC_MESSAGES\django.mo first seen with mtime 1725855909.018471
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\id\LC_MESSAGES\django.mo first seen with mtime 1725855909.020489
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\it\LC_MESSAGES\django.mo first seen with mtime 1725855909.020489
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\ja\LC_MESSAGES\django.mo first seen with mtime 1725855909.020489
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\ko_KR\LC_MESSAGES\django.mo first seen with mtime 1725855909.020489
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\lt\LC_MESSAGES\django.mo first seen with mtime 1725855909.023508
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\lv\LC_MESSAGES\django.mo first seen with mtime 1725855909.023508
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\mk\LC_MESSAGES\django.mo first seen with mtime 1725855909.0265303
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\nb\LC_MESSAGES\django.mo first seen with mtime 1725855909.0265303
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\ne_NP\LC_MESSAGES\django.mo first seen with mtime 1725855909.0276444
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\nl\LC_MESSAGES\django.mo first seen with mtime 1725855909.0290482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\nn\LC_MESSAGES\django.mo first seen with mtime 1725855909.0290482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\no\LC_MESSAGES\django.mo first seen with mtime 1725855909.0290482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\pl\LC_MESSAGES\django.mo first seen with mtime 1725855909.0290482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\pt\LC_MESSAGES\django.mo first seen with mtime 1725855909.0290482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\pt_BR\LC_MESSAGES\django.mo first seen with mtime 1725855909.0290482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\pt_PT\LC_MESSAGES\django.mo first seen with mtime 1725855909.0290482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\ro\LC_MESSAGES\django.mo first seen with mtime 1725855909.0341628
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\ru\LC_MESSAGES\django.mo first seen with mtime 1725855909.0341628
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\ru_RU\LC_MESSAGES\django.mo first seen with mtime 1725855909.0341628
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\sk\LC_MESSAGES\django.mo first seen with mtime 1725855909.0371828
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\sl\LC_MESSAGES\django.mo first seen with mtime 1725855909.0371828
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\sv\LC_MESSAGES\django.mo first seen with mtime 1725855909.039484
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\th\LC_MESSAGES\django.mo first seen with mtime 1725855909.039484
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\tr\LC_MESSAGES\django.mo first seen with mtime 1725855909.039484
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\tr_TR\LC_MESSAGES\django.mo first seen with mtime 1725855909.039484
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\uk\LC_MESSAGES\django.mo first seen with mtime 1725855909.0425692
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\vi\LC_MESSAGES\django.mo first seen with mtime 1725855909.0446832
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\zh_CN\LC_MESSAGES\django.mo first seen with mtime 1725855909.0446832
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\zh_Hans\LC_MESSAGES\django.mo first seen with mtime 1725855909.0446832
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\zh_Hant\LC_MESSAGES\django.mo first seen with mtime 1725855909.0472062
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework\locale\zh_TW\LC_MESSAGES\django.mo first seen with mtime 1725855909.0472062
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\ar\LC_MESSAGES\django.mo first seen with mtime 1725855909.610808
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\cs\LC_MESSAGES\django.mo first seen with mtime 1725855909.610808
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\de\LC_MESSAGES\django.mo first seen with mtime 1725855909.610808
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\es\LC_MESSAGES\django.mo first seen with mtime 1725855909.610808
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\es_AR\LC_MESSAGES\django.mo first seen with mtime 1725855909.615824
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\es_CL\LC_MESSAGES\django.mo first seen with mtime 1725855909.617482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\fa\LC_MESSAGES\django.mo first seen with mtime 1725855909.617482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\fa_IR\LC_MESSAGES\django.mo first seen with mtime 1725855909.617482
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\fr\LC_MESSAGES\django.mo first seen with mtime 1725855909.621733
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\he_IL\LC_MESSAGES\django.mo first seen with mtime 1725855909.621733
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\id_ID\LC_MESSAGES\django.mo first seen with mtime 1725855909.621733
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\it_IT\LC_MESSAGES\django.mo first seen with mtime 1725855909.6263134
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\ko_KR\LC_MESSAGES\django.mo first seen with mtime 1725855909.6274412
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\nl_NL\LC_MESSAGES\django.mo first seen with mtime 1725855909.6274412
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\pl_PL\LC_MESSAGES\django.mo first seen with mtime 1725855909.6274412
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\pt_BR\LC_MESSAGES\django.mo first seen with mtime 1725855909.6315668
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\ro\LC_MESSAGES\django.mo first seen with mtime 1725855909.6315668
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\ru_RU\LC_MESSAGES\django.mo first seen with mtime 1725855909.6315668
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\sl\LC_MESSAGES\django.mo first seen with mtime 1725855909.6315668
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\sv\LC_MESSAGES\django.mo first seen with mtime 1725855909.6315668
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\tr\LC_MESSAGES\django.mo first seen with mtime 1725855909.637194
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\uk_UA\LC_MESSAGES\django.mo first seen with mtime 1725855909.637194
+File C:\Users\iames\OneDrive\projects\better-spelling-bee\backend\venv\Lib\site-packages\rest_framework_simplejwt\locale\zh_Hans\LC_MESSAGES\django.mo first seen with mtime 1725855909.637194
