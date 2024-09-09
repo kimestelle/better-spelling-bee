@@ -8,3 +8,4 @@ axios
 djangorestframework-simplejwt
 djangorestframework_simplejwt
 gunicorn
+whitenoise
