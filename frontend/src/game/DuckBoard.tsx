@@ -7,10 +7,10 @@ import { applyDrop, asset, contains, insertionIndex, MAX_LETTERS, type Letter, t
 type Drag = { item: Letter; fromTray: boolean; pointer: number; originX: number; originY: number; x: number; y: number; width: number; height: number; moved: boolean; target: HTMLButtonElement };
 export function DuckArt({ letter, center, flying = false, flapping = false }: {letter: string; center: boolean; flying?: boolean; flapping?: boolean}) {
   return <span className={`duck-art ${center ? 'center-letter' : ''} ${flapping ? 'is-flapping' : ''}`}>
-    {/* Artwork and letter share one isolated stacking context and one animation. */}
+    {/* The full-size letter layer keeps the original SVG silhouette mask. */}
     <img className="rest-sprite" src={asset(`game-assets/${flying ? 'duck-fly' : 'duck'}.svg`)} alt="" draggable={false}/>
     {!flying && <img className="flap-sprite" src={asset("game-assets/duck-fly.svg")} alt="" draggable={false}/>}
-    <span className="duck-letter">{letter.toUpperCase()}</span>
+    <span className="duck-letter"><span className="duck-glyph">{letter.toUpperCase()}</span></span>
   </span>;
 }
 export default function DuckBoard({ puzzle, onSubmit }: { puzzle: Puzzle; onSubmit: (word: string) => {reset: boolean; sink: boolean} }) {

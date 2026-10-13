@@ -347,7 +347,7 @@ button:focus-visible,a:focus-visible,[role=button]:focus-visible { outline:2px s
 .pond-duck { position:absolute; }
 .duck-art { position:relative; display:block; width:100%; height:100%; isolation:isolate; pointer-events:none; }
 .duck-art img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:top; z-index:0; pointer-events:none; }
-.duck-art .duck-letter { position:absolute; inset:0; padding-left:2svh; line-height:4.8svh; z-index:1; font-weight:400; pointer-events:none; mask-image:none; -webkit-mask-image:none; }
+.duck-art .duck-letter { position:absolute; inset:0; padding-left:2svh; line-height:4.8svh; z-index:1; font-weight:400; pointer-events:none; mask-image:var(--duck); -webkit-mask-image:var(--duck); mask-size:contain; -webkit-mask-size:contain; mask-position:center top; -webkit-mask-position:center top; mask-repeat:no-repeat; -webkit-mask-repeat:no-repeat; }
 .duck-art.center-letter .duck-letter { color:white; }
 .flap-sprite { opacity:0; }
 .is-flapping .rest-sprite { animation:rest-frame .2s steps(1) 2; }
@@ -371,4 +371,6 @@ html[data-theme=light] .bg-sand {background:#FAF9F6;}
 /* In the original overlapping tray, every letter stays above every resting
    duck body. The active drag still travels as a complete duck in its portal. */
 .tray-duck, .tray-duck .duck-art { isolation:auto; }
-.tray-duck .duck-letter { width:3svh; height:4.8svh; left:3.3svh; right:auto; top:auto; bottom:0; padding:0; pointer-events:auto; touch-action:none; }
+.duck-glyph { font:inherit; }
+/* Only the glyph catches input; the full-size mask cannot cover a neighbor’s hit target. */
+.tray-duck .duck-glyph { pointer-events:auto; touch-action:none; }
