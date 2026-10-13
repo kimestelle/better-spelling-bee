@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.env*
+venv/
+__pycache__/
+*.sqlite3

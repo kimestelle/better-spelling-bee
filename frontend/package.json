@@ -1,44 +1,31 @@
 {
-  "name": "bee-front",
-  "version": "0.1.0",
+  "name": "better-spelling-bee-gameplay",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "node scripts/serve.mjs",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "verify:static": "node scripts/verify-static.mjs"
   },
   "dependencies": {
-    "@atlaskit/drag-and-drop": "^0.15.1",
-    "@atlaskit/pragmatic-drag-and-drop": "^1.2.1",
-    "@dnd-kit/core": "^6.1.0",
-    "@dnd-kit/sortable": "^8.0.0",
-    "@dnd-kit/utilities": "^3.2.2",
-    "@hello-pangea/dnd": "^16.6.0",
-    "@nextui-org/react": "^2.4.6",
-    "@types/styled-components": "^5.1.34",
-    "axios": "^1.7.7",
-    "framer-motion": "^11.3.2",
-    "install": "^0.13.0",
-    "js-cookie": "^3.0.5",
-    "jsonwebtoken": "^9.0.2",
-    "next": "^14.2.8",
-    "next-themes": "^0.3.0",
-    "npm": "^10.8.2",
-    "react": "^18.3.1",
-    "react-color": "^2.19.3",
-    "react-dom": "^18.3.1",
-    "styled-components": "^6.1.11"
+    "@fontsource/arvo": "5.3.0",
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "eslint-config-next": "14.2.35",
+    "tsx": "^4",
+    "typescript": "^5",
+    "jsdom": "^26.1.0",
+    "@types/jsdom": "^21.1.7"
   }
 }
