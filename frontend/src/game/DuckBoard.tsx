@@ -1,22 +1,25 @@
 'use client';
-import React, { useCallback, useEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react';
+import React, { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { startIdleFlapping } from './idle';
 import { createPortal } from 'react-dom';
 import { applyDrop, asset, contains, insertionIndex, MAX_LETTERS, type Letter, type Puzzle } from './rules';
 
 type Drag = { item: Letter; fromTray: boolean; pointer: number; originX: number; originY: number; x: number; y: number; width: number; height: number; moved: boolean; target: HTMLButtonElement };
-export function DuckArt({ letter, center, flying = false }: {letter: string; center: boolean; flying?: boolean}) {
-  return <span className={`duck-art ${center ? 'center-letter' : ''}`}>
+export function DuckArt({ letter, center, flying = false, flapping = false }: {letter: string; center: boolean; flying?: boolean; flapping?: boolean}) {
+  return <span className={`duck-art ${center ? 'center-letter' : ''} ${flapping ? 'is-flapping' : ''}`}>
     {/* Artwork and letter share one isolated stacking context and one animation. */}
-    <img src={asset(`game-assets/${flying ? 'duck-fly' : 'duck'}.svg`)} alt="" draggable={false}/>
+    <img className="rest-sprite" src={asset(`game-assets/${flying ? 'duck-fly' : 'duck'}.svg`)} alt="" draggable={false}/>
+    {!flying && <img className="flap-sprite" src={asset("game-assets/duck-fly.svg")} alt="" draggable={false}/>}
     <span className="duck-letter">{letter.toUpperCase()}</span>
   </span>;
 }
-export default function DuckBoard({ puzzle, onSubmit, sound }: { puzzle: Puzzle; onSubmit: (word: string) => boolean; sound: boolean }) {
+export default function DuckBoard({ puzzle, onSubmit }: { puzzle: Puzzle; onSubmit: (word: string) => {reset: boolean; sink: boolean} }) {
   const [items, setItems] = useState<Letter[]>([]);
   const [order, setOrder] = useState([puzzle.center, ...puzzle.letters.filter(l => l !== puzzle.center)]);
   const [drag, setDrag] = useState<Drag | null>(null);
   const [over, setOver] = useState(false);
-  const [celebrating, setCelebrating] = useState(false);
+  const [animation, setAnimation] = useState('');
+  const [flappingIndex, setFlappingIndex] = useState<number | null>(null);
   const [limitMessage, setLimitMessage] = useState('');
   const dragRef = useRef<Drag | null>(null);
   const trayRef = useRef<HTMLDivElement>(null);
@@ -24,7 +27,7 @@ export default function DuckBoard({ puzzle, onSubmit, sound }: { puzzle: Puzzle;
   const suppressClick = useRef(false);
   const busy = useRef(false);
   const timer = useRef<ReturnType<typeof setTimeout>>();
-  const audio = useRef<HTMLAudioElement | null>(null);
+  useEffect(() => startIdleFlapping(7, setFlappingIndex, () => !dragRef.current && !busy.current && !document.hidden), []);
   const makeItem = (letter: string) => ({ id: `duck-${sequence.current++}`, letter });
   const clearDrag = useCallback(() => {
     const active = dragRef.current;
@@ -56,16 +59,12 @@ export default function DuckBoard({ puzzle, onSubmit, sound }: { puzzle: Puzzle;
   }, []);
   const submit = useCallback(() => {
     if (busy.current || dragRef.current || !items.length) return;
-    if (onSubmit(items.map(i => i.letter).join(''))) {
-      busy.current = true; setCelebrating(true);
-      if (sound) {
-        audio.current ||= new Audio(asset('audio/small-quack.mp3'));
-        audio.current.currentTime = 0;
-        void audio.current.play().catch(() => {});
-      }
-      timer.current = setTimeout(() => { setItems([]); setCelebrating(false); busy.current = false; }, 420);
+    const result = onSubmit(items.map(i => i.letter).join(''));
+    if (result.reset) {
+      busy.current = true; setAnimation(result.sink ? 'duck-sink' : 'duck-fly');
+      timer.current = setTimeout(() => { setItems([]); setAnimation(''); busy.current = false; }, 400);
     }
-  }, [items, onSubmit, sound]);
+  }, [items, onSubmit]);
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
       if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || event.repeat || busy.current || dragRef.current) return;
@@ -134,26 +133,25 @@ export default function DuckBoard({ puzzle, onSubmit, sound }: { puzzle: Puzzle;
     });
   }
   return <section className="board" aria-label="Duck word builder">
-    <div className="word-readout" aria-live="polite" aria-label="Current word">{items.map(i=>i.letter).join('').toUpperCase() || 'Make a little word magic.'}</div>
-    <div ref={trayRef} className={`word-tray ${over?'drop-over':''} ${celebrating?'celebrating':''}`} aria-label="Word tray" data-testid="word-tray">
-      {!items.length && <span className="tray-hint">Drop your ducks here</span>}
-      {items.map(item => <button key={item.id} type="button" className={`duck tray-duck ${drag?.item.id===item.id?'drag-source':''}`} data-tray-duck={item.id} aria-label={`Remove ${item.letter.toUpperCase()} from word`} {...handlers(item,true)} onClick={()=>click(()=>setItems(p=>p.filter(i=>i.id!==item.id)))}>
+    <div className="word-readout sr-only" aria-live="polite" aria-label="Current word">{items.map(i=>i.letter).join('').toUpperCase() || ''}</div>
+    <div ref={trayRef} className={`word-tray ${over?'drop-over':''} ${animation}`} aria-label="Word tray" data-testid="word-tray">
+      {items.map(item => <button key={item.id} type="button" className={`duck tray-duck ${drag?.item.id===item.id?'drag-source':''}`} data-tray-duck={item.id} aria-label={`Move ${item.letter.toUpperCase()} in word`} {...handlers(item,true)} onClick={()=>click(()=>{})}>
         <DuckArt letter={item.letter} center={item.letter===puzzle.center}/>
       </button>)}
     </div>
     <div className="pond" style={{backgroundImage:`url(${asset('game-assets/pond.svg')})`}} aria-label="Letter pond">
-      {order.map((letter,index)=><button type="button" key={letter} className={`duck pond-duck duck-${index}`} style={{'--delay':`${index*-.37}s`} as CSSProperties} aria-label={`Add ${letter.toUpperCase()}${letter===puzzle.center?' (required letter)':''}`} {...handlers({id:`pool-${letter}`,letter},false)}
+      {order.map((letter,index)=><button type="button" key={letter} className={`duck pond-duck duck-${index}`} aria-label={`Add ${letter.toUpperCase()}${letter===puzzle.center?' (required letter)':''}`} {...handlers({id:`pool-${letter}`,letter},false)}
         onPointerDown={event=>start(event,makeItem(letter),false)}
         onClick={()=>click(()=>{if(items.length>=MAX_LETTERS) setLimitMessage(`Up to ${MAX_LETTERS} letters per word.`); else add(letter);})}>
-        <DuckArt letter={letter} center={letter===puzzle.center}/>
+        <DuckArt letter={letter} center={letter===puzzle.center} flapping={flappingIndex===index && !drag}/>
       </button>)}
     </div>
     <div className="word-controls">
-      <button type="button" onClick={()=>setItems(p=>p.slice(0,-1))} disabled={!items.length || celebrating}>Delete</button>
+      <button type="button" onClick={()=>setItems(p=>p.slice(0,-1))} disabled={!!animation}>Delete</button>
       <button type="button" className="shuffle" aria-label="Shuffle letters" onClick={shuffle}><img src={asset('game-assets/shuffle.svg')} alt=""/></button>
-      <button type="button" onClick={submit} disabled={!items.length || celebrating}>Enter</button>
+      <button type="button" onClick={submit} disabled={!!animation}>Enter</button>
     </div>
-    <p className="keyboard-hint">Click, drag, or type. Enter to submit · Backspace to delete</p>
+
     <p className="sr-only" role="status">{limitMessage}</p>
     {drag?.moved && createPortal(<div className="drag-overlay" data-testid="drag-overlay" aria-hidden="true" style={{left:drag.x-drag.width/2,top:drag.y-drag.height/2,width:drag.width,height:drag.height}}><DuckArt letter={drag.item.letter} center={drag.item.letter===puzzle.center} flying/></div>,document.body)}
   </section>;

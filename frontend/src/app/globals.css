@@ -1,87 +1,374 @@
-* { box-sizing: border-box; }
-:root { color-scheme: light; --ink:#283937; --paper:#faf9f6; --sky:#7ec8e3; --line:#ffffffa6; }
-body { margin:0; min-height:100svh; color:var(--ink); background:linear-gradient(var(--sky),var(--paper)); font-family:Arvo,Georgia,serif; }
-body::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:50; opacity:.24; background-image:var(--noise); }
-button,a,input { -webkit-tap-highlight-color:transparent; }
-button,a { touch-action:manipulation; }
-button { font:inherit; color:inherit; border:0; cursor:pointer; background:#e9e6df; border-radius:10px; padding:12px 24px; box-shadow:2px 3px 0 #243e361a; }
-button:disabled { opacity:.5; cursor:default; }
-a { color:inherit; }
-button:focus-visible,a:focus-visible,summary:focus-visible { outline:3px solid #b06812; outline-offset:5px; }
-button:hover:not(:disabled),.play-button:hover { filter:brightness(1.035); }
-.opening { position:relative; width:100%; height:100svh; min-height:540px; overflow:hidden; display:flex; justify-content:center; }
-.opening-logo { position:absolute; top:14svh; width:min(420px,75vw); height:9svh; }
-.opening-actions { position:absolute; top:45%; left:50%; transform:translate(-50%,-50%); display:flex; gap:20px; z-index:20; }
-.play-button { min-width:140px; padding:18px 26px; text-align:center; border-radius:12px; text-decoration:none; background:#faf9f6; box-shadow:3px 4px 0 #28393720; font-size:20px; }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* background + general */
+    /* light mode bg gradient */
+    :root {
+      --foreground-rgb: 0, 0, 0;
+      --background-start-color: #7EC8E3;
+      --background-end-color: #FAF9F6;
+
+      position: relative;
+    }
+
+    /* dark mode bg gradient */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-color: #0F2143;
+        --background-end-color: #364961;
+      }
+
+      .inverse-color {
+        color: black;
+      }
+    }
+
+    /* noise texture overlay covering everything */
+    :root::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100svw;
+      height: 100svh;
+      background: var(--noise) repeat;
+      background-size: 120px 120px;
+      opacity: 0.5;
+
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* optional borders to help formatting */
+    * {
+      /* border: 0.1px solid red; */
+      box-sizing: border-box;
+      font-size: 1.7svh;
+    }
+
+    /* div {
+      border: 0.1px solid blue;
+    } */
+
+
+    body {
+      color: rgb(var(--foreground-rgb));
+      background: linear-gradient(
+        to bottom,
+        var(--background-start-color),
+        var(--background-end-color)
+      );
+      height: 100svh;
+    }
+
+/* html element formatting */
+    h1 {
+      font-size: 5svh;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"] {
+      width: 25svh;
+      height: 3.5svh;
+
+      border: 1px solid rgb(161, 161, 161);
+      border-radius: 1svh;
+      padding: 1svh;
+
+      box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+
+      color: black;
+    }
+
+    input[type="checkbox"] {
+      width: 2.5svh;
+      height: 2.5svh;
+      border: 1px solid rgb(161, 161, 161);
+      margin: 0;
+      cursor: pointer;
+    }
+
+    button {
+      width: 15svh;
+      height: 4.5svh;
+      cursor: pointer;
+
+      background-color: #D6D6D6;
+      border-radius: 1svh;
+      padding: 1svh;
+
+      box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      button {
+        background-color: #acacac;
+        box-shadow: 0.2svh 0.3svh 0px rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    button:active {
+      box-shadow: inset 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .bg-button-red {
+      background-color: #E24B4B;
+    }
+
+    .bg-button-green {
+      background-color: #81BF6A;
+      color: white;
+      box-shadow: 0.2svh 0.3svh 0px rgba(255, 255, 255, 0.1);
+    }
+
+
+/* misc element formatting */
+    /* box options, box-shadow on buttons and pop-up interfaces + box-shine on cool stuff*/
+    .box-shadow {
+      box-shadow: 0.2svh 0.3svh 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .box-shine {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box-shine::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(30deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+      transform: rotate(30deg);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+          transform: rotate(30deg) translateX(-200%);
+      }
+      100% {
+          transform: rotate(30deg) translateX(200%);
+      }
+    }
+
+    /* checkboxes to indicate daily mode completion*/
+    .checkbox {
+      border-radius: 1svh;
+      border: 0.2svh solid white;
+    }
+
+    /* clickable element formatting */
+    .clickable {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* sand background for popup interfaces and some screen background */
+    .bg-sand {
+      background-color: #FAF9F6;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .bg-sand {
+        background-color: #364961;
+      }
+    }
+
+    @layer utilities {
+      .text-balance {
+        text-wrap: balance;
+      }
+    }
+
+/* gameplay */
+    /* pond duck positions */
+    .duck-0 {
+      left: 46%;
+      top: 33.5%;
+    }
+
+    .duck-1 {
+      left: 56%;
+      top: 15.5%;
+    }
+
+    .duck-2 {
+      left: 66.25%;
+      top: 33.5%;
+    }
+
+    .duck-3 {
+      left: 56%;
+      top: 51.75%;
+    }
+
+    .duck-4 {
+      left: 36%;
+      top: 51.75%;
+    }
+
+    .duck-5 {
+      left: 25.75%;
+      top: 33.5%;
+    }
+
+    .duck-6 {
+      left: 36%;
+      top: 15.5%;
+    }
+
+    .pond {
+      background-image: var(--pond);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: 90%;
+      background-position-x: 3.2svh;
+    }
+
+    .mask {
+      display: none;
+    }
+
+    /* formatting for game object ducks (still need to figure out how to get letters in front */
+    .duck-container {
+      /* position: relative; */
+      user-select: none;
+      cursor: grab;
+      transition: transform 0.2s ease, opacity 0.1s ease;
+      width: 7.6svh;
+      height: 8.3svh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: var(--duck);
+      margin: 0 -2.2svh; /* Negative margin to create overlap */
+
+      outline: none; /* Removes the focus outline */
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .duck-container:active {
+      cursor: grabbing;
+      background-image: var(--duck-fly);
+    }
+
+    .duck-letter {
+      position: absolute;
+      width: 7.6svh;
+      height: 8.3svh;
+      padding-left: 0.6svh;
+      line-height: 4.8svh;
+
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      font-style: normal;
+      font-size: 4svh;
+      color: black;
+
+      -webkit-mask-image: var(--duck);
+      mask-image: var(--duck);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    /* center duck is white */
+    .center {
+      color: white;
+    }
+
+/* avatar */
+    /* noise texture overlay covering everything */
+    .avatar-animate {
+      animation: bob 2.5s infinite;
+    }
+
+    @keyframes bob {
+      0% {
+        transform: translateY(0%);
+      }
+
+      30% {
+        transform: translateY(2.5%);
+      }
+
+      100% {
+        transform: translateY(0%);
+      }
+    }
+
+    /* face container for positioning accessories */
+
+    .face-container {
+      border-radius: 50%;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    .face {
+      width: 100%;
+    }
+
+    /* animations */
+
+    .twirl-infinite-animation {
+      animation: Rotate 2s linear infinite;
+    }
+
+    @keyframes Twirl
+      {0% { transform: rotateY(0deg) }
+      20% { transform: rotateY(360deg) }
+    }
+/* The original styles above are retained. These rules only fix the drag layers,
+   preserve keyboard focus, and keep the two-button opening screen. */
+body { font-family: Arvo, Georgia, serif; }
+.opening { position:relative; width:100%; height:100svh; overflow:hidden; display:flex; justify-content:center; }
+.opening-logo { position:absolute; top:13svh; height:7svh; max-width:90vw; }
+.opening-actions { position:absolute; top:45%; left:50%; transform:translate(-50%,-50%); display:flex; gap:3svh; z-index:20; }
+.play-button { width:15svh; height:4.5svh; text-align:center; border-radius:1svh; padding:1svh; background:#D6D6D6; box-shadow:.2svh .3svh 0 #0000001a; }
 .opening-scene { position:absolute; bottom:0; width:180svh; height:30svh; display:flex; align-items:flex-end; flex-shrink:0; user-select:none; }
 .scene-landscape { width:100%; }
-.game-shell { width:min(860px,100%); margin:0 auto; padding:24px 28px 40px; }
-.game-header { display:flex; align-items:center; justify-content:space-between; gap:20px; }
-.game-logo { width:280px; max-width:50%; height:52px; }
-.icon-link { width:38px; height:38px; padding:7px; }
-.icon-link img { width:100%; height:100%; }
-.sound-toggle { display:flex; align-items:center; gap:5px; font-size:12px; }
-.mode-nav { display:flex; justify-content:center; gap:22px; margin:24px 0 12px; }
-.mode-nav a { text-decoration:none; opacity:.6; padding-bottom:6px; }
-.mode-nav a[aria-current] { opacity:1; border-bottom:2px solid currentColor; }
-.mode-caption { text-align:center; font-size:12px; min-height:24px; margin:0 0 30px; }
-.text-button { padding:0; margin-left:15px; background:none; box-shadow:none; text-decoration:underline; font-size:12px; }
-.game-columns { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(230px,1fr); gap:40px; align-items:start; }
-.game-status { min-height:38px; margin:0; text-align:center; font-size:14px; }
-.board { width:100%; --duck-size:clamp(42px,6vw,68px); }
-.word-readout { height:36px; text-align:center; font-size:15px; letter-spacing:.025em; overflow-wrap:anywhere; }
-.word-tray { min-height:96px; padding:12px 6px; border-bottom:2px dotted white; border-radius:12px 12px 0 0; display:flex; flex-wrap:wrap; justify-content:center; align-content:center; position:relative; gap:0; transition:background .15s; }
-.drop-over { background:#ffffff60; }
-.tray-hint { opacity:.55; font-size:13px; }
-.duck { position:relative; isolation:isolate; display:block; width:var(--duck-size); height:var(--duck-size); padding:0; border:0; margin:0; background:transparent; box-shadow:none; flex-shrink:0; touch-action:none; user-select:none; -webkit-user-select:none; cursor:grab; }
+button:focus-visible,a:focus-visible,[role=button]:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+.board { display:contents; }
+.word-tray { position:relative; height:15svh; width:100%; display:flex; flex-direction:row; justify-content:center; align-items:center; padding-top:6svh; border-bottom:.3svh dotted white; }
+.drop-over { background:lightblue; }
+.board .pond { position:relative; height:40svh; width:100%; margin-top:7svh; display:flex; justify-content:center; align-items:center; flex-shrink:0; }
+.duck { position:relative; isolation:isolate; width:7.6svh; height:8.3svh; flex-shrink:0; margin:0 -2.2svh; padding:0; border:0; border-radius:0; background:transparent!important; box-shadow:none!important; cursor:grab; touch-action:none; user-select:none; -webkit-user-select:none; }
 .duck:active { cursor:grabbing; }
-.duck:hover:not(:disabled) { filter:none; }
+.pond-duck { position:absolute; }
 .duck-art { position:relative; display:block; width:100%; height:100%; isolation:isolate; pointer-events:none; }
-.duck-art img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; z-index:0; pointer-events:none; }
-.duck-letter { position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center; padding-left:12%; padding-bottom:5%; font-size:calc(var(--duck-size,68px)*.43); line-height:1; font-weight:700; color:#182324; z-index:1; pointer-events:none; }
-.center-letter .duck-letter { color:white; text-shadow:0 1px 2px #75511366; }
-.pond { position:relative; width:100%; aspect-ratio:1.3; margin:14px 0 0; background-repeat:no-repeat; background-size:100% 90%; background-position:center 75%; }
-.pond-duck { position:absolute; transform:translate(-50%,-50%); }
-.pond-duck .duck-art { animation:duck-bob 2.8s ease-in-out infinite; animation-delay:var(--delay,0s); }
-.duck-0{left:50%;top:51%;} .duck-1{left:38%;top:30%;} .duck-2{left:63%;top:30%;} .duck-3{left:76%;top:51%;} .duck-4{left:63%;top:72%;} .duck-5{left:38%;top:72%;} .duck-6{left:25%;top:51%;}
-.tray-duck { width:calc(var(--duck-size)*.8); height:calc(var(--duck-size)*.8); }
-.tray-duck .duck-letter { font-size:calc(var(--duck-size)*.34); }
-.drag-source { opacity:.25; }
-.drag-overlay { position:fixed; z-index:1000; isolation:isolate; pointer-events:none; --duck-size:68px; filter:drop-shadow(0 6px 5px #243e3622); }
-.drag-overlay .duck-letter { font-size:clamp(20px,3vw,29px); }
-.word-controls { display:flex; justify-content:center; align-items:center; gap:12px; }
-.word-controls button { min-width:96px; font-size:14px; }
-.word-controls .shuffle { min-width:0; width:46px; height:46px; padding:8px; border-radius:50%; }
-.shuffle img { width:100%; height:100%; }
-.keyboard-hint { font-size:10px; text-align:center; line-height:1.8; opacity:.65; margin-top:20px; }
-.score-panel { margin-top:14px; padding:20px 0; }
-.score-heading { display:flex; align-items:baseline; gap:8px; font-size:12px; }
-.score-heading strong { font-size:34px; font-weight:400; }
-.rank { margin-left:auto; font-size:12px; }
-progress { width:100%; height:8px; appearance:none; border:0; border-radius:20px; overflow:hidden; margin:13px 0 5px; }
-progress::-webkit-progress-bar { background:#ffffff7a; } progress::-webkit-progress-value { background:#efd06d; } progress::-moz-progress-bar { background:#efd06d; }
-.score-caption { font-size:11px; opacity:.7; margin:0 0 32px; }
-h2 { font-size:15px; font-weight:400; display:flex; justify-content:space-between; gap:8px; border-bottom:1px solid var(--line); padding-bottom:14px; }
-h2 span { font-size:12px; opacity:.65; }
-.empty-words { font-size:13px; line-height:1.9; opacity:.6; }
-.found-words { list-style:none; padding:0; max-height:240px; overflow:auto; font-size:14px; }
-.found-words li { display:flex; justify-content:space-between; padding:7px 0; }
-.found-words li span { opacity:.5; font-size:11px; }
-.rules { margin-top:28px; font-size:12px; line-height:1.8; }
-.rules summary { cursor:pointer; }
-.save-note { font-size:10px; opacity:.6; line-height:1.7; margin-top:22px; }
-.completion { font-size:14px; line-height:1.8; }
-.loading { min-height:100svh; display:grid; place-items:center; }
-.loading img { width:65px; animation:duck-bob 2.8s ease-in-out infinite; }
-.celebrating .duck-art { animation:duck-fly-away .42s ease-in forwards; }
-.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
-@keyframes duck-bob { 0%,100% {transform:translateY(0) rotate(-2deg)} 50% {transform:translateY(-7px) rotate(2deg)} }
-@keyframes duck-fly-away { to {transform:translateY(-50px) rotate(-12deg);opacity:0;} }
-@media(max-width:680px) {
-  .game-shell{padding:18px 18px 30px;max-width:470px;}.game-columns{grid-template-columns:1fr;gap:16px;}.game-logo{max-width:56%;height:44px;}.game-header{gap:10px;}.mode-caption{margin-bottom:18px;font-size:10px;}.mode-nav{margin-top:18px;}.board{--duck-size:clamp(50px,14vw,65px);}.pond{aspect-ratio:1.55;}.word-tray{min-height:80px;}.score-panel{margin-top:0;padding:4px 8px;}.score-caption{margin-bottom:16px;}.game-status{font-size:12px;}.keyboard-hint{font-size:9px;}.opening-actions{gap:12px;}.play-button{min-width:125px;font-size:18px;}.opening-logo{width:80vw;}.sound-toggle{font-size:10px;}.text-button{font-size:10px;}.drag-overlay .duck-letter{font-size:25px;}
-}
-@media(prefers-color-scheme:dark) {
-  :root{color-scheme:dark;--ink:#faf9f6;--paper:#364961;--sky:#0f2143;} button,.play-button{background:#e9e6df;color:#253435;}.game-logo,.opening-logo{filter:brightness(0) invert(1);}.icon-link img{filter:invert(1);}.text-button{background:none;color:inherit;}.duck{background:transparent;}
-}
+.duck-art img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:top; z-index:0; pointer-events:none; }
+.duck-art .duck-letter { position:absolute; inset:0; padding-left:2svh; line-height:4.8svh; z-index:1; font-weight:400; pointer-events:none; mask-image:none; -webkit-mask-image:none; }
+.duck-art.center-letter .duck-letter { color:white; }
+.flap-sprite { opacity:0; }
+.is-flapping .rest-sprite { animation:rest-frame .2s steps(1) 2; }
+.is-flapping .flap-sprite { animation:flap-frame .2s steps(1) 2; }
+@keyframes rest-frame { 0%,100%{opacity:1} 40%{opacity:0} }
+@keyframes flap-frame { 0%,100%{opacity:0} 40%{opacity:1} }
+.drag-source { opacity:0; }
+.drag-overlay { position:fixed; z-index:1000; isolation:isolate; pointer-events:none; }
+.word-controls { height:9svh; padding-bottom:9svh; display:flex; flex-direction:row; justify-content:center; align-items:center; }
+.word-controls .shuffle { width:6svh; height:6svh; margin:1svh; border-radius:5svh; }
+.duck-fly .duck-art { animation:word-fly .4s forwards; }
+.duck-sink .duck-art { animation:word-sink .4s forwards; }
+@keyframes word-fly { to {transform:translateY(-8svh);opacity:0} }
+@keyframes word-sink { to {transform:translateY(4svh);opacity:0} }
+html[data-theme=light] { --foreground-rgb:0,0,0;--background-start-color:#7EC8E3;--background-end-color:#FAF9F6;color-scheme:light; }
+html[data-theme=dark] { --foreground-rgb:255,255,255;--background-start-color:#0F2143;--background-end-color:#364961;color-scheme:dark; }
+html[data-theme=dark] .bg-sand {background:#364961;}
+html[data-theme=light] .bg-sand {background:#FAF9F6;}
+.inverse-color {color:black;}
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after{animation:none!important;transition:none!important;} }
-img { display:block; max-width:100%; }
+/* In the original overlapping tray, every letter stays above every resting
+   duck body. The active drag still travels as a complete duck in its portal. */
+.tray-duck, .tray-duck .duck-art { isolation:auto; }
+.tray-duck .duck-letter { width:3svh; height:4.8svh; left:3.3svh; right:auto; top:auto; bottom:0; padding:0; pointer-events:auto; touch-action:none; }

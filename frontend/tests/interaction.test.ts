@@ -18,7 +18,7 @@ test('duck lifecycle: repeated drops, whole-duck overlay, cancellation, resizing
  const {default:DuckBoard}=await import('../src/game/DuckBoard');
  const root=createRoot(document.getElementById('root')!);
  const puzzle={id:'test',letters:['a','c','e','l','n','r','t'],center:'a',words:['area']};
- await act(async()=>root.render(React.createElement(DuckBoard,{puzzle,onSubmit:()=>true,sound:false})));
+ await act(async()=>root.render(React.createElement(DuckBoard,{puzzle,onSubmit:()=>({reset:true,sink:false})})));
  const source=()=>document.querySelector<HTMLButtonElement>('[aria-label="Add A (required letter)"]')!;
  const word=()=>document.querySelector('.word-readout')!.textContent;
  const emit=async(target:Element|Window,type:string,x=30,y=230,extra:Record<string,unknown>={})=>{

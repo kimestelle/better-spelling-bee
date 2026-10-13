@@ -7,10 +7,10 @@ database, server runtime, analytics, or external font service is required.
 ## Play
 
 - **Normal:** one puzzle per UTC day, identical across devices; progress stays locally.
-- **Infinite:** choose another puzzle whenever you like. The bank contains 366 puzzles;
-  puzzles can repeat and each puzzle's progress is retained on this browser.
+- **Infinite:** use the original reset-game control for a new puzzle. The bank contains 366 puzzles;
+  puzzles can repeat; resetting starts a fresh game.
 - Click or type letters, or drag ducks into the tray. Drag within the tray to reorder;
-  click a tray duck or drag it outside to remove it. Enter submits, Backspace deletes,
+  drag it outside to remove it. Enter submits, Backspace deletes,
   and Escape cancels an active drag (or clears the current word).
 - Use at least four letters and include the white letter. Four-letter words earn
   1 point, longer words earn their length, and pangrams earn 14 points. Genius is
@@ -65,3 +65,11 @@ base paths and absence of old credentials/API references in the generated assets
 The retired backend, login/profile code, checked-in databases, and Python virtual
 environments were removed only from this gameplay branch. They remain recoverable
 on the backup branch and original main commit.
+
+## Original presentation
+
+The score line, found-word dropdown, settings panel, win screen, layout, type,
+noise texture, pond geometry and duck sizing are restored from the preserved original.
+Idle ducks remain stationary: one random duck briefly flaps every 2 seconds,
+using the original duck and duck-fly sprites. The two-button opening and backend-free
+puzzles are the requested exceptions.

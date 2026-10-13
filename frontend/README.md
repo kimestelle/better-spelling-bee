@@ -1,10 +1,14 @@
 # Gameplay frontend
 
-See the [repository README](../README.md) for setup, rules, tests, deployment,
-and the preserved original version. This application exports static HTML/CSS/JS.
+See the [repository README](../README.md) for setup, rules, tests and deployment.
+
+The original UI components are in `src/game/original`; the original global styles
+are retained, with scoped fixes for pointer capture and duck/letter stacking.
+Idle animation picks one random duck every 2000 ms and briefly swaps the original
+sprites. Ducks do not bob, rotate or travel during idle. The idle timer is cleaned
+up on unmount and skips ticks while dragging.
 
 The drag implementation keeps pointer capture on a stable source button and renders
-a non-interactive portal above the board. Artwork and lettering share an isolated
-stacking context. The inner artwork owns idle animation while the outer button owns
-layout, so dragging never overwrites the animation transform. Drops commit on release;
-cancel, blur, scrolling and resizing restore the pre-drag word.
+the active duck with its letter in a non-interactive portal. Tray letters sit above
+all overlapping resting bodies. Drops commit on release; cancellation, blur,
+scrolling and resizing preserve the pre-drag word. The served build is static.

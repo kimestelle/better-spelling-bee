@@ -1,8 +1,11 @@
 'use client';
-import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import puzzles from './puzzles.json';
 import DuckBoard from './DuckBoard';
+import FoundWords from './original/FoundWords';
+import ScoreBar from './original/ScoreBar';
+import TopBar from './original/TopBar';
+import WinScreen from './original/WinScreen';
 import { asset, checkWord, dailyIndex, nextPuzzleIndex, restoreWords, scoreWord, type Puzzle } from './rules';
 
 function read(key: string) { try { return localStorage.getItem(key); } catch { return null; } }
@@ -12,6 +15,7 @@ type Mode = 'normal' | 'infinite';
 export default function Game({mode}: {mode: Mode}) {
   const [date,setDate] = useState('');
   const [practice,setPractice] = useState<number | null>(null);
+  const [generation,setGeneration] = useState(0);
   useEffect(()=>{
     setDate(today());
     const stored = Number(read('duck-pond:practice'));
@@ -21,56 +25,54 @@ export default function Game({mode}: {mode: Mode}) {
     window.addEventListener('focus',update);
     return ()=>{ clearInterval(timer); window.removeEventListener('focus',update); };
   },[]);
-  if (!date || practice===null) return <main className="loading" aria-label="Loading game"><img src={asset('game-assets/duck.svg')} alt="Loading"/></main>;
+  if (!date || practice===null) return <div className="w-[10svh] h-[10svh] flex justify-center items-center bg-white rounded-[100%] bg-opacity-50 border-[1svh] border-white border-opacity-20"><img src={asset('game-assets/duck.svg')} alt="Loading" className="w-[6svh] h-[6svh] twirl-infinite-animation"/></div>;
   const index = mode==='normal' ? dailyIndex(date,puzzles.length) : practice;
   const key = `duck-pond:v1:${mode}:${mode==='normal'?date+':':''}${puzzles[index].id}`;
-  return <GameSession key={key} puzzle={puzzles[index]} storageKey={key} mode={mode} date={date} onNext={()=>{
+  return <GameSession key={key+':'+generation} puzzle={puzzles[index]} storageKey={key} mode={mode} date={date} onNext={()=>{
+    if(!window.confirm('Are you sure you want to reset the game? This cannot be undone.'))return;
     const next = nextPuzzleIndex(index,puzzles.length);
-    write('duck-pond:practice',String(next)); setPractice(next);
+    write(`duck-pond:v1:infinite:${puzzles[next].id}`,'[]');
+    write('duck-pond:practice',String(next)); setPractice(next);setGeneration(g=>g+1);
   }}/>;
 }
 function GameSession({puzzle,storageKey,mode,date,onNext}: {puzzle: Puzzle;storageKey:string;mode:Mode;date:string;onNext:()=>void}) {
   const [found,setFound]=useState<string[]>([]);
   const [ready,setReady]=useState(false);
   const [status,setStatus]=useState('');
-  const [storageUnavailable,setStorageUnavailable]=useState(false);
-  const [sound,setSound]=useState(false);
+  const [winScreenDisplayed,setWinScreenDisplayed]=useState(false);
   useEffect(()=>{setFound(restoreWords(read(storageKey),puzzle));setReady(true);},[puzzle,storageKey]);
+  useEffect(()=>{if(!status)return;const timer=setTimeout(()=>setStatus(''),1500);return()=>clearTimeout(timer);},[status]);
   const points=found.reduce((sum,w)=>sum+scoreWord(w),0);
   const total=puzzle.words.reduce((sum,w)=>sum+scoreWord(w),0);
-  const target=Math.ceil(total*.7);
+  const percentage=points/total*100;
+  const counterPosition=[2,5,8,15,25,40,50].findIndex(limit=>percentage<=limit)+1 || 8;
   const submit=useCallback((word:string)=>{
     const result=checkWord(word,puzzle,found);
-    setStatus(result.message);
-    if(!result.valid) return false;
+    if(word.length<4){setStatus('Too Short!');return {reset:false,sink:false};}
+    if(!word.includes(puzzle.center)){setStatus('Missing center letter');return {reset:true,sink:true};}
+    if(found.includes(word)){setStatus('Already found!');return {reset:true,sink:true};}
+    if(!result.valid){setStatus('Not in word list');return {reset:true,sink:true};}
     const updated=[...found,result.word];
     setFound(updated);
-    setStorageUnavailable(!write(storageKey,JSON.stringify(updated)));
-    return true;
+    const saved=write(storageKey,JSON.stringify(updated));
+    setStatus(saved ? new Set(word).size===7?'PANGRAM!':word.length===4?'good!':word.length===5?'great!':'quack-tastic!' : 'Progress could not be saved on this device');
+    return {reset:true,sink:false};
   },[found,puzzle,storageKey]);
-  return <main className="game-shell">
-    <header className="game-header">
-      <Link href="/" aria-label="Back to opening screen" className="icon-link"><img src={asset('icons/home-icon.svg')} alt=""/></Link>
-      <img src={asset('logo.svg')} alt="Better Spelling Bee" className="game-logo"/>
-      <label className="sound-toggle"><input type="checkbox" checked={sound} onChange={e=>setSound(e.target.checked)}/> Sound</label>
-    </header>
-    <nav className="mode-nav" aria-label="Game mode"><Link href="/play/daily/" aria-current={mode==='normal'?'page':undefined}>Normal</Link><Link href="/play/infinite/" aria-current={mode==='infinite'?'page':undefined}>Infinite</Link></nav>
-    <p className="mode-caption">{mode==='normal'?`The daily pond · ${date} (UTC)`:'A fresh pond whenever you like'}{mode==='infinite'&&<button type="button" className="text-button" onClick={onNext}>New puzzle ↗</button>}</p>
-    <div className="game-columns">
-      <div className="play-area">
-        <p className="game-status" role="status">{status || <>Every word needs <strong>{puzzle.center.toUpperCase()}</strong>, the white letter.</>}</p>
-        {ready && <DuckBoard puzzle={puzzle} onSubmit={submit} sound={sound}/>}
+  if(points>=Math.ceil(total*.7)&&!winScreenDisplayed)return <WinScreen onReturn={()=>setWinScreenDisplayed(true)}/>;
+  return <main className="flex flex-col w-[50svh] h-[100svh] md:w-[100svh] border-black md:pt-[2svh]" aria-label={mode==='normal'?'Normal game':'Infinite game'}>
+    <div className="flex flex-col h-full items-center">
+      <TopBar daily={mode==='normal'}/>
+      {mode==='normal'?<span className="inline-block text-white">daily: <span className="italic">{date.slice(5,7)}/{date.slice(8,10)}/{date.slice(0,4)}</span></span>:<span className="inline-block bg-gradient-to-r from-[#FF5F6D] to-[#FFC371] to-50% text-transparent bg-clip-text">infinite mode! <span onClick={onNext} role="button" tabIndex={0} onKeyDown={e=>{if(e.key==='Enter'||e.key===' ')onNext();}} className="text-white italic clickable">&lt;reset game&gt;</span></span>}
+    </div>
+    <div className="flex flex-col md:flex-row-reverse">
+      <div className="relative h-[14svh] w-[50svh] flex flex-col md:mt-[2svh]">
+        <ScoreBar points={points} counterPosition={counterPosition}/>
+        <FoundWords foundWords={found}/>
       </div>
-      <aside className="score-panel" aria-label="Your progress">
-        <div className="score-heading"><strong data-testid="score">{points}</strong><span>points</span><span className="rank">{found.length===puzzle.words.length?'Pond perfect!':points>=target?'Genius!':'Keep paddling'}</span></div>
-        <progress value={Math.min(points,target)} max={target} aria-label="Progress toward genius"/>
-        <p className="score-caption">{points>=target?'Genius reached! Keep finding words.':`${target-points} points to genius`}</p>
-        <h2>Found words <span>{found.length} / {puzzle.words.length}</span></h2>
-        {found.length ? <ul className="found-words">{[...found].sort().map(w=><li key={w}>{w}<span>{scoreWord(w)}</span></li>)}</ul> : <p className="empty-words">A whole pond of possibilities.<br/>Your words will appear here.</p>}
-        {found.length===puzzle.words.length&&<p role="status" className="completion">You found every word. Quack-tastic!</p>}
-        <details className="rules"><summary>How to play</summary><p>Make words with 4 or more letters. Always include the white letter. Letters can be used more than once.</p><p>Four-letter words earn 1 point. Longer words earn their length. A pangram uses all 7 letters and earns 14 points.</p><p>Drag ducks into the word tray, rearrange them, or click a tray duck to remove it. Drag one back out to remove it. Escape cancels a drag or clears the word.</p><p>Normal has one puzzle per UTC day. Infinite draws from 366 bundled puzzles. Progress stays in this browser; no account needed.</p></details>
-        <p className="save-note">{storageUnavailable?'Browser storage is unavailable. Progress lasts for this visit.':'Progress saved on this device.'}</p>
-      </aside>
+      <div className="flex flex-col h-[75svh] w-[50svh] md:mt-[8svh]">
+        <div role="status" className={`flex h-[4svh] w-fit justify-center items-center self-center px-[1.5svh] ${status?'bg-white bg-opacity-50 rounded-lg':''}`}>{status}</div>
+        {ready&&<DuckBoard puzzle={puzzle} onSubmit={submit}/>}
+      </div>
     </div>
   </main>;
 }
