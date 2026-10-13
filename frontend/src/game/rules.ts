@@ -1,6 +1,7 @@
 export interface Puzzle { id: string; letters: string[]; center: string; words: string[] }
 export interface Letter { id: string; letter: string }
-export const MAX_LETTERS = 24;
+// Preserve the original tray cap for every input method.
+export const MAX_LETTERS = 11;
 export function scoreWord(word: string): number {
   if (word.length === 4) return 1;
   if (new Set(word).size === 7) return 14;

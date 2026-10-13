@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom';
 import React, { act } from 'react';
 import { createRoot } from 'react-dom/client';
 
-test('duck lifecycle: repeated drops, whole-duck overlay, cancellation, resizing, touch and cleanup',async()=>{
+test('duck lifecycle: repeated drops, whole-duck overlay, cancellation, resizing, touch, original 11-letter cap and cleanup',async()=>{
  const dom=new JSDOM('<div id="root"></div>',{url:'http://localhost/'});
  Object.assign(globalThis,{window:dom.window,document:dom.window.document,HTMLElement:dom.window.HTMLElement,IS_REACT_ACT_ENVIRONMENT:true});
  const captures=new Map<Element,number>();
@@ -39,7 +39,7 @@ test('duck lifecycle: repeated drops, whole-duck overlay, cancellation, resizing
    assert.equal(word(),'AAA');assert.equal(document.querySelector('.drag-overlay'),null);assert.equal(document.querySelector('[data-drag-ghost]'),null);
  }
  await emit(source(),'pointerdown');await emit(source(),'pointermove',60,50);
- await act(async()=>window.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true,cancelable:true})));
+ await act(async()=>document.body.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true,cancelable:true})));
  assert.equal(word(),'AAA');assert.equal(document.querySelector('.drag-overlay'),null);assert.equal(document.querySelector('[data-drag-ghost]'),null);
  await emit(source(),'pointerdown');await emit(source(),'pointermove',60,50);
  await act(async()=>window.dispatchEvent(new dom.window.Event('resize')));
@@ -54,6 +54,28 @@ test('duck lifecycle: repeated drops, whole-duck overlay, cancellation, resizing
  assert.equal(word(),'AAAA');
  await emit(trayDuck,'pointermove',400,300);await emit(trayDuck,'pointerup',400,300);
  assert.equal(word(),'AAA');
+ // The original click limit is eleven; all inputs must share that boundary.
+ for(let i=0;i<8;i++){await emit(source(),'pointerdown');await emit(source(),'pointerup');await emit(source(),'click');}
+ assert.equal(word(),'A'.repeat(11));
+ await emit(source(),'click');
+ await act(async()=>document.body.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'a',bubbles:true})));
+ assert.equal(word(),'A'.repeat(11));
+ await emit(source(),'pointerdown');await emit(source(),'pointermove',60,50);
+ assert.equal(document.querySelectorAll('.tray-preview [data-preview-duck]').length,11);
+ assert.equal(document.querySelector('[data-drag-ghost]'),null); // No twelfth ghost.
+ await emit(source(),'pointerup',60,50);await emit(source(),'click');
+ assert.equal(word(),'A'.repeat(11));
+ // A slot freed by deletion accepts the eleventh duck again via keyboard or drag.
+ await act(async()=>document.body.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Backspace',bubbles:true})));
+ await act(async()=>document.body.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'a',bubbles:true})));
+ assert.equal(word(),'A'.repeat(11));
+ await act(async()=>document.body.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Backspace',bubbles:true})));
+ await emit(source(),'pointerdown');await emit(source(),'pointermove',60,50);
+ assert.equal(document.querySelectorAll('[data-drag-ghost]').length,1);
+ await emit(source(),'pointerup',60,50);assert.equal(word(),'A'.repeat(11));
+ const fullTrayDuck=document.querySelector('[data-tray-duck]')!;
+ await emit(fullTrayDuck,'pointerdown',30,50);await emit(fullTrayDuck,'pointermove',60,50);await emit(fullTrayDuck,'pointerup',60,50);
+ assert.equal(word(),'A'.repeat(11)); // Reordering remains allowed at capacity.
  await emit(source(),'pointerdown');await emit(source(),'pointermove',60,50);
  await act(async()=>root.unmount());assert.equal(captures.size,0);assert.equal(document.querySelector('.drag-overlay'),null);
  dom.window.close();

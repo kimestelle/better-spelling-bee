@@ -16,3 +16,6 @@ offset, so it does not jump to center under the pointer. Tray letters keep the o
 all overlapping resting bodies. The full-size mask aligns with the sprite; only
 the inner glyph catches pointer input so neighboring ducks stay draggable. Drops commit on release; cancellation, blur,
 scrolling and resizing preserve the pre-drag word. The served build is static.
+
+The original maximum of 11 tray letters applies consistently to clicks, keyboard
+input and pond drops. Reordering existing ducks is still allowed at capacity.
