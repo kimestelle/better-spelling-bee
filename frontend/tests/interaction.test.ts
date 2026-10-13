@@ -28,17 +28,19 @@ test('duck lifecycle: repeated drops, whole-duck overlay, cancellation, resizing
  };
  for(let i=0;i<3;i++){
    await emit(source(),'pointerdown');await emit(source(),'pointermove',60,50);
+   assert.equal(document.querySelectorAll('[data-drag-ghost]').length,1);
+   assert.equal(word(),'A'.repeat(i)); // Hover previews must not commit the word.
    assert.equal(document.querySelectorAll('.drag-overlay img').length,1);assert.equal(document.querySelector('.drag-overlay .duck-letter')!.textContent,'A');
    await emit(source(),'pointerup',60,50);await emit(source(),'click',60,50);
    assert.equal(word(),'A'.repeat(i+1));assert.equal(captures.size,0);assert.equal(document.querySelector('.drag-overlay'),null);
  }
  for(const cancel of ['pointercancel','lostpointercapture']){
    await emit(source(),'pointerdown');await emit(source(),'pointermove',60,50);await emit(source(),cancel,60,50);
-   assert.equal(word(),'AAA');assert.equal(document.querySelector('.drag-overlay'),null);
+   assert.equal(word(),'AAA');assert.equal(document.querySelector('.drag-overlay'),null);assert.equal(document.querySelector('[data-drag-ghost]'),null);
  }
  await emit(source(),'pointerdown');await emit(source(),'pointermove',60,50);
  await act(async()=>window.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true,cancelable:true})));
- assert.equal(word(),'AAA');assert.equal(document.querySelector('.drag-overlay'),null);
+ assert.equal(word(),'AAA');assert.equal(document.querySelector('.drag-overlay'),null);assert.equal(document.querySelector('[data-drag-ghost]'),null);
  await emit(source(),'pointerdown');await emit(source(),'pointermove',60,50);
  await act(async()=>window.dispatchEvent(new dom.window.Event('resize')));
  assert.equal(word(),'AAA');assert.equal(captures.size,0);
@@ -46,7 +48,11 @@ test('duck lifecycle: repeated drops, whole-duck overlay, cancellation, resizing
  await emit(source(),'pointerdown',30,230,{pointerType:'touch'});await emit(source(),'pointermove',60,50,{pointerType:'touch'});await emit(source(),'pointerup',60,50,{pointerType:'touch'});
  assert.equal(word(),'AAAA');
  const trayDuck=document.querySelector('[data-tray-duck]')!;
- await emit(trayDuck,'pointerdown',30,50);await emit(trayDuck,'pointermove',400,300);await emit(trayDuck,'pointerup',400,300);
+ await emit(trayDuck,'pointerdown',30,50);await emit(trayDuck,'pointermove',60,50);
+ assert.equal(trayDuck.isConnected,true);assert.equal(captures.get(trayDuck),1);assert.equal(document.querySelector('[data-drag-ghost]')?.textContent,'A');
+ assert.equal(trayDuck.parentElement?.classList.contains('word-tray'),true);
+ assert.equal(word(),'AAAA');
+ await emit(trayDuck,'pointermove',400,300);await emit(trayDuck,'pointerup',400,300);
  assert.equal(word(),'AAA');
  await emit(source(),'pointerdown');await emit(source(),'pointermove',60,50);
  await act(async()=>root.unmount());assert.equal(captures.size,0);assert.equal(document.querySelector('.drag-overlay'),null);

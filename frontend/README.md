@@ -10,7 +10,9 @@ up on unmount and skips ticks while dragging.
 
 The drag implementation keeps pointer capture on a stable source button and renders
 the active duck with its letter in a non-interactive portal. A faint ghost stays
-in the tray at the source position until the drag ends or is cancelled. Tray letters keep the original SVG silhouette mask and sit above
+in the tray and previews the destination as the pointer moves. Hovering from the
+pond also shows a ghost before release. The dragged duck preserves its pickup
+offset, so it does not jump to center under the pointer. Tray letters keep the original SVG silhouette mask and sit above
 all overlapping resting bodies. The full-size mask aligns with the sprite; only
 the inner glyph catches pointer input so neighboring ducks stay draggable. Drops commit on release; cancellation, blur,
 scrolling and resizing preserve the pre-drag word. The served build is static.

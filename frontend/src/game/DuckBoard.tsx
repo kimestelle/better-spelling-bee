@@ -4,7 +4,7 @@ import { startIdleFlapping } from './idle';
 import { createPortal } from 'react-dom';
 import { applyDrop, asset, contains, insertionIndex, MAX_LETTERS, type Letter, type Puzzle } from './rules';
 
-type Drag = { item: Letter; fromTray: boolean; pointer: number; originX: number; originY: number; x: number; y: number; width: number; height: number; moved: boolean; target: HTMLButtonElement };
+type Drag = { item: Letter; fromTray: boolean; pointer: number; originX: number; originY: number; x: number; y: number; width: number; height: number; offsetX: number; offsetY: number; moved: boolean; target: HTMLButtonElement };
 export function DuckArt({ letter, center, flying = false, flapping = false }: {letter: string; center: boolean; flying?: boolean; flapping?: boolean}) {
   return <span className={`duck-art ${center ? 'center-letter' : ''} ${flapping ? 'is-flapping' : ''}`}>
     {/* The full-size letter layer keeps the original SVG silhouette mask. */}
@@ -17,7 +17,7 @@ export default function DuckBoard({ puzzle, onSubmit }: { puzzle: Puzzle; onSubm
   const [items, setItems] = useState<Letter[]>([]);
   const [order, setOrder] = useState([puzzle.center, ...puzzle.letters.filter(l => l !== puzzle.center)]);
   const [drag, setDrag] = useState<Drag | null>(null);
-  const [over, setOver] = useState(false);
+  const [previewIndex, setPreviewIndex] = useState<number | null>(null);
   const [animation, setAnimation] = useState('');
   const [flappingIndex, setFlappingIndex] = useState<number | null>(null);
   const [limitMessage, setLimitMessage] = useState('');
@@ -32,7 +32,7 @@ export default function DuckBoard({ puzzle, onSubmit }: { puzzle: Puzzle; onSubm
   const clearDrag = useCallback(() => {
     const active = dragRef.current;
     dragRef.current = null;
-    setDrag(null); setOver(false);
+    setDrag(null); setPreviewIndex(null);
     if (active?.target.hasPointerCapture(active.pointer)) active.target.releasePointerCapture(active.pointer);
   }, []);
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function DuckBoard({ puzzle, onSubmit }: { puzzle: Puzzle; onSubm
     if (event.button !== 0 || !event.isPrimary || busy.current || dragRef.current) return;
     suppressClick.current = false;
     const rect = event.currentTarget.getBoundingClientRect();
-    const value: Drag = { item, fromTray, pointer: event.pointerId, originX: event.clientX, originY: event.clientY, x: event.clientX, y: event.clientY, width: rect.width, height: rect.height, moved: false, target: event.currentTarget };
+    const value: Drag = { item, fromTray, pointer: event.pointerId, originX: event.clientX, originY: event.clientY, x: event.clientX, y: event.clientY, width: rect.width, height: rect.height, offsetX: event.clientX-rect.left, offsetY: event.clientY-rect.top, moved: false, target: event.currentTarget };
     event.currentTarget.setPointerCapture(event.pointerId);
     dragRef.current = value;
   }
@@ -95,19 +95,22 @@ export default function DuckBoard({ puzzle, onSubmit }: { puzzle: Puzzle; onSubm
     dragRef.current = value;
     if (moved) {
       setDrag(value);
-      const rect = trayRef.current?.getBoundingClientRect();
-      setOver(!!rect && contains(rect, event.clientX, event.clientY));
+      setPreviewIndex(dropIndex(value, event.clientX, event.clientY));
     }
+  }
+  function dropIndex(active: Drag, x: number, y: number) {
+    if (!trayRef.current || !contains(trayRef.current.getBoundingClientRect(), x, y)) return null;
+    const preview = trayRef.current.querySelector('.tray-preview');
+    const rects = Array.from((preview || trayRef.current).querySelectorAll<HTMLElement>(preview ? '[data-preview-duck]' : '[data-tray-duck]'))
+      .filter(el => (el.dataset.previewDuck || el.dataset.trayDuck) !== active.item.id).map(el => el.getBoundingClientRect());
+    return insertionIndex(rects, x, y);
   }
   function end(event: ReactPointerEvent<HTMLButtonElement>, cancelled = false) {
     const active = dragRef.current;
     if (!active || active.pointer !== event.pointerId) return;
     suppressClick.current = active.moved || cancelled;
     if (active.moved && !cancelled && trayRef.current) {
-      const inside = contains(trayRef.current.getBoundingClientRect(), event.clientX, event.clientY);
-      const rects = Array.from(trayRef.current.querySelectorAll<HTMLButtonElement>('[data-tray-duck]'))
-        .filter(el => el.dataset.trayDuck !== active.item.id).map(el => el.getBoundingClientRect());
-      const index = inside ? insertionIndex(rects, event.clientX, event.clientY) : null;
+      const index = dropIndex(active, event.clientX, event.clientY);
       setItems(previous => applyDrop(previous, active.item, active.fromTray, index));
     }
     clearDrag();
@@ -132,12 +135,20 @@ export default function DuckBoard({ puzzle, onSubmit }: { puzzle: Puzzle; onSubm
       return [puzzle.center,...outside];
     });
   }
+  // Render a reversible destination preview without committing the word. Existing
+  // source buttons stay in place: moving a captured DOM node loses capture in Chrome.
+  const shownItems = drag && previewIndex !== null ? applyDrop(items, drag.item, drag.fromTray, previewIndex) : items;
   return <section className="board" aria-label="Duck word builder">
     <div className="word-readout sr-only" aria-live="polite" aria-label="Current word">{items.map(i=>i.letter).join('').toUpperCase() || ''}</div>
-    <div ref={trayRef} className={`word-tray ${over?'drop-over':''} ${animation}`} aria-label="Word tray" data-testid="word-tray">
-      {items.map(item => <button key={item.id} type="button" className={`duck tray-duck ${drag?.item.id===item.id?'drag-source':''}`} data-tray-duck={item.id} aria-label={`Move ${item.letter.toUpperCase()} in word`} {...handlers(item,true)} onClick={()=>click(()=>{})}>
+    <div ref={trayRef} className={`word-tray ${previewIndex!==null?'drop-over preview-active':''} ${animation}`} aria-label="Word tray" data-testid="word-tray">
+      {items.map(item => <button key={item.id} type="button" className={`duck tray-duck ${drag?.item.id===item.id?'drag-source':''}`} data-tray-duck={item.id} data-drag-ghost={previewIndex===null && drag?.item.id===item.id || undefined} aria-label={`Move ${item.letter.toUpperCase()} in word`} {...handlers(item,true)} onClick={()=>click(()=>{})}>
         <DuckArt letter={item.letter} center={item.letter===puzzle.center}/>
       </button>)}
+      {drag && previewIndex !== null && <div className="tray-preview" aria-hidden="true">
+        {shownItems.map(item => <span key={item.id} className={`duck tray-duck ${drag.item.id===item.id?'drag-source':''}`} data-preview-duck={item.id} data-drag-ghost={drag.item.id===item.id || undefined}>
+          <DuckArt letter={item.letter} center={item.letter===puzzle.center}/>
+        </span>)}
+      </div>}
     </div>
     <div className="pond" style={{backgroundImage:`url(${asset('game-assets/pond.svg')})`}} aria-label="Letter pond">
       {order.map((letter,index)=><button type="button" key={letter} className={`duck pond-duck duck-${index}`} aria-label={`Add ${letter.toUpperCase()}${letter===puzzle.center?' (required letter)':''}`} {...handlers({id:`pool-${letter}`,letter},false)}
@@ -153,6 +164,6 @@ export default function DuckBoard({ puzzle, onSubmit }: { puzzle: Puzzle; onSubm
     </div>
 
     <p className="sr-only" role="status">{limitMessage}</p>
-    {drag?.moved && createPortal(<div className="drag-overlay" data-testid="drag-overlay" aria-hidden="true" style={{left:drag.x-drag.width/2,top:drag.y-drag.height/2,width:drag.width,height:drag.height}}><DuckArt letter={drag.item.letter} center={drag.item.letter===puzzle.center} flying/></div>,document.body)}
+    {drag?.moved && createPortal(<div className="drag-overlay" data-testid="drag-overlay" aria-hidden="true" style={{left:drag.x-drag.offsetX,top:drag.y-drag.offsetY,width:drag.width,height:drag.height}}><DuckArt letter={drag.item.letter} center={drag.item.letter===puzzle.center} flying/></div>,document.body)}
   </section>;
 }

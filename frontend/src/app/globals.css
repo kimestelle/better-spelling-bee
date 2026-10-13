@@ -354,8 +354,9 @@ button:focus-visible,a:focus-visible,[role=button]:focus-visible { outline:2px s
 .is-flapping .flap-sprite { animation:flap-frame .2s steps(1) 2; }
 @keyframes rest-frame { 0%,100%{opacity:1} 40%{opacity:0} }
 @keyframes flap-frame { 0%,100%{opacity:0} 40%{opacity:1} }
-/* Keep a faint source duck visible while its solid copy follows the pointer. */
-.drag-source { opacity:.3; }
+/* Fade the artwork and glyph separately so the ghost letter keeps its layer
+   above neighboring bodies, just like the other SVG-clipped letters. */
+.drag-source .rest-sprite, .drag-source .duck-glyph { opacity:.3; }
 .drag-overlay { position:fixed; z-index:1000; isolation:isolate; pointer-events:none; }
 .word-controls { height:9svh; padding-bottom:9svh; display:flex; flex-direction:row; justify-content:center; align-items:center; }
 .word-controls .shuffle { width:6svh; height:6svh; margin:1svh; border-radius:5svh; }
@@ -375,3 +376,8 @@ html[data-theme=light] .bg-sand {background:#FAF9F6;}
 .duck-glyph { font:inherit; }
 /* Only the glyph catches input; the full-size mask cannot cover a neighbor’s hit target. */
 .tray-duck .duck-glyph { pointer-events:auto; touch-action:none; }
+
+/* Visual previews never move the real buttons that own pointer capture. */
+.preview-active > .tray-duck { opacity:0; }
+.tray-preview { position:absolute; inset:0; display:flex; justify-content:center; align-items:center; padding-top:6svh; pointer-events:none; }
+.tray-preview .duck-glyph { pointer-events:none; }
