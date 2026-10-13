@@ -9,7 +9,8 @@ sprites. Ducks do not bob, rotate or travel during idle. The idle timer is clean
 up on unmount and skips ticks while dragging.
 
 The drag implementation keeps pointer capture on a stable source button and renders
-the active duck with its letter in a non-interactive portal. Tray letters keep the original SVG silhouette mask and sit above
+the active duck with its letter in a non-interactive portal. A faint ghost stays
+in the tray at the source position until the drag ends or is cancelled. Tray letters keep the original SVG silhouette mask and sit above
 all overlapping resting bodies. The full-size mask aligns with the sprite; only
 the inner glyph catches pointer input so neighboring ducks stay draggable. Drops commit on release; cancellation, blur,
 scrolling and resizing preserve the pre-drag word. The served build is static.
