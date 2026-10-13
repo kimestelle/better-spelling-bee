@@ -334,7 +334,7 @@ body { font-family: Arvo, Georgia, serif; }
 .opening { position:relative; width:100%; height:100svh; overflow:hidden; display:flex; justify-content:center; }
 .opening-logo { position:absolute; top:13svh; height:7svh; max-width:90vw; }
 .opening-actions { position:absolute; top:45%; left:50%; transform:translate(-50%,-50%); display:flex; gap:3svh; z-index:20; }
-.play-button { width:15svh; height:4.5svh; text-align:center; border-radius:1svh; padding:1svh; background:#D6D6D6; box-shadow:.2svh .3svh 0 #0000001a; }
+.play-button { width:15svh; height:4.5svh; text-align:center; border-radius:1svh; padding:1svh; background:#FFFFFF; color:#000000; box-shadow:.2svh .3svh 0 #0000001a; }
 .opening-scene { position:absolute; bottom:0; width:180svh; height:30svh; display:flex; align-items:flex-end; flex-shrink:0; user-select:none; }
 .scene-landscape { width:100%; }
 button:focus-visible,a:focus-visible,[role=button]:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
